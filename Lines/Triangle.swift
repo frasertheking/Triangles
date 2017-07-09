@@ -15,6 +15,7 @@ class Triangle {
     var line1: Line?
     var line2: Line?
     var line3: Line?
+    var isMinimal = true
     var area: CGFloat? {
         get {
             let part1 = (vertex1?.x)!*((vertex1?.y)!-(vertex2?.y)!)

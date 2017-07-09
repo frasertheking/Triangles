@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var triangleView: UIView!
     var tapGestureRecognizer: UITapGestureRecognizer!
     
     var firstPoint: CGPoint?
@@ -81,20 +82,18 @@ class ViewController: UIViewController {
         }
         
         let minArray = removeMaximumTrianglesFromArray(array: triangleArray)
-        print("done")
-        
+        drawTriangles(array: minArray)
     }
     
     func removeMaximumTrianglesFromArray(array: [Triangle]) -> [Triangle] {
         var sortedArray = array.sorted(by: { $0.area! < $1.area! })
-        let tempArray = sortedArray
         
-        for i in 0 ..< tempArray.count {
-            for j in i+1 ..< tempArray.count {
-                if (tempArray[j].hasLine(line: tempArray[i].line1!) && tempArray[j].hasLine(line: tempArray[i].line2!)) ||
-                   (tempArray[j].hasLine(line: tempArray[i].line1!) && tempArray[j].hasLine(line: tempArray[i].line3!)) ||
-                   (tempArray[j].hasLine(line: tempArray[i].line2!) && tempArray[j].hasLine(line: tempArray[i].line3!)) {
-                    sortedArray.remove(at: j)
+        for i in 0 ..< sortedArray.count {
+            for j in i+1 ..< sortedArray.count {
+                if (sortedArray[j].hasLine(line: sortedArray[i].line1!) && sortedArray[j].hasLine(line: sortedArray[i].line2!)) ||
+                   (sortedArray[j].hasLine(line: sortedArray[i].line1!) && sortedArray[j].hasLine(line: sortedArray[i].line3!)) ||
+                   (sortedArray[j].hasLine(line: sortedArray[i].line2!) && sortedArray[j].hasLine(line: sortedArray[i].line3!)) {
+                    sortedArray[j].isMinimal = false
                 }
             }
         }
@@ -123,6 +122,30 @@ class ViewController: UIViewController {
         }
         
         return nil
+    }
+    
+    func drawTriangles(array: [Triangle]) {
+        
+        self.triangleView.layer.sublayers = nil
+        
+        for triangle in array {
+            if triangle.isMinimal {
+                let path = CGMutablePath()
+                path.move(to: triangle.vertex1!)
+                path.addLine(to: triangle.vertex2!)
+                path.addLine(to: triangle.vertex3!)
+                path.addLine(to: triangle.vertex1!)
+                
+                let shape = CAShapeLayer()
+                shape.frame = self.view.bounds
+                shape.path = path
+                shape.lineWidth = 3.0
+                shape.fillColor = UIColor.red.cgColor
+                
+                self.triangleView.layer.insertSublayer(shape, at: 0)
+            }
+        }
+
     }
     
  
