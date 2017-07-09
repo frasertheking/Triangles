@@ -9,17 +9,121 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var tapGestureRecognizer: UITapGestureRecognizer!
+    
+    var firstPoint: CGPoint?
+    var secondPoint: CGPoint?
+    var lineArr: [Line] = [Line]()
+    var lineCount: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.showMoreActions(touch:)))
+        tapGestureRecognizer.numberOfTapsRequired = 1
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func showMoreActions(touch: UITapGestureRecognizer) {
+        let touchPoint = touch.location(in: self.view)
+        
+        guard let _ = firstPoint else {
+            firstPoint = touchPoint
+            return
+        }
+        
+        guard let _  = secondPoint else {
+            secondPoint = touchPoint
+            addLine(fromPoint: firstPoint!, toPoint: secondPoint!)
+            
+            firstPoint = nil
+            secondPoint = nil
+            
+            return
+        }
     }
+    
+    func addLine(fromPoint start: CGPoint, toPoint end:CGPoint) {
+        let line = CAShapeLayer()
+        let linePath = UIBezierPath()
+        linePath.move(to: start)
+        linePath.addLine(to: end)
+        line.path = linePath.cgPath
+        line.strokeColor = UIColor.red.cgColor
+        line.lineWidth = 1
+        line.lineJoin = kCALineJoinRound
+        self.view.layer.addSublayer(line)
+        lineArr.append(Line(id: lineCount, start: start, end: end))
+        lineCount += 1
+        findIntersections()
+    }
+    
+    func findIntersections() {
+        var triangleArray: [Triangle] = [Triangle]()
+        for i in 0 ..< lineArr.count {
+            var intersectionCount: Int = 0
+            var intersectionArr: [Line] = [Line]()
+            for j in i+1 ..< lineArr.count {
+                if lineArr[i].intersectsWithLine(line2: (a: lineArr[j].start!, b: lineArr[j].end!)) {
+                    intersectionCount += 1
+                    intersectionArr.append(lineArr[j])
+                }
+                
+                if let minimalTriangle: Triangle = getMinimalTriangleFromLines(lines: intersectionArr, currentLine: lineArr[i]) {
 
+                    let results = triangleArray.filter { $0.vertex1 == minimalTriangle.vertex1 && $0.vertex2 == minimalTriangle.vertex2 && $0.vertex3 == minimalTriangle.vertex3 }
+                    if results.isEmpty {
+                        triangleArray.append(minimalTriangle)
+                    }
+                }
+            }
+        }
+        
+        let minArray = removeMaximumTrianglesFromArray(array: triangleArray)
+        print("done")
+        
+    }
+    
+    func removeMaximumTrianglesFromArray(array: [Triangle]) -> [Triangle] {
+        var sortedArray = array.sorted(by: { $0.area! < $1.area! })
+        let tempArray = sortedArray
+        
+        for i in 0 ..< tempArray.count {
+            for j in i+1 ..< tempArray.count {
+                if (tempArray[j].hasLine(line: tempArray[i].line1!) && tempArray[j].hasLine(line: tempArray[i].line2!)) ||
+                   (tempArray[j].hasLine(line: tempArray[i].line1!) && tempArray[j].hasLine(line: tempArray[i].line3!)) ||
+                   (tempArray[j].hasLine(line: tempArray[i].line2!) && tempArray[j].hasLine(line: tempArray[i].line3!)) {
+                    sortedArray.remove(at: j)
+                }
+            }
+        }
 
+        return sortedArray
+    }
+    
+    func getMinimalTriangleFromLines(lines: [Line], currentLine: Line) -> Triangle? {
+        var triangleArr: [Triangle] = [Triangle]()
+        for i in 0 ..< lines.count {
+            for j in i+1 ..< lines.count {
+                if lines[i].intersectsWithLine(line2: (a: lines[j].start!, b: lines[j].end!)) {
+                    triangleArr.append(Triangle(vertex1: currentLine.getIntersectionPointForLine(line2: (a: lines[i].start!, b: lines[i].end!)),
+                                                vertex2: currentLine.getIntersectionPointForLine(line2: (a: lines[j].start!, b: lines[j].end!)),
+                                                vertex3: lines[i].getIntersectionPointForLine(line2: (a: lines[j].start!, b: lines[j].end!)),
+                                                  line1: currentLine,
+                                                  line2: lines[i],
+                                                  line3: lines[j]))
+                }
+            }
+        }
+        
+        let sortedTriangles = triangleArr.sorted(by: { $0.area! < $1.area! })
+        if (sortedTriangles.count > 0) {
+            return sortedTriangles[0]
+        }
+        
+        return nil
+    }
+    
+ 
 }
-
