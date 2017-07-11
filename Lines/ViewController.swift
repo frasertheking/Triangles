@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var firstPoint: CGPoint?
     var secondPoint: CGPoint?
     var lineArr: [Line] = [Line]()
+    var triangleArray: [Triangle] = [Triangle]()
     var lineCount: Int = 0
     
     override func viewDidLoad() {
@@ -61,7 +62,7 @@ class ViewController: UIViewController {
     }
     
     func findIntersections() {
-        var triangleArray: [Triangle] = [Triangle]()
+        triangleArray = [Triangle]()
         for i in 0 ..< lineArr.count {
             var intersectionCount: Int = 0
             var intersectionArr: [Line] = [Line]()
@@ -71,11 +72,9 @@ class ViewController: UIViewController {
                     intersectionArr.append(lineArr[j])
                 }
                 
-                if let minimalTriangle: Triangle = getMinimalTriangleFromLines(lines: intersectionArr, currentLine: lineArr[i]) {
-
-                    let results = triangleArray.filter { $0.vertex1 == minimalTriangle.vertex1 && $0.vertex2 == minimalTriangle.vertex2 && $0.vertex3 == minimalTriangle.vertex3 }
-                    if results.isEmpty {
-                        triangleArray.append(minimalTriangle)
+                if let minimalTriangles: [Triangle] = getMinimalTriangleFromLines(lines: intersectionArr, currentLine: lineArr[i]) {
+                    for triangle in minimalTriangles {
+                        triangleArray.append(triangle)
                     }
                 }
             }
@@ -89,23 +88,45 @@ class ViewController: UIViewController {
         var sortedArray = array.sorted(by: { $0.area! < $1.area! })
         
         for i in 0 ..< sortedArray.count {
-            for j in i+1 ..< sortedArray.count {
-                if (sortedArray[j].hasLine(line: sortedArray[i].line1!) && sortedArray[j].hasLine(line: sortedArray[i].line2!)) ||
-                   (sortedArray[j].hasLine(line: sortedArray[i].line1!) && sortedArray[j].hasLine(line: sortedArray[i].line3!)) ||
-                   (sortedArray[j].hasLine(line: sortedArray[i].line2!) && sortedArray[j].hasLine(line: sortedArray[i].line3!)) {
-                    sortedArray[j].isMinimal = false
+            for j in 0 ..< sortedArray.count {
+                let triangleCenter: CGPoint = getCenterFromTriangle(triangle: sortedArray[j])
+                if isPointInTriangle(p: triangleCenter, p0: sortedArray[i].vertex1!, p1: sortedArray[i].vertex2!, p2: sortedArray[i].vertex3!) &&
+                    sortedArray[i].area! > sortedArray[j].area! {
+                    sortedArray[i].isMinimal = false
                 }
             }
         }
-
+        
         return sortedArray
     }
     
-    func getMinimalTriangleFromLines(lines: [Line], currentLine: Line) -> Triangle? {
+    func getCenterFromTriangle(triangle: Triangle) -> CGPoint {
+        let centerX: CGFloat = (triangle.vertex1!.x + triangle.vertex2!.x + triangle.vertex3!.x) / 3;
+        let centerY: CGFloat = (triangle.vertex1!.y + triangle.vertex2!.y + triangle.vertex3!.y) / 3;
+        return CGPoint(x: centerX, y: centerY)
+    }
+    
+    func isPointInTriangle(p: CGPoint, p0: CGPoint, p1: CGPoint, p2: CGPoint) -> Bool {
+        let A = 1/2 * (-p1.y * p2.x + p0.y * (-p1.x + p2.x) + p0.x * (p1.y - p2.y) + p1.x * p2.y)
+        let sign: CGFloat = A < 0 ? -1 : 1
+        
+        let x = p0.y * p2.x - p0.x * p2.y
+        let y = (p0.x - p2.x) * p.y
+        let s = (x + (p2.y - p0.y) * p.x + y) * sign
+        
+        let q = p0.x * p1.y - p0.y * p1.x
+        let r = (p1.x - p0.x) * p.y
+        
+        let t = (q + (p0.y - p1.y) * p.x + r) * sign
+        return s > 0 && t > 0 && (s + t) < 2 * A * sign
+    }
+    
+    func getMinimalTriangleFromLines(lines: [Line], currentLine: Line) -> [Triangle]? {
         var triangleArr: [Triangle] = [Triangle]()
         for i in 0 ..< lines.count {
             for j in i+1 ..< lines.count {
                 if lines[i].intersectsWithLine(line2: (a: lines[j].start!, b: lines[j].end!)) {
+                    print("Triangle", currentLine.id, lines[i].id, lines[j].id)
                     triangleArr.append(Triangle(vertex1: currentLine.getIntersectionPointForLine(line2: (a: lines[i].start!, b: lines[i].end!)),
                                                 vertex2: currentLine.getIntersectionPointForLine(line2: (a: lines[j].start!, b: lines[j].end!)),
                                                 vertex3: lines[i].getIntersectionPointForLine(line2: (a: lines[j].start!, b: lines[j].end!)),
@@ -117,8 +138,19 @@ class ViewController: UIViewController {
         }
         
         let sortedTriangles = triangleArr.sorted(by: { $0.area! < $1.area! })
-        if (sortedTriangles.count > 0) {
-            return sortedTriangles[0]
+        var returnTriangles: [Triangle] = [Triangle]()
+        for triangle in sortedTriangles {
+            let results = triangleArray.filter { $0.vertex1 == triangle.vertex1 && $0.vertex2 == triangle.vertex2 && $0.vertex3 == triangle.vertex3 }
+            if results.isEmpty {
+                
+                // Need to check if minimal
+                
+                returnTriangles.append(triangle)
+            }
+        }
+        
+        if returnTriangles.count > 0 {
+            return returnTriangles
         }
         
         return nil
@@ -140,7 +172,7 @@ class ViewController: UIViewController {
                 shape.frame = self.view.bounds
                 shape.path = path
                 shape.lineWidth = 3.0
-                shape.fillColor = UIColor.red.cgColor
+                shape.fillColor = UIColor.red.withAlphaComponent(0.5).cgColor
                 
                 self.triangleView.layer.insertSublayer(shape, at: 0)
             }

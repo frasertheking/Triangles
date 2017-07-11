@@ -36,7 +36,6 @@ class Triangle {
     
     func hasLine(line: Line) -> Bool {
         return line1!.id == line.id || line2!.id == line.id || line3!.id == line.id
-        
     }
     
 //    func getTriangleArea(line1: Line, line2: Line, line3: Line) -> CGFloat {
