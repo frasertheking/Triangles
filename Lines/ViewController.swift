@@ -89,13 +89,14 @@ class ViewController: UIViewController {
         
         for i in 0 ..< sortedArray.count {
             for j in 0 ..< sortedArray.count {
-                let triangleCenter: CGPoint = getCenterFromTriangle(triangle: sortedArray[j])
-                if isPointInTriangle(p: triangleCenter, p0: sortedArray[i].vertex1!, p1: sortedArray[i].vertex2!, p2: sortedArray[i].vertex3!) &&
-                    sortedArray[i].area! > sortedArray[j].area! {
-                    sortedArray[i].isMinimal = false
+                let triangleCenter: CGPoint = getCenterFromTriangle(triangle: sortedArray[i])
+                if isPointInTriangle(p: triangleCenter, p0: sortedArray[j].vertex1!, p1: sortedArray[j].vertex2!, p2: sortedArray[j].vertex3!) &&
+                    sortedArray[j].area! != sortedArray[i].area! && sortedArray[i].isMinimal {
+                    sortedArray[j].isMinimal = false
                 }
             }
         }
+
         
         return sortedArray
     }
@@ -126,7 +127,6 @@ class ViewController: UIViewController {
         for i in 0 ..< lines.count {
             for j in i+1 ..< lines.count {
                 if lines[i].intersectsWithLine(line2: (a: lines[j].start!, b: lines[j].end!)) {
-                    print("Triangle", currentLine.id, lines[i].id, lines[j].id)
                     triangleArr.append(Triangle(vertex1: currentLine.getIntersectionPointForLine(line2: (a: lines[i].start!, b: lines[i].end!)),
                                                 vertex2: currentLine.getIntersectionPointForLine(line2: (a: lines[j].start!, b: lines[j].end!)),
                                                 vertex3: lines[i].getIntersectionPointForLine(line2: (a: lines[j].start!, b: lines[j].end!)),

@@ -12,6 +12,19 @@ class Line {
     var id: Int?
     var start: CGPoint?
     var end: CGPoint?
+    var length: CGFloat? {
+        get {
+            guard let point1 = start else {
+                return nil
+            }
+            
+            guard let point2 = end else {
+                return nil
+            }
+            
+            return CGFloat(sqrt(pow((point2.x - point1.x), 2) + pow((point2.y - point1.y), 2)))
+        }
+    }
     var slope: CGFloat? {
         get {
             guard let point1 = start else {

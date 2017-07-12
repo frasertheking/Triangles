@@ -16,12 +16,20 @@ class Triangle {
     var line2: Line?
     var line3: Line?
     var isMinimal = true
+    var semiPerimeter: CGFloat {
+        get {
+            let len1: CGFloat = CGFloat(sqrt(pow((vertex2!.x - vertex1!.x), 2) + pow((vertex2!.y - vertex1!.y), 2)))
+            let len2: CGFloat = CGFloat(sqrt(pow((vertex2!.x - vertex3!.x), 2) + pow((vertex2!.y - vertex3!.y), 2)))
+            let len3: CGFloat = CGFloat(sqrt(pow((vertex3!.x - vertex1!.x), 2) + pow((vertex3!.y - vertex1!.y), 2)))
+            return (len1 + len2 + len3) / 2.0
+        }
+    }
     var area: CGFloat? {
         get {
-            let part1 = (vertex1?.x)!*((vertex1?.y)!-(vertex2?.y)!)
-            let part2 = (vertex2?.x)!*((vertex3?.y)!-(vertex1?.y)!)
-            let part3 = (vertex3?.x)!*((vertex1?.y)!-(vertex2?.y)!)
-            return abs(0.5*(part1 + part2 + part3))
+            let len1: CGFloat = CGFloat(sqrt(pow((vertex2!.x - vertex1!.x), 2) + pow((vertex2!.y - vertex1!.y), 2)))
+            let len2: CGFloat = CGFloat(sqrt(pow((vertex2!.x - vertex3!.x), 2) + pow((vertex2!.y - vertex3!.y), 2)))
+            let len3: CGFloat = CGFloat(sqrt(pow((vertex3!.x - vertex1!.x), 2) + pow((vertex3!.y - vertex1!.y), 2)))
+            return sqrt(semiPerimeter*(semiPerimeter - len1)*(semiPerimeter - len2)*(semiPerimeter - len3))
         }
     }
     
