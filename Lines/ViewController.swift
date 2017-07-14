@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var triangleView: UIView!
+    @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var undoButton: UIButton!
+    @IBOutlet weak var triangleCountLabel: UILabel!
     var tapGestureRecognizer: UITapGestureRecognizer!
     
     var firstPoint: CGPoint?
@@ -18,47 +21,91 @@ class ViewController: UIViewController {
     var lineArr: [Line] = [Line]()
     var triangleArray: [Triangle] = [Triangle]()
     var lineCount: Int = 0
+    var lineStart: CGPoint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.showMoreActions(touch:)))
-        tapGestureRecognizer.numberOfTapsRequired = 1
-        view.addGestureRecognizer(tapGestureRecognizer)
+        clearButton.layer.name = "UI"
+        undoButton.layer.name = "UI"
+        triangleCountLabel.layer.name = "UI"
+        triangleView.layer.name = "UI"
+        
+        let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(panGesture:)))
+        view.addGestureRecognizer(gestureRecognizer)
     }
     
-    func showMoreActions(touch: UITapGestureRecognizer) {
-        let touchPoint = touch.location(in: self.view)
-        
-        guard let _ = firstPoint else {
-            firstPoint = touchPoint
-            return
+    @IBAction func clearPressed(sender: UIButton) {
+
+      /*  for case let layer in self.view.layer.sublayers! {
+            if layer.name != "UI" {
+                layer.removeFromSuperlayer()
+            }
         }
         
-        guard let _  = secondPoint else {
-            secondPoint = touchPoint
-            addLine(fromPoint: firstPoint!, toPoint: secondPoint!)
+        lineCount = 0
+        lineArr.removeAll(keepingCapacity: false)
+        findIntersections()*/
+    }
+    
+    @IBAction func undoPressed(sender: UIButton) {
+        if (lineCount > 0) {
+            lineCount -= 1
+            for case let layer in self.view.layer.sublayers! {
+                if layer.name == "\(lineCount)" {
+                    layer.removeFromSuperlayer()
+                }
+            }
             
-            firstPoint = nil
-            secondPoint = nil
-            
-            return
+            lineArr.removeLast()
+            findIntersections()
         }
     }
     
-    func addLine(fromPoint start: CGPoint, toPoint end:CGPoint) {
+    func handlePanGesture(panGesture: UIPanGestureRecognizer) {
+
+        if panGesture.state == .began {
+            print("Began", panGesture.location(in: view))
+            lineStart = panGesture.location(in: view)
+        }
+        
+        if panGesture.state == .ended {
+            print("Ended", panGesture.location(in: view))
+            addLine(fromPoint: lineStart!, toPoint: panGesture.location(in: view), done: true)
+
+        }
+        
+        if panGesture.state == .changed {
+            print("Changed", panGesture.location(in: view))
+            addLine(fromPoint: lineStart!, toPoint: panGesture.location(in: view), done: false)
+
+        }
+    }
+    
+    func addLine(fromPoint start: CGPoint, toPoint end:CGPoint, done: Bool) {
+        
+        for case let layer in self.view.layer.sublayers! {
+            if layer.name == "\(lineCount)" {
+                layer.removeFromSuperlayer()
+            }
+        }
+        
         let line = CAShapeLayer()
         let linePath = UIBezierPath()
         linePath.move(to: start)
         linePath.addLine(to: end)
         line.path = linePath.cgPath
         line.strokeColor = UIColor.red.cgColor
-        line.lineWidth = 1
+        line.lineWidth = 5
         line.lineJoin = kCALineJoinRound
+        line.name = "\(lineCount)"
         self.view.layer.addSublayer(line)
-        lineArr.append(Line(id: lineCount, start: start, end: end))
-        lineCount += 1
-        findIntersections()
+        
+        if done {
+            lineArr.append(Line(id: lineCount, start: start, end: end))
+            lineCount += 1
+            findIntersections()
+        }
     }
     
     func findIntersections() {
@@ -159,9 +206,11 @@ class ViewController: UIViewController {
     func drawTriangles(array: [Triangle]) {
         
         self.triangleView.layer.sublayers = nil
+        var minCount = 0
         
         for triangle in array {
             if triangle.isMinimal {
+                minCount += 1
                 let path = CGMutablePath()
                 path.move(to: triangle.vertex1!)
                 path.addLine(to: triangle.vertex2!)
@@ -177,6 +226,8 @@ class ViewController: UIViewController {
                 self.triangleView.layer.insertSublayer(shape, at: 0)
             }
         }
+        
+        triangleCountLabel.text = "\(minCount)"
 
     }
     

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,17 +26,46 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y92-Wx-gie">
+                                <rect key="frame" x="32" y="64" width="57" height="30"/>
+                                <state key="normal" title="Clear All"/>
+                                <connections>
+                                    <action selector="clearPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q5h-ow-7u2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoY-dg-or9">
+                                <rect key="frame" x="305" y="64" width="38" height="30"/>
+                                <state key="normal" title="Undo"/>
+                                <connections>
+                                    <action selector="undoPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OYh-Op-Kjg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb5-UM-of3">
+                                <rect key="frame" x="182" y="68" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Y92-Wx-gie" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="EqM-xj-0gP"/>
                             <constraint firstAttribute="trailing" secondItem="Xry-KG-5jD" secondAttribute="trailing" id="TVV-FU-eXs"/>
+                            <constraint firstItem="Bb5-UM-of3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="f6y-zS-vQj"/>
                             <constraint firstItem="Xry-KG-5jD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gOi-pw-AZs"/>
+                            <constraint firstItem="Bb5-UM-of3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gQa-Vj-9iN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NoY-dg-or9" secondAttribute="trailing" constant="16" id="jLk-dF-j5h"/>
+                            <constraint firstItem="NoY-dg-or9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="jMl-2A-J4a"/>
                             <constraint firstItem="Xry-KG-5jD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uoq-5n-m78"/>
                             <constraint firstAttribute="bottom" secondItem="Xry-KG-5jD" secondAttribute="bottom" id="w9H-zW-9jT"/>
+                            <constraint firstItem="Y92-Wx-gie" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="yCS-cs-2IW"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="clearButton" destination="Y92-Wx-gie" id="wCW-ea-e6I"/>
+                        <outlet property="triangleCountLabel" destination="Bb5-UM-of3" id="WUj-8w-VHA"/>
                         <outlet property="triangleView" destination="Xry-KG-5jD" id="V1q-ns-G1W"/>
+                        <outlet property="undoButton" destination="NoY-dg-or9" id="rSe-AT-RHl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
