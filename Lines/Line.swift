@@ -81,4 +81,14 @@ extension Line {
         
         return CGPoint(x: round(start.x + u * (end.x - start.x)), y: round(start.y + u * (end.y - start.y)))
     }
+    
+    func getIntersectionWithVertexCircle(intersectionPoint: CGPoint, intersectionArray: [CGPoint]) -> CGPoint? {
+        for point in intersectionArray {
+            if (pow((intersectionPoint.x - point.x), 2) + pow((intersectionPoint.y - point.y), 2) < 100) && point != intersectionPoint {
+                return point
+            }
+        }
+        
+        return nil
+    }
 }

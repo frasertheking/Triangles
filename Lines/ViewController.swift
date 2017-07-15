@@ -145,7 +145,15 @@ class ViewController: UIViewController {
                     intersectionArr.append(lineArr[j])
                     
                     // Draw intersection Point
-                    let intersectionPoint = lineArr[i].getIntersectionPointForLine(line2: (a: lineArr[j].start!, b: lineArr[j].end!))
+                    var intersectionPoint = lineArr[i].getIntersectionPointForLine(line2: (a: lineArr[j].start!, b: lineArr[j].end!))
+                    
+                    for point in intersectionArray {
+                        if (pow((intersectionPoint.x - point.x), 2) + pow((intersectionPoint.y - point.y), 2) < 100) && point != intersectionPoint {
+                            print("intersection point within other intersection point")
+                            intersectionPoint = point
+                        }
+                    }
+                    
                     if intersectionArray.index(of: intersectionPoint) == nil {
                         intersectionArray.append(intersectionPoint)
                         drawVertexLayer(x: intersectionPoint.x - 10, y: intersectionPoint.y - 10)
@@ -207,9 +215,26 @@ class ViewController: UIViewController {
         for i in 0 ..< lines.count {
             for j in i+1 ..< lines.count {
                 if lines[i].intersectsWithLine(line2: (a: lines[j].start!, b: lines[j].end!)) {
-                    triangleArr.append(Triangle(vertex1: currentLine.getIntersectionPointForLine(line2: (a: lines[i].start!, b: lines[i].end!)),
-                                                vertex2: currentLine.getIntersectionPointForLine(line2: (a: lines[j].start!, b: lines[j].end!)),
-                                                vertex3: lines[i].getIntersectionPointForLine(line2: (a: lines[j].start!, b: lines[j].end!)),
+                    
+                    var vertex1 = currentLine.getIntersectionPointForLine(line2: (a: lines[i].start!, b: lines[i].end!))
+                    var vertex2 = currentLine.getIntersectionPointForLine(line2: (a: lines[j].start!, b: lines[j].end!))
+                    var vertex3 = lines[i].getIntersectionPointForLine(line2: (a: lines[j].start!, b: lines[j].end!))
+                    
+                    if let vertex1InCircle = currentLine.getIntersectionWithVertexCircle(intersectionPoint: vertex1, intersectionArray: self.intersectionArray) {
+                        vertex1 = vertex1InCircle
+                    }
+                    
+                    if let vertex2InCircle = currentLine.getIntersectionWithVertexCircle(intersectionPoint: vertex2, intersectionArray: self.intersectionArray) {
+                        vertex2 = vertex2InCircle
+                    }
+                    
+                    if let vertex3InCircle = currentLine.getIntersectionWithVertexCircle(intersectionPoint: vertex3, intersectionArray: self.intersectionArray) {
+                        vertex3 = vertex3InCircle
+                    }
+                    
+                    triangleArr.append(Triangle(vertex1: vertex1,
+                                                vertex2: vertex2,
+                                                vertex3: vertex3,
                                                   line1: currentLine,
                                                   line2: lines[i],
                                                   line3: lines[j]))
@@ -242,7 +267,7 @@ class ViewController: UIViewController {
         var minCount = 0
         
         for triangle in array {
-            if triangle.isMinimal {
+            if triangle.isMinimal && triangle.area! > CGFloat(100.0) {
                 minCount += 1
                 let path = CGMutablePath()
                 path.move(to: triangle.vertex1!)
