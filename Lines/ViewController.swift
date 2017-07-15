@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var triangleView: UIView!
+    @IBOutlet weak var vertexView: UIView!
+    @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var triangleCountLabel: UILabel!
@@ -20,6 +22,7 @@ class ViewController: UIViewController {
     var secondPoint: CGPoint?
     var lineArr: [Line] = [Line]()
     var triangleArray: [Triangle] = [Triangle]()
+    var intersectionArray: [CGPoint] = [CGPoint]()
     var lineCount: Int = 0
     var lineStart: CGPoint?
     
@@ -51,13 +54,18 @@ class ViewController: UIViewController {
     @IBAction func undoPressed(sender: UIButton) {
         if (lineCount > 0) {
             lineCount -= 1
-            for case let layer in self.view.layer.sublayers! {
-                if layer.name == "\(lineCount)" {
-                    layer.removeFromSuperlayer()
+            if let layers = self.lineView.layer.sublayers {
+                for case let layer in layers {
+                    if layer.name == "\(lineCount)" {
+                        layer.removeFromSuperlayer()
+                    }
                 }
             }
             
             lineArr.removeLast()
+            intersectionArray.removeAll(keepingCapacity: false)
+            self.vertexView.layer.sublayers = nil
+
             findIntersections()
         }
     }
@@ -65,47 +73,65 @@ class ViewController: UIViewController {
     func handlePanGesture(panGesture: UIPanGestureRecognizer) {
 
         if panGesture.state == .began {
-            print("Began", panGesture.location(in: view))
             lineStart = panGesture.location(in: view)
         }
         
         if panGesture.state == .ended {
-            print("Ended", panGesture.location(in: view))
             addLine(fromPoint: lineStart!, toPoint: panGesture.location(in: view), done: true)
 
         }
         
         if panGesture.state == .changed {
-            print("Changed", panGesture.location(in: view))
             addLine(fromPoint: lineStart!, toPoint: panGesture.location(in: view), done: false)
-
         }
     }
     
     func addLine(fromPoint start: CGPoint, toPoint end:CGPoint, done: Bool) {
         
-        for case let layer in self.view.layer.sublayers! {
-            if layer.name == "\(lineCount)" {
-                layer.removeFromSuperlayer()
+        let roundedStart = CGPoint(x: round(start.x), y: round(start.y))
+        let roundedEnd = CGPoint(x: round(end.x), y: round(end.y))
+
+        if let layers = self.lineView.layer.sublayers {
+            for case let layer in layers {
+                if layer.name == "\(lineCount)" {
+                    layer.removeFromSuperlayer()
+                }
             }
         }
         
         let line = CAShapeLayer()
         let linePath = UIBezierPath()
-        linePath.move(to: start)
-        linePath.addLine(to: end)
+        linePath.move(to: roundedStart)
+        linePath.addLine(to: roundedEnd)
         line.path = linePath.cgPath
         line.strokeColor = UIColor.red.cgColor
         line.lineWidth = 5
         line.lineJoin = kCALineJoinRound
         line.name = "\(lineCount)"
-        self.view.layer.addSublayer(line)
+        self.lineView.layer.addSublayer(line)
         
         if done {
-            lineArr.append(Line(id: lineCount, start: start, end: end))
+            lineArr.append(Line(id: lineCount, start: roundedStart, end: roundedEnd))
             lineCount += 1
             findIntersections()
         }
+    }
+    
+    func drawVertices(triangles: [Triangle]) {
+        for triangle in triangles {
+            drawVertexLayer(x: (triangle.vertex1?.x)! - 5, y: (triangle.vertex1?.y)! - 5)
+            drawVertexLayer(x: (triangle.vertex2?.x)! - 5, y: (triangle.vertex2?.y)! - 5)
+            drawVertexLayer(x: (triangle.vertex3?.x)! - 5, y: (triangle.vertex3?.y)! - 5)
+        }
+    }
+    
+    func drawVertexLayer(x: CGFloat, y: CGFloat) {
+        let circleLayer = CAShapeLayer()
+        let radius: CGFloat = 10
+        circleLayer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 2.0 * radius, height: 2.0 * radius), cornerRadius: radius).cgPath
+        circleLayer.position = CGPoint(x: x, y: y)
+        circleLayer.fillColor = UIColor.red.withAlphaComponent(0.5).cgColor
+        self.vertexView.layer.addSublayer(circleLayer)
     }
     
     func findIntersections() {
@@ -117,6 +143,13 @@ class ViewController: UIViewController {
                 if lineArr[i].intersectsWithLine(line2: (a: lineArr[j].start!, b: lineArr[j].end!)) {
                     intersectionCount += 1
                     intersectionArr.append(lineArr[j])
+                    
+                    // Draw intersection Point
+                    let intersectionPoint = lineArr[i].getIntersectionPointForLine(line2: (a: lineArr[j].start!, b: lineArr[j].end!))
+                    if intersectionArray.index(of: intersectionPoint) == nil {
+                        intersectionArray.append(intersectionPoint)
+                        drawVertexLayer(x: intersectionPoint.x - 10, y: intersectionPoint.y - 10)
+                    }
                 }
                 
                 if let minimalTriangles: [Triangle] = getMinimalTriangleFromLines(lines: intersectionArr, currentLine: lineArr[i]) {
@@ -218,7 +251,7 @@ class ViewController: UIViewController {
                 path.addLine(to: triangle.vertex1!)
                 
                 let shape = CAShapeLayer()
-                shape.frame = self.view.bounds
+                shape.frame = self.triangleView.bounds
                 shape.path = path
                 shape.lineWidth = 3.0
                 shape.fillColor = UIColor.red.withAlphaComponent(0.5).cgColor

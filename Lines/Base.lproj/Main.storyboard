@@ -22,7 +22,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98b-Dj-aHL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xry-KG-5jD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eC0-71-531">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -49,23 +57,33 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="eC0-71-531" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4Hs-zc-1zt"/>
+                            <constraint firstAttribute="bottom" secondItem="eC0-71-531" secondAttribute="bottom" id="DKr-cG-Tvi"/>
+                            <constraint firstAttribute="bottom" secondItem="98b-Dj-aHL" secondAttribute="bottom" id="DSB-Ri-SZ3"/>
                             <constraint firstItem="Y92-Wx-gie" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="EqM-xj-0gP"/>
+                            <constraint firstAttribute="trailing" secondItem="98b-Dj-aHL" secondAttribute="trailing" id="KvT-ah-MMq"/>
+                            <constraint firstAttribute="trailing" secondItem="eC0-71-531" secondAttribute="trailing" id="Ldm-dt-yOA"/>
                             <constraint firstAttribute="trailing" secondItem="Xry-KG-5jD" secondAttribute="trailing" id="TVV-FU-eXs"/>
+                            <constraint firstItem="98b-Dj-aHL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z3Z-ij-Vh4"/>
                             <constraint firstItem="Bb5-UM-of3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="f6y-zS-vQj"/>
                             <constraint firstItem="Xry-KG-5jD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gOi-pw-AZs"/>
                             <constraint firstItem="Bb5-UM-of3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gQa-Vj-9iN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NoY-dg-or9" secondAttribute="trailing" constant="16" id="jLk-dF-j5h"/>
                             <constraint firstItem="NoY-dg-or9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="jMl-2A-J4a"/>
+                            <constraint firstItem="eC0-71-531" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pdH-iU-qQ1"/>
                             <constraint firstItem="Xry-KG-5jD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uoq-5n-m78"/>
                             <constraint firstAttribute="bottom" secondItem="Xry-KG-5jD" secondAttribute="bottom" id="w9H-zW-9jT"/>
+                            <constraint firstItem="98b-Dj-aHL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wAK-SR-aRr"/>
                             <constraint firstItem="Y92-Wx-gie" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="yCS-cs-2IW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="clearButton" destination="Y92-Wx-gie" id="wCW-ea-e6I"/>
+                        <outlet property="lineView" destination="98b-Dj-aHL" id="bSR-3g-JVu"/>
                         <outlet property="triangleCountLabel" destination="Bb5-UM-of3" id="WUj-8w-VHA"/>
                         <outlet property="triangleView" destination="Xry-KG-5jD" id="V1q-ns-G1W"/>
                         <outlet property="undoButton" destination="NoY-dg-or9" id="rSe-AT-RHl"/>
+                        <outlet property="vertexView" destination="eC0-71-531" id="8nv-8M-HZG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

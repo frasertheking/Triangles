@@ -22,7 +22,7 @@ class Line {
                 return nil
             }
             
-            return CGFloat(sqrt(pow((point2.x - point1.x), 2) + pow((point2.y - point1.y), 2)))
+            return round(CGFloat(sqrt(pow((point2.x - point1.x), 2) + pow((point2.y - point1.y), 2))))
         }
     }
     var slope: CGFloat? {
@@ -35,7 +35,7 @@ class Line {
                 return nil
             }
             
-            return CGFloat((point2.y - point1.y) / (point2.x - point1.x))
+            return round(CGFloat((point2.y - point1.y) / (point2.x - point1.x)))
         }
     }
     
@@ -79,6 +79,6 @@ extension Line {
             return .zero
         }
         
-        return CGPoint(x: start.x + u * (end.x - start.x), y: start.y + u * (end.y - start.y))
+        return CGPoint(x: round(start.x + u * (end.x - start.x)), y: round(start.y + u * (end.y - start.y)))
     }
 }

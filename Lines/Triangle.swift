@@ -45,10 +45,4 @@ class Triangle {
     func hasLine(line: Line) -> Bool {
         return line1!.id == line.id || line2!.id == line.id || line3!.id == line.id
     }
-    
-//    func getTriangleArea(line1: Line, line2: Line, line3: Line) -> CGFloat {
-//        let vertex1: CGPoint = line1.getIntersectionPointForLine(line2: (a: line2.start!, b: line2.end!))
-//        let vertex2: CGPoint = line1.getIntersectionPointForLine(line2: (a: line3.start!, b: line3.end!))
-//        let vertex3: CGPoint = line2.getIntersectionPointForLine(line2: (a: line3.start!, b: line3.end!))
-//    }
 }
