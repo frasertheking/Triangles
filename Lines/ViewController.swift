@@ -25,14 +25,11 @@ class ViewController: UIViewController {
     var intersectionArray: [CGPoint] = [CGPoint]()
     var lineCount: Int = 0
     var lineStart: CGPoint?
+    let vertexRadius: CGFloat = 7.0
+    var undoFrameRefresh: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        clearButton.layer.name = "UI"
-        undoButton.layer.name = "UI"
-        triangleCountLabel.layer.name = "UI"
-        triangleView.layer.name = "UI"
         
         let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(panGesture:)))
         view.addGestureRecognizer(gestureRecognizer)
@@ -40,15 +37,13 @@ class ViewController: UIViewController {
     
     @IBAction func clearPressed(sender: UIButton) {
 
-      /*  for case let layer in self.view.layer.sublayers! {
-            if layer.name != "UI" {
-                layer.removeFromSuperlayer()
-            }
-        }
+        self.vertexView.layer.sublayers = nil
+        self.lineView.layer.sublayers = nil
         
         lineCount = 0
         lineArr.removeAll(keepingCapacity: false)
-        findIntersections()*/
+        intersectionArray.removeAll(keepingCapacity: false)
+        findIntersections()
     }
     
     @IBAction func undoPressed(sender: UIButton) {
@@ -66,6 +61,7 @@ class ViewController: UIViewController {
             intersectionArray.removeAll(keepingCapacity: false)
             self.vertexView.layer.sublayers = nil
 
+            undoFrameRefresh = true
             findIntersections()
         }
     }
@@ -105,14 +101,16 @@ class ViewController: UIViewController {
         linePath.addLine(to: roundedEnd)
         line.path = linePath.cgPath
         line.strokeColor = UIColor.red.cgColor
-        line.lineWidth = 5
+        line.lineWidth = 4
         line.lineJoin = kCALineJoinRound
+        line.lineCap = "round"
         line.name = "\(lineCount)"
         self.lineView.layer.addSublayer(line)
         
         if done {
             lineArr.append(Line(id: lineCount, start: roundedStart, end: roundedEnd))
             lineCount += 1
+            undoFrameRefresh = false
             findIntersections()
         }
     }
@@ -127,12 +125,44 @@ class ViewController: UIViewController {
     
     func drawVertexLayer(x: CGFloat, y: CGFloat) {
         let circleLayer = CAShapeLayer()
-        let radius: CGFloat = 10
-        circleLayer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 2.0 * radius, height: 2.0 * radius), cornerRadius: radius).cgPath
-        circleLayer.position = CGPoint(x: x, y: y)
-        circleLayer.fillColor = UIColor.red.withAlphaComponent(0.5).cgColor
+        circleLayer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 2.0 * vertexRadius, height: 2.0 * vertexRadius), cornerRadius: vertexRadius).cgPath
+        circleLayer.fillColor = UIColor.black.cgColor
+        circleLayer.bounds = CGRect(x: 0, y: 0, width: 2.0 * vertexRadius, height: 2.0 * vertexRadius)
+        circleLayer.contentsGravity = "center";
+        circleLayer.position = CGPoint(x: x+vertexRadius, y: y+vertexRadius)
         self.vertexView.layer.addSublayer(circleLayer)
+        
+        if (!undoFrameRefresh) {
+            // Begin the transaction
+            CATransaction.begin()
+            
+            let scaleAnimation:CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
+            scaleAnimation.duration = 0.2
+            scaleAnimation.repeatCount = 0
+            scaleAnimation.fromValue = 0
+            scaleAnimation.toValue = 1.25
+            scaleAnimation.fillMode = kCAFillModeForwards
+            scaleAnimation.isRemovedOnCompletion = false
+            
+            // Callback function
+            CATransaction.setCompletionBlock {
+                let scaleAnimation:CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
+                scaleAnimation.duration = 0.2
+                scaleAnimation.repeatCount = 0
+                scaleAnimation.fromValue = 1.25
+                scaleAnimation.toValue = 1
+                scaleAnimation.fillMode = kCAFillModeForwards
+                scaleAnimation.isRemovedOnCompletion = false
+                circleLayer.add(scaleAnimation, forKey: "scale")
+                circleLayer.position = CGPoint(x: x+self.vertexRadius, y: y+self.vertexRadius)
+            }
+            
+            circleLayer.add(scaleAnimation, forKey: "scale")
+            circleLayer.position = CGPoint(x: x+vertexRadius, y: y+vertexRadius)
+            CATransaction.commit()
+        }
     }
+
     
     func findIntersections() {
         triangleArray = [Triangle]()
@@ -148,7 +178,7 @@ class ViewController: UIViewController {
                     var intersectionPoint = lineArr[i].getIntersectionPointForLine(line2: (a: lineArr[j].start!, b: lineArr[j].end!))
                     
                     for point in intersectionArray {
-                        if (pow((intersectionPoint.x - point.x), 2) + pow((intersectionPoint.y - point.y), 2) < 100) && point != intersectionPoint {
+                        if (pow((intersectionPoint.x - point.x), 2) + pow((intersectionPoint.y - point.y), 2) < pow(vertexRadius, 2)) && point != intersectionPoint {
                             print("intersection point within other intersection point")
                             intersectionPoint = point
                         }
@@ -156,7 +186,7 @@ class ViewController: UIViewController {
                     
                     if intersectionArray.index(of: intersectionPoint) == nil {
                         intersectionArray.append(intersectionPoint)
-                        drawVertexLayer(x: intersectionPoint.x - 10, y: intersectionPoint.y - 10)
+                        drawVertexLayer(x: intersectionPoint.x - vertexRadius, y: intersectionPoint.y - vertexRadius)
                     }
                 }
                 
@@ -267,7 +297,7 @@ class ViewController: UIViewController {
         var minCount = 0
         
         for triangle in array {
-            if triangle.isMinimal && triangle.area! > CGFloat(100.0) {
+            if triangle.isMinimal && triangle.area! > 100 {
                 minCount += 1
                 let path = CGMutablePath()
                 path.move(to: triangle.vertex1!)
@@ -278,7 +308,6 @@ class ViewController: UIViewController {
                 let shape = CAShapeLayer()
                 shape.frame = self.triangleView.bounds
                 shape.path = path
-                shape.lineWidth = 3.0
                 shape.fillColor = UIColor.red.withAlphaComponent(0.5).cgColor
                 
                 self.triangleView.layer.insertSublayer(shape, at: 0)
