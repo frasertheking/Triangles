@@ -9,6 +9,7 @@
 import UIKit
 
 class Triangle {
+    var id: Int?
     var vertex1: CGPoint?
     var vertex2: CGPoint?
     var vertex3: CGPoint?

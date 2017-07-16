@@ -23,13 +23,19 @@ class ViewController: UIViewController {
     var lineArr: [Line] = [Line]()
     var triangleArray: [Triangle] = [Triangle]()
     var intersectionArray: [CGPoint] = [CGPoint]()
+    var colorArray: [UIColor] = [UIColor]()
     var lineCount: Int = 0
     var lineStart: CGPoint?
-    let vertexRadius: CGFloat = 7.0
+    let vertexRadius: CGFloat = 5.0
     var undoFrameRefresh: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Seed colors
+        for _ in 0 ... 99 {
+            colorArray.append(UIColor.random())
+        }
         
         let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(panGesture:)))
         view.addGestureRecognizer(gestureRecognizer)
@@ -100,7 +106,7 @@ class ViewController: UIViewController {
         linePath.move(to: roundedStart)
         linePath.addLine(to: roundedEnd)
         line.path = linePath.cgPath
-        line.strokeColor = UIColor.red.cgColor
+        line.strokeColor = UIColor.black.cgColor
         line.lineWidth = 4
         line.lineJoin = kCALineJoinRound
         line.lineCap = "round"
@@ -179,7 +185,6 @@ class ViewController: UIViewController {
                     
                     for point in intersectionArray {
                         if (pow((intersectionPoint.x - point.x), 2) + pow((intersectionPoint.y - point.y), 2) < pow(vertexRadius, 2)) && point != intersectionPoint {
-                            print("intersection point within other intersection point")
                             intersectionPoint = point
                         }
                     }
@@ -308,7 +313,7 @@ class ViewController: UIViewController {
                 let shape = CAShapeLayer()
                 shape.frame = self.triangleView.bounds
                 shape.path = path
-                shape.fillColor = UIColor.red.withAlphaComponent(0.5).cgColor
+                shape.fillColor = colorArray[minCount].cgColor
                 
                 self.triangleView.layer.insertSublayer(shape, at: 0)
             }
