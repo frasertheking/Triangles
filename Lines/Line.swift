@@ -4,7 +4,6 @@
 //
 //  Created by Fraser King on 2017-06-15.
 //  Copyright © 2017 Fraser King. All rights reserved.
-// y = mx + b
 
 import UIKit
 
