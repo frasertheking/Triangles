@@ -105,4 +105,71 @@ class Triangle {
         let t = (q + (vertex1.y - vertex2.y) * p.x + r) * sign
         return s > 0 && t > 0 && (s + t) < 2 * A * sign
     }
+    
+    // Class functions    
+    class func getTriangleFromLines(lines: [Line], currentLine: Line, intersectionArray: [CGPoint], currentTriangles: [Triangle]) -> [Triangle]? {
+        var triangleArr: [Triangle] = [Triangle]()
+        for i in 0 ..< lines.count {
+            for j in i+1 ..< lines.count {
+                if let lineStartJ = lines[j].start, let lineEndJ = lines[j].end, let lineStartI = lines[i].start, let lineEndI = lines[i].end {
+                    
+                    if lines[i].intersectsWithLine(line2: (a: lineStartJ, b: lineEndJ)) {
+                        
+                        var vertex1 = currentLine.getIntersectionPointForLine(line2: (a: lineStartI, b: lineEndI))
+                        var vertex2 = currentLine.getIntersectionPointForLine(line2: (a: lineStartJ, b: lineEndJ))
+                        var vertex3 = lines[i].getIntersectionPointForLine(line2: (a: lineStartJ, b: lineEndJ))
+                        
+                        if let vertex1InCircle = currentLine.getIntersectionWithVertexCircle(intersectionPoint: vertex1, intersectionArray: intersectionArray) {
+                            vertex1 = vertex1InCircle
+                        }
+                        
+                        if let vertex2InCircle = currentLine.getIntersectionWithVertexCircle(intersectionPoint: vertex2, intersectionArray: intersectionArray) {
+                            vertex2 = vertex2InCircle
+                        }
+                        
+                        if let vertex3InCircle = currentLine.getIntersectionWithVertexCircle(intersectionPoint: vertex3, intersectionArray: intersectionArray) {
+                            vertex3 = vertex3InCircle
+                        }
+                        
+                        triangleArr.append(Triangle(vertex1: vertex1,
+                                                    vertex2: vertex2,
+                                                    vertex3: vertex3,
+                                                    line1: currentLine,
+                                                    line2: lines[i],
+                                                    line3: lines[j]))
+                    }
+                }
+            }
+        }
+        
+        let sortedTriangles = triangleArr.sorted(by: { $0.area < $1.area })
+        var returnTriangles: [Triangle] = [Triangle]()
+        for triangle in sortedTriangles {
+            let results = currentTriangles.filter { $0.vertex1 == triangle.vertex1 && $0.vertex2 == triangle.vertex2 && $0.vertex3 == triangle.vertex3 }
+            if results.isEmpty {
+                returnTriangles.append(triangle)
+            }
+        }
+        
+        if returnTriangles.count > 0 {
+            return returnTriangles
+        }
+        
+        return nil
+    }
+    
+    class func markMaximumTrianglesInArray(array: [Triangle]) -> [Triangle] {
+        var sortedArray = array.sorted(by: { $0.area < $1.area })
+        
+        for i in 0 ..< sortedArray.count {
+            for j in 0 ..< sortedArray.count {
+                let triangleCenter: CGPoint = sortedArray[i].getCenter()
+                if sortedArray[j].isPointInTriangle(p: triangleCenter) && sortedArray[j].area != sortedArray[i].area && sortedArray[i].isMinimal {
+                    sortedArray[j].isMinimal = false
+                }
+            }
+        }
+        
+        return sortedArray
+    }
 }
