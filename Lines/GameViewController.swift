@@ -40,5 +40,6 @@ class GameViewController: UIViewController {
     
     @IBAction func activateSketchMode(sender: UIButton) {
         sketchView.level = nil
+        sketchView.clearAll()
     }
 }
