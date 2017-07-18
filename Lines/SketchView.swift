@@ -36,6 +36,7 @@ class SketchView: UIView {
     fileprivate var lineCount: Int = 0
     fileprivate var lineStart: CGPoint?
     fileprivate var undoFrameRefresh: Bool = false
+    fileprivate var startingLineCount = 0
     
     // Public vars
     var numberOfTriangles: Int {
@@ -46,6 +47,10 @@ class SketchView: UIView {
             self.delegate?.updateTriangleCount(newCount: newValue)
         }
     }
+    var level: Level?
+    
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -91,19 +96,44 @@ class SketchView: UIView {
         return view
     }
     
+    // Level setup 
+    func setupLevel(level: Level) {
+        self.level = level
+        generateLevel()
+    }
+    
+    func generateLevel() {
+        
+        guard let level = self.level else {
+            return
+        }
+        
+        guard let lines = level.lines else {
+            return
+        }
+        
+        startingLineCount = 0
+        lineCount = startingLineCount
+        for line in lines {
+            startingLineCount += 1
+            drawLine(fromPoint: line.start!, toPoint: line.end!, doneDrawingLine: true)
+        }
+        lineCount = startingLineCount
+    }
+    
     // Action Event Handlers
     func clearAll() {
         self.vertexView.layer.sublayers = nil
         self.lineView.layer.sublayers = nil
 
-        lineCount = 0
         lineArr.removeAll(keepingCapacity: false)
         intersectionArray.removeAll(keepingCapacity: false)
+        generateLevel()
         findIntersections()
     }
     
     func undo() {
-        if (lineCount > 0) {
+        if (lineCount > startingLineCount) {
              lineCount -= 1
              
              removeLayerFromView(by: lineCount, view: lineView)

@@ -16,10 +16,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var triangleCountLabel: UILabel!
     
+    let level: Level = Levels.level1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         sketchView.delegate = self
+        sketchView.setupLevel(level: level)
     }
     
     func updateTriangleCount(newCount: Int) {
@@ -33,5 +36,9 @@ class GameViewController: UIViewController {
     
     @IBAction func undoPressed(sender: UIButton) {
         sketchView.undo()
+    }
+    
+    @IBAction func activateSketchMode(sender: UIButton) {
+        sketchView.level = nil
     }
 }

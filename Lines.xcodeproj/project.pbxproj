@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		430030431F1D8268004AD769 /* SketchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430030421F1D8268004AD769 /* SketchView.swift */; };
 		430030451F1D8272004AD769 /* SketchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430030441F1D8272004AD769 /* SketchView.xib */; };
+		430030471F1D8FEF004AD769 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430030461F1D8FEF004AD769 /* Level.swift */; };
+		430030491F1D90BE004AD769 /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430030481F1D90BE004AD769 /* Levels.swift */; };
 		432171B51F12A0D9001A85F5 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432171B41F12A0D9001A85F5 /* Triangle.swift */; };
 		43924C291F1BEE060007B61F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924C281F1BEE060007B61F /* Extensions.swift */; };
 		43A99BC71EF36C85006E477C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A99BC61EF36C85006E477C /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		430030421F1D8268004AD769 /* SketchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchView.swift; sourceTree = "<group>"; };
 		430030441F1D8272004AD769 /* SketchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SketchView.xib; sourceTree = "<group>"; };
+		430030461F1D8FEF004AD769 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		430030481F1D90BE004AD769 /* Levels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
 		432171B41F12A0D9001A85F5 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		43924C281F1BEE060007B61F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		43A99BC31EF36C85006E477C /* Lines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lines.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +100,8 @@
 			children = (
 				43A99BD81EF36F81006E477C /* Line.swift */,
 				432171B41F12A0D9001A85F5 /* Triangle.swift */,
+				430030461F1D8FEF004AD769 /* Level.swift */,
+				430030481F1D90BE004AD769 /* Levels.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -194,6 +200,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				43924C291F1BEE060007B61F /* Extensions.swift in Sources */,
+				430030471F1D8FEF004AD769 /* Level.swift in Sources */,
+				430030491F1D90BE004AD769 /* Levels.swift in Sources */,
 				43A99BD91EF36F81006E477C /* Line.swift in Sources */,
 				43A99BC91EF36C85006E477C /* GameViewController.swift in Sources */,
 				43A99BC71EF36C85006E477C /* AppDelegate.swift in Sources */,
