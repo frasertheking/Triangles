@@ -14,19 +14,32 @@ class GameViewController: UIViewController {
     @IBOutlet weak var sketchView: SketchView!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var undoButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var triangleCountLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
-    let level: Level = Levels.level1
+    var levelNumber = 0
+    var level: Level = Levels.levels[0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.nextButton.isHidden = true
         sketchView.delegate = self
         sketchView.setupLevel(level: level)
+        descriptionLabel.text = "Make \(level.numberOfTrianglesRequired!) triangles with \(level.numberOfLinesProvided!) line(s)"
     }
     
     func updateTriangleCount(newCount: Int) {
         self.triangleCountLabel.text = "\(newCount)"
+        
+        guard let numberOfTrianglesRequired = level.numberOfTrianglesRequired else {
+            return
+        }
+        
+        if newCount >= numberOfTrianglesRequired && levelNumber < Levels.levels.count-1 {
+            self.nextButton.isHidden = false
+        }
     }
     
     // Action Event Handlers
@@ -36,6 +49,15 @@ class GameViewController: UIViewController {
     
     @IBAction func undoPressed(sender: UIButton) {
         sketchView.undo()
+    }
+    
+    @IBAction func nextPressed(sender: UIButton) {
+        sketchView.resetStage()
+        self.nextButton.isHidden = true
+        levelNumber += 1
+        level = Levels.levels[levelNumber]
+        sketchView.setupLevel(level: level)
+        descriptionLabel.text = "Make \(level.numberOfTrianglesRequired!) triangles with \(level.numberOfLinesProvided!) line(s)"
     }
     
     @IBAction func activateSketchMode(sender: UIButton) {

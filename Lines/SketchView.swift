@@ -122,12 +122,23 @@ class SketchView: UIView {
     }
     
     // Action Event Handlers
+    func resetStage() {
+        self.vertexView.layer.sublayers = nil
+        self.lineView.layer.sublayers = nil
+        self.triangleView.layer.sublayers = nil
+        lineArr.removeAll()
+        intersectionArray.removeAll()
+        triangleArray.removeAll()
+        lineCount = 0
+        startingLineCount = 0
+    }
+    
     func clearAll() {
         self.vertexView.layer.sublayers = nil
         self.lineView.layer.sublayers = nil
 
-        lineArr.removeAll(keepingCapacity: false)
-        intersectionArray.removeAll(keepingCapacity: false)
+        lineArr.removeAll()
+        intersectionArray.removeAll()
         generateLevel()
         findIntersections()
     }
@@ -138,7 +149,7 @@ class SketchView: UIView {
              
              removeLayerFromView(by: lineCount, view: lineView)
              lineArr.removeLast()
-             intersectionArray.removeAll(keepingCapacity: false)
+             intersectionArray.removeAll()
              self.vertexView.layer.sublayers = nil
              undoFrameRefresh = true
              findIntersections()
@@ -146,19 +157,31 @@ class SketchView: UIView {
     }
     
     func handlePanGesture(panGesture: UIPanGestureRecognizer) {
-        if panGesture.state == .began {
-            lineStart = panGesture.location(in: self)
+        
+        guard let level = self.level else {
+            return
         }
         
-        if panGesture.state == .ended {
-            if let lineStart = lineStart {
-                drawLine(fromPoint: lineStart, toPoint: panGesture.location(in: self), doneDrawingLine: true)
+        guard let numberOfLinesProvided = level.numberOfLinesProvided else {
+            return
+        }
+        
+        if lineCount < startingLineCount + numberOfLinesProvided {
+            if panGesture.state == .began {
+                lineStart = panGesture.location(in: self)
             }
-        }
-        
-        if panGesture.state == .changed {
-            if let lineStart = lineStart {
-                drawLine(fromPoint: lineStart, toPoint: panGesture.location(in: self), doneDrawingLine: false)
+            
+            if panGesture.state == .ended {
+                if let lineStart = lineStart {
+                    drawLine(fromPoint: lineStart, toPoint: panGesture.location(in: self), doneDrawingLine: true)
+                    //print("Line", lineStart, panGesture.location(in: self))
+                }
+            }
+            
+            if panGesture.state == .changed {
+                if let lineStart = lineStart {
+                    drawLine(fromPoint: lineStart, toPoint: panGesture.location(in: self), doneDrawingLine: false)
+                }
             }
         }
     }

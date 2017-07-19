@@ -26,15 +26,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTJ-3Y-EZQ">
-                                <rect key="frame" x="54" y="612" width="267" height="30"/>
-                                <state key="normal" title="Try to make 2 triangles by adding 1 line">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="activateSketchModeWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5vF-YV-HAf"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y92-Wx-gie">
                                 <rect key="frame" x="32" y="64" width="57" height="30"/>
                                 <state key="normal" title="Clear All"/>
@@ -55,18 +46,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSX-IZ-ZNd">
+                                <rect key="frame" x="162" y="606" width="50" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gXk-c7-jPd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7t-ca-1fq">
+                                <rect key="frame" x="166" y="575" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QSX-IZ-ZNd" secondAttribute="bottom" constant="20" id="1Mn-gZ-wKq"/>
                             <constraint firstItem="Y92-Wx-gie" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="EqM-xj-0gP"/>
-                            <constraint firstItem="wTJ-3Y-EZQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FIT-9i-rgx"/>
+                            <constraint firstItem="u7t-ca-1fq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OWF-dX-daK"/>
                             <constraint firstAttribute="trailing" secondItem="Xry-KG-5jD" secondAttribute="trailing" id="TVV-FU-eXs"/>
+                            <constraint firstItem="QSX-IZ-ZNd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xtl-JS-n9l"/>
                             <constraint firstItem="Bb5-UM-of3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="f6y-zS-vQj"/>
                             <constraint firstItem="Xry-KG-5jD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gOi-pw-AZs"/>
                             <constraint firstItem="Bb5-UM-of3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gQa-Vj-9iN"/>
-                            <constraint firstAttribute="bottom" secondItem="wTJ-3Y-EZQ" secondAttribute="bottom" constant="25" id="gYa-wZ-xlt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NoY-dg-or9" secondAttribute="trailing" constant="16" id="jLk-dF-j5h"/>
                             <constraint firstItem="NoY-dg-or9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="jMl-2A-J4a"/>
+                            <constraint firstItem="QSX-IZ-ZNd" firstAttribute="top" secondItem="u7t-ca-1fq" secondAttribute="bottom" constant="10" id="pGv-er-ka6"/>
                             <constraint firstItem="Xry-KG-5jD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uoq-5n-m78"/>
                             <constraint firstAttribute="bottom" secondItem="Xry-KG-5jD" secondAttribute="bottom" id="w9H-zW-9jT"/>
                             <constraint firstItem="Y92-Wx-gie" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="yCS-cs-2IW"/>
@@ -74,6 +81,8 @@
                     </view>
                     <connections>
                         <outlet property="clearButton" destination="Y92-Wx-gie" id="wCW-ea-e6I"/>
+                        <outlet property="descriptionLabel" destination="u7t-ca-1fq" id="FAi-Jn-9R2"/>
+                        <outlet property="nextButton" destination="QSX-IZ-ZNd" id="o6l-Rg-2U8"/>
                         <outlet property="sketchView" destination="Xry-KG-5jD" id="OXe-gc-2Ks"/>
                         <outlet property="triangleCountLabel" destination="Bb5-UM-of3" id="WUj-8w-VHA"/>
                         <outlet property="undoButton" destination="NoY-dg-or9" id="rSe-AT-RHl"/>
