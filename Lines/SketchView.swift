@@ -50,6 +50,7 @@ class SketchView: UIView {
     }
     var level: Level?
     var dontDrawTriangles = false
+    var devModeEnabled = true
 
     // Max generation vars
     var maxTriangles = 0
@@ -103,7 +104,9 @@ class SketchView: UIView {
     // Level setup 
     func setupLevel(level: Level) {
         self.level = level
-        generateLevel()
+        if !devModeEnabled {
+            generateLevel()
+        }
     }
     
     func generateLevel() {
@@ -170,21 +173,25 @@ class SketchView: UIView {
             return
         }
         
-        if lineCount < startingLineCount + numberOfLinesProvided {
+        if (lineCount < startingLineCount + numberOfLinesProvided) || devModeEnabled {
             if gesture.state == .began {
                 lineStart = gesture.location(in: self)
             }
             
             if gesture.state == .ended {
                 if let lineStart = lineStart {
-                    drawLine(fromPoint: lineStart, toPoint: gesture.location(in: self), doneDrawingLine: true)
-                    //print("Line", lineStart, gesture.location(in: self))
+                    if lineStart.distance(gesture.location(in: self)) > 10 {
+                        drawLine(fromPoint: lineStart, toPoint: gesture.location(in: self), doneDrawingLine: true)
+                        print("Line", lineStart, gesture.location(in: self))
+                    }
                 }
             }
             
             if gesture.state == .changed {
                 if let lineStart = lineStart {
-                    drawLine(fromPoint: lineStart, toPoint: gesture.location(in: self), doneDrawingLine: false)
+                    if lineStart.distance(gesture.location(in: self)) > 10 {
+                        drawLine(fromPoint: lineStart, toPoint: gesture.location(in: self), doneDrawingLine: false)
+                    }
                 }
             }
         }
@@ -343,6 +350,27 @@ class SketchView: UIView {
                     layer.removeFromSuperlayer()
                 }
             }
+        }
+    }
+    
+    func calculateMaxTriangles() {
+        self.dontDrawTriangles = true
+        for i in stride(from: 0, to: UIScreen.main.bounds.size.width, by: 30) {
+            for j in stride(from: 0, to: UIScreen.main.bounds.size.height / 2, by: 30) {
+                self.drawLine(fromPoint: CGPoint(x: i, y: j), toPoint: CGPoint(x: UIScreen.main.bounds.size.width - i, y: UIScreen.main.bounds.size.height - j), doneDrawingLine: true)
+                /*for k in stride(from: 0, to: UIScreen.main.bounds.size.width, by: 30) {
+                 for l in stride(from: 0, to: UIScreen.main.bounds.size.height / 2, by: 30) {
+                 sketchView.drawLine(fromPoint: CGPoint(x: k, y: l), toPoint: CGPoint(x: UIScreen.main.bounds.size.width - k, y: UIScreen.main.bounds.size.height - l), doneDrawingLine: true)
+                 sketchView.undo()
+                 }
+                 }*/
+                self.clearAll()
+            }
+        }
+        self.dontDrawTriangles = false
+        
+        for line in self.maxLines {
+            self.drawLine(fromPoint: line.start!, toPoint: line.end!, doneDrawingLine: true)
         }
     }
     

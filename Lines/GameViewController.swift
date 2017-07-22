@@ -42,27 +42,6 @@ class GameViewController: UIViewController {
         }
     }
     
-    func calculateMaxTriangles() {
-        sketchView.dontDrawTriangles = true
-        for i in stride(from: 0, to: UIScreen.main.bounds.size.width, by: 30) {
-            for j in stride(from: 0, to: UIScreen.main.bounds.size.height / 2, by: 30) {
-                sketchView.drawLine(fromPoint: CGPoint(x: i, y: j), toPoint: CGPoint(x: UIScreen.main.bounds.size.width - i, y: UIScreen.main.bounds.size.height - j), doneDrawingLine: true)
-                /*for k in stride(from: 0, to: UIScreen.main.bounds.size.width, by: 30) {
-                 for l in stride(from: 0, to: UIScreen.main.bounds.size.height / 2, by: 30) {
-                 sketchView.drawLine(fromPoint: CGPoint(x: k, y: l), toPoint: CGPoint(x: UIScreen.main.bounds.size.width - k, y: UIScreen.main.bounds.size.height - l), doneDrawingLine: true)
-                 sketchView.undo()
-                 }
-                 }*/
-                sketchView.clearAll()
-            }
-        }
-        sketchView.dontDrawTriangles = false
-        
-        for line in sketchView.maxLines {
-            sketchView.drawLine(fromPoint: line.start!, toPoint: line.end!, doneDrawingLine: true)
-        }
-    }
-    
     // Action Event Handlers
     @IBAction func clearPressed(sender: UIButton) {
         sketchView.clearAll()

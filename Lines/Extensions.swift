@@ -14,3 +14,11 @@ extension UIColor {
                        alpha: 0.75)
     }
 }
+
+extension CGPoint {
+    func distance(_ b: CGPoint) -> CGFloat {
+        let xDist = self.x - b.x
+        let yDist = self.y - b.y
+        return CGFloat(sqrt((xDist * xDist) + (yDist * yDist)))
+    }
+}
