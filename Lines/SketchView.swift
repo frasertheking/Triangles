@@ -17,9 +17,12 @@ class SketchView: UIView {
     var tapGestureRecognizer: UITapGestureRecognizer!
     var delegate: GameViewController?
     
+    // DEV MODE
+    var devModeEnabled = false
+    
     // Constants
     fileprivate let kLineMax: Int = 99
-    fileprivate let kVertexRadius: CGFloat = 8.0
+    fileprivate let kVertexRadius: CGFloat = 7.0
     fileprivate let kMinimumTriangleSize: CGFloat = 200.0
     fileprivate let kAnimationDuration: TimeInterval = 0.2
     fileprivate let kSwollenVertexScaleFactor: CGFloat = 1.25
@@ -50,7 +53,6 @@ class SketchView: UIView {
     }
     var level: Level?
     var dontDrawTriangles = false
-    var devModeEnabled = true
 
     // Max generation vars
     var maxTriangles = 0
@@ -213,13 +215,19 @@ class SketchView: UIView {
                         
                         // Check to see if intersection with already present vertex radius
                         var intersectionPoint = lineArr[i].getIntersectionPointForLine(line2: (a: lineStart, b: lineEnd))
+                        var drawVertex = true
+
                         for point in intersectionArray {
                             if (pow((intersectionPoint.x - point.x), 2) + pow((intersectionPoint.y - point.y), 2) < pow(kVertexRadius, 2)) && point != intersectionPoint {
                                 intersectionPoint = point
                             }
+                            
+                            if (pow((intersectionPoint.x - point.x), 2) + pow((intersectionPoint.y - point.y), 2) < 2*pow(kVertexRadius, 2)) {
+                                drawVertex = false
+                            }
                         }
                         
-                        if intersectionArray.index(of: intersectionPoint) == nil {
+                        if intersectionArray.index(of: intersectionPoint) == nil && drawVertex {
                             intersectionArray.append(intersectionPoint)
                             drawVertices(x: intersectionPoint.x - kVertexRadius, y: intersectionPoint.y - kVertexRadius)
                         }

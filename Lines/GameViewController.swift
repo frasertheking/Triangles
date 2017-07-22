@@ -52,6 +52,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func nextPressed(sender: UIButton) {
+        self.triangleCountLabel.text = "0"
         sketchView.resetStage()
         self.nextButton.isHidden = true
         levelNumber += 1

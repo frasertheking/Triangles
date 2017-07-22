@@ -14,7 +14,7 @@ class Level: NSObject {
     var numberOfTrianglesRequired: Int?
     var lines: [Line]?
     
-    init(levelId: Int, numberOfLinesProvided: Int, numberOfTrianglesRequired: Int, lines: [Line]) {
+    init(levelId: Int, numberOfLinesProvided: Int, numberOfTrianglesRequired: Int, lines: [Line]?) {
         self.levelId = levelId
         self.numberOfLinesProvided = numberOfLinesProvided
         self.numberOfTrianglesRequired = numberOfTrianglesRequired
