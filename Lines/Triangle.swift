@@ -13,6 +13,9 @@ class Triangle {
     var vertex1: CGPoint?
     var vertex2: CGPoint?
     var vertex3: CGPoint?
+    var intersection1: CGPoint?
+    var intersection2: CGPoint?
+    var intersection3: CGPoint?
     var line1: Line?
     var line2: Line?
     var line3: Line?
@@ -60,13 +63,16 @@ class Triangle {
         }
     }
     
-    init(vertex1: CGPoint, vertex2: CGPoint, vertex3: CGPoint, line1: Line, line2: Line, line3: Line) {
+    init(vertex1: CGPoint, vertex2: CGPoint, vertex3: CGPoint, line1: Line, line2: Line, line3: Line, int1: CGPoint, int2: CGPoint, int3: CGPoint) {
         self.vertex1 = vertex1
         self.vertex2 = vertex2
         self.vertex3 = vertex3
         self.line1 = line1
         self.line2 = line2
         self.line3 = line3
+        self.intersection1 = int1
+        self.intersection2 = int2
+        self.intersection3 = int3
     }
     
     func hasLine(line: Line) -> Bool {
@@ -119,6 +125,10 @@ class Triangle {
                         var vertex2 = currentLine.getIntersectionPointForLine(line2: (a: lineStartJ, b: lineEndJ))
                         var vertex3 = lines[i].getIntersectionPointForLine(line2: (a: lineStartJ, b: lineEndJ))
                         
+                        let intersection1 = vertex1
+                        let intersection2 = vertex2
+                        let intersection3 = vertex3
+
                         if let vertex1InCircle = currentLine.getIntersectionWithVertexCircle(intersectionPoint: vertex1, intersectionArray: intersectionArray) {
                             vertex1 = vertex1InCircle
                         }
@@ -136,7 +146,10 @@ class Triangle {
                                                     vertex3: vertex3,
                                                     line1: currentLine,
                                                     line2: lines[i],
-                                                    line3: lines[j]))
+                                                    line3: lines[j],
+                                                    int1: intersection1,
+                                                    int2: intersection2,
+                                                    int3: intersection3))
                     }
                 }
             }

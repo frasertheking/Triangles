@@ -22,12 +22,12 @@ class SketchView: UIView {
     
     // Constants
     fileprivate let kLineMax: Int = 99
-    fileprivate let kVertexRadius: CGFloat = 7.0
+    fileprivate let kVertexRadius: CGFloat = 10.0
     fileprivate let kMinimumTriangleSize: CGFloat = 200.0
     fileprivate let kAnimationDuration: TimeInterval = 0.2
     fileprivate let kSwollenVertexScaleFactor: CGFloat = 1.25
-    fileprivate let kLineWidth: CGFloat = 5.0
-    fileprivate let kTriangleStrokeBufferWidth: CGFloat = 5.0
+    fileprivate let kLineWidth: CGFloat = 4.0
+    fileprivate let kTriangleStrokeBufferWidth: CGFloat = 4.0
     fileprivate let kLineColor: UIColor = UIColor.black
     
     // Global vars
@@ -283,7 +283,7 @@ class SketchView: UIView {
                 minCount += 1
                 
                 if !dontDrawTriangles {
-                    guard let vertex1 = triangle.vertex1, let vertex2 = triangle.vertex2, let vertex3 = triangle.vertex3 else {
+                    guard let vertex1 = triangle.intersection1, let vertex2 = triangle.intersection2, let vertex3 = triangle.intersection3 else {
                         return
                     }
                     
