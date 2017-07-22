@@ -19,11 +19,12 @@ class SketchView: UIView {
     
     // Constants
     fileprivate let kLineMax: Int = 99
-    fileprivate let kVertexRadius: CGFloat = 5.0
-    fileprivate let kMinimumTriangleSize: CGFloat = 100.0
+    fileprivate let kVertexRadius: CGFloat = 8.0
+    fileprivate let kMinimumTriangleSize: CGFloat = 200.0
     fileprivate let kAnimationDuration: TimeInterval = 0.2
     fileprivate let kSwollenVertexScaleFactor: CGFloat = 1.25
-    fileprivate let kLineWidth: CGFloat = 4
+    fileprivate let kLineWidth: CGFloat = 5.0
+    fileprivate let kTriangleStrokeBufferWidth: CGFloat = 5.0
     fileprivate let kLineColor: UIColor = UIColor.black
     
     // Global vars
@@ -48,9 +49,11 @@ class SketchView: UIView {
         }
     }
     var level: Level?
-    
-    
-    
+    var dontDrawTriangles = false
+
+    // Max generation vars
+    var maxTriangles = 0
+    var maxLines: [Line] = [Line]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -82,8 +85,9 @@ class SketchView: UIView {
         }
         
         // Setup gesture recognizer for pan gestures
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(panGesture:)))
-        view.addGestureRecognizer(panGestureRecognizer)
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleGesture(gesture:)))
+        gestureRecognizer.minimumPressDuration = 0.0
+        view.addGestureRecognizer(gestureRecognizer)
     }
     
     // Loads a XIB file into a view and returns this view.
@@ -156,8 +160,8 @@ class SketchView: UIView {
         }
     }
     
-    func handlePanGesture(panGesture: UIPanGestureRecognizer) {
-        
+    func handleGesture(gesture: UILongPressGestureRecognizer) {
+
         guard let level = self.level else {
             return
         }
@@ -167,20 +171,20 @@ class SketchView: UIView {
         }
         
         if lineCount < startingLineCount + numberOfLinesProvided {
-            if panGesture.state == .began {
-                lineStart = panGesture.location(in: self)
+            if gesture.state == .began {
+                lineStart = gesture.location(in: self)
             }
             
-            if panGesture.state == .ended {
+            if gesture.state == .ended {
                 if let lineStart = lineStart {
-                    drawLine(fromPoint: lineStart, toPoint: panGesture.location(in: self), doneDrawingLine: true)
-                    //print("Line", lineStart, panGesture.location(in: self))
+                    drawLine(fromPoint: lineStart, toPoint: gesture.location(in: self), doneDrawingLine: true)
+                    //print("Line", lineStart, gesture.location(in: self))
                 }
             }
             
-            if panGesture.state == .changed {
+            if gesture.state == .changed {
                 if let lineStart = lineStart {
-                    drawLine(fromPoint: lineStart, toPoint: panGesture.location(in: self), doneDrawingLine: false)
+                    drawLine(fromPoint: lineStart, toPoint: gesture.location(in: self), doneDrawingLine: false)
                 }
             }
         }
@@ -263,26 +267,35 @@ class SketchView: UIView {
             if triangle.isMinimal && triangle.area > kMinimumTriangleSize {
                 minCount += 1
                 
-                guard let vertex1 = triangle.vertex1, let vertex2 = triangle.vertex2, let vertex3 = triangle.vertex3 else {
-                    return
+                if !dontDrawTriangles {
+                    guard let vertex1 = triangle.vertex1, let vertex2 = triangle.vertex2, let vertex3 = triangle.vertex3 else {
+                        return
+                    }
+                    
+                    let path = CGMutablePath()
+                    path.move(to: vertex1)
+                    path.addLine(to: vertex2)
+                    path.addLine(to: vertex3)
+                    path.addLine(to: vertex1)
+                    
+                    let shape = CAShapeLayer()
+                    shape.frame = self.triangleView.bounds
+                    shape.path = path
+                    shape.fillColor = colorArray[minCount].cgColor
+                    shape.strokeColor = UIColor.black.cgColor
+                    shape.lineWidth = kTriangleStrokeBufferWidth
+                    
+                    self.triangleView.layer.insertSublayer(shape, at: 0)
                 }
-                
-                let path = CGMutablePath()
-                path.move(to: vertex1)
-                path.addLine(to: vertex2)
-                path.addLine(to: vertex3)
-                path.addLine(to: vertex1)
-                
-                let shape = CAShapeLayer()
-                shape.frame = self.triangleView.bounds
-                shape.path = path
-                shape.fillColor = colorArray[minCount].cgColor
-                
-                self.triangleView.layer.insertSublayer(shape, at: 0)
             }
         }
         
         self.numberOfTriangles = minCount
+        
+        if minCount > maxTriangles {
+            maxTriangles = minCount
+            maxLines = [lineArr[lineArr.count-1]]
+        }
     }
     
     func drawVertices(x: CGFloat, y: CGFloat) {

@@ -7,6 +7,8 @@
 
 import UIKit
 
+fileprivate let vertexRadius: CGFloat = 8.0
+
 class Line {
     var id: Int?
     var start: CGPoint?
@@ -83,7 +85,7 @@ extension Line {
     
     func getIntersectionWithVertexCircle(intersectionPoint: CGPoint, intersectionArray: [CGPoint]) -> CGPoint? {
         for point in intersectionArray {
-            if (pow((intersectionPoint.x - point.x), 2) + pow((intersectionPoint.y - point.y), 2) < 25) && point != intersectionPoint {
+            if (pow((intersectionPoint.x - point.x), 2) + pow((intersectionPoint.y - point.y), 2) < pow(vertexRadius, 2)) && point != intersectionPoint {
                 return point
             }
         }
