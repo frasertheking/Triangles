@@ -7,7 +7,7 @@
 
 import UIKit
 
-fileprivate let vertexRadius: CGFloat = 10.0
+fileprivate let vertexRadius: CGFloat = 9.0
 
 class Line {
     var id: Int?

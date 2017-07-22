@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RandomColorSwift
 
 class SketchView: UIView {
     
@@ -22,8 +23,8 @@ class SketchView: UIView {
     
     // Constants
     fileprivate let kLineMax: Int = 99
-    fileprivate let kVertexRadius: CGFloat = 10.0
-    fileprivate let kMinimumTriangleSize: CGFloat = 200.0
+    fileprivate let kVertexRadius: CGFloat = 9.0
+    fileprivate let kMinimumTriangleSize: CGFloat = 100.0
     fileprivate let kAnimationDuration: TimeInterval = 0.2
     fileprivate let kSwollenVertexScaleFactor: CGFloat = 1.25
     fileprivate let kLineWidth: CGFloat = 4.0
@@ -84,7 +85,7 @@ class SketchView: UIView {
         
         // Seed colors
         for _ in 0 ... kLineMax {
-            colorArray.append(UIColor.random())
+            colorArray.append(randomColor(hue: .blue, luminosity: .light))
         }
         
         // Setup gesture recognizer for pan gestures
@@ -148,7 +149,9 @@ class SketchView: UIView {
 
         lineArr.removeAll()
         intersectionArray.removeAll()
-        generateLevel()
+        if !devModeEnabled {
+            generateLevel()
+        }
         findIntersections()
     }
     
@@ -184,7 +187,7 @@ class SketchView: UIView {
                 if let lineStart = lineStart {
                     if lineStart.distance(gesture.location(in: self)) > 10 {
                         drawLine(fromPoint: lineStart, toPoint: gesture.location(in: self), doneDrawingLine: true)
-                        print("Line", lineStart, gesture.location(in: self))
+                        print("Line(id: -1, start: CGPoint(x: \(lineStart.x), y: \(lineStart.y)), end: CGPoint(x: \(gesture.location(in: self).x), y: \(gesture.location(in: self).y))),")
                     }
                 }
             }
@@ -243,7 +246,7 @@ class SketchView: UIView {
         }
         
         // Remove maximum triangles from the triangle array
-        let minArray = Triangle.markMaximumTrianglesInArray(array: triangleArray)
+        let minArray = Triangle.markMaximumTrianglesInArray(triangles: triangleArray, lines: lineArr)
         drawTriangles(array: minArray)
     }
     

@@ -171,14 +171,24 @@ class Triangle {
         return nil
     }
     
-    class func markMaximumTrianglesInArray(array: [Triangle]) -> [Triangle] {
-        var sortedArray = array.sorted(by: { $0.area < $1.area })
+    class func markMaximumTrianglesInArray(triangles: [Triangle], lines: [Line]) -> [Triangle] {
+        var sortedArray = triangles.sorted(by: { $0.area < $1.area })
         
         for i in 0 ..< sortedArray.count {
             for j in 0 ..< sortedArray.count {
                 let triangleCenter: CGPoint = sortedArray[i].getCenter()
                 if sortedArray[j].isPointInTriangle(p: triangleCenter) && sortedArray[j].area != sortedArray[i].area && sortedArray[i].isMinimal {
                     sortedArray[j].isMinimal = false
+                }
+            }
+        }
+        
+        for triangle in sortedArray {
+            for line in lines {
+                if let start = line.start, let end = line.end {
+                    if triangle.isPointInTriangle(p: start) || triangle.isPointInTriangle(p: end) {
+                        triangle.isMinimal = false
+                    }
                 }
             }
         }
