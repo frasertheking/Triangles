@@ -39,6 +39,8 @@ class GameViewController: UIViewController {
         
         if newCount == numberOfTrianglesRequired && levelNumber < Levels.levels.count-1 {
             self.nextButton.isHidden = false
+        } else {
+            self.nextButton.isHidden = true
         }
     }
     

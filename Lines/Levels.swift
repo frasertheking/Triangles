@@ -9,7 +9,7 @@
 import UIKit
 
 class Levels: NSObject {
-    
+
     static let a0 = Level(levelId: 0, numberOfLinesProvided: 1, numberOfTrianglesRequired: 1, lines:
         [Line(id: -1, start: CGPoint(x: 185, y: 150), end: CGPoint(x: 65, y: 500)),
          Line(id: -1, start: CGPoint(x: 164, y: 150), end: CGPoint(x: 288, y: 500))])

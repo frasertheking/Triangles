@@ -8,6 +8,10 @@
 import UIKit
 
 fileprivate let vertexRadius: CGFloat = 9.0
+fileprivate let baseW: CGFloat = 375.0
+fileprivate let baseH: CGFloat = 667.0
+fileprivate let width = UIScreen.main.bounds.size.width
+fileprivate let height = UIScreen.main.bounds.size.height
 
 class Line {
     var id: Int?
@@ -41,9 +45,16 @@ class Line {
     }
     
     init(id: Int, start: CGPoint, end: CGPoint) {
+
         self.id = id
-        self.start = start
-        self.end = end
+
+        if id == -1 {
+            self.start = CGPoint(x: (start.x / baseW)*width, y: (start.y / baseH)*height)
+            self.end = CGPoint(x: (end.x / baseW)*width, y: (end.y / baseH)*height)
+        } else {            
+            self.start = start
+            self.end = end
+        }
     }
 }
 
