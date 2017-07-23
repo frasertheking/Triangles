@@ -83,11 +83,6 @@ class SketchView: UIView {
         // Show the view.
         addSubview(view)
         
-        // Seed colors
-        for _ in 0 ... kLineMax {
-            colorArray.append(randomColor(hue: .blue, luminosity: .light))
-        }
-        
         // Setup gesture recognizer for pan gestures
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleGesture(gesture:)))
         gestureRecognizer.minimumPressDuration = 0.0
@@ -120,6 +115,11 @@ class SketchView: UIView {
         
         guard let lines = level.lines else {
             return
+        }
+        
+        // Seed colors
+        for _ in 0 ... kLineMax {
+            colorArray.append(randomColor(hue: .random, luminosity: .bright))
         }
         
         startingLineCount = 0
@@ -323,6 +323,7 @@ class SketchView: UIView {
         circleLayer.bounds = CGRect(x: 0, y: 0, width: 2.0 * kVertexRadius, height: 2.0 * kVertexRadius)
         circleLayer.contentsGravity = "center";
         circleLayer.position = CGPoint(x: x+kVertexRadius, y: y+kVertexRadius)
+        circleLayer.opacity = 0.5
         self.vertexView.layer.addSublayer(circleLayer)
         
         if (!undoFrameRefresh) {

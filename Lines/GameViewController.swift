@@ -23,7 +23,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.nextButton.isHidden = true
         sketchView.delegate = self
         sketchView.setupLevel(level: level)
@@ -37,7 +37,7 @@ class GameViewController: UIViewController {
             return
         }
         
-        if newCount >= numberOfTrianglesRequired && levelNumber < Levels.levels.count-1 {
+        if newCount == numberOfTrianglesRequired && levelNumber < Levels.levels.count-1 {
             self.nextButton.isHidden = false
         }
     }
