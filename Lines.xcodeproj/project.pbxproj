@@ -12,6 +12,8 @@
 		430030471F1D8FEF004AD769 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430030461F1D8FEF004AD769 /* Level.swift */; };
 		430030491F1D90BE004AD769 /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430030481F1D90BE004AD769 /* Levels.swift */; };
 		432171B51F12A0D9001A85F5 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432171B41F12A0D9001A85F5 /* Triangle.swift */; };
+		435A87BF1F25293C0048BAE9 /* Pastel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435A87BE1F25293C0048BAE9 /* Pastel.framework */; };
+		435A87C01F25293C0048BAE9 /* Pastel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 435A87BE1F25293C0048BAE9 /* Pastel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43924C291F1BEE060007B61F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924C281F1BEE060007B61F /* Extensions.swift */; };
 		43A99BC71EF36C85006E477C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A99BC61EF36C85006E477C /* AppDelegate.swift */; };
 		43A99BC91EF36C85006E477C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A99BC81EF36C85006E477C /* GameViewController.swift */; };
@@ -22,12 +24,27 @@
 		9027E1C165DD4986AC988746 /* Pods_Lines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71A90601016507D7D0F0C91 /* Pods_Lines.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		435A87C11F25293C0048BAE9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				435A87C01F25293C0048BAE9 /* Pastel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		430030421F1D8268004AD769 /* SketchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchView.swift; sourceTree = "<group>"; };
 		430030441F1D8272004AD769 /* SketchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SketchView.xib; sourceTree = "<group>"; };
 		430030461F1D8FEF004AD769 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		430030481F1D90BE004AD769 /* Levels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
 		432171B41F12A0D9001A85F5 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		435A87BE1F25293C0048BAE9 /* Pastel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pastel.framework; path = Carthage/Build/iOS/Pastel.framework; sourceTree = "<group>"; };
 		43924C281F1BEE060007B61F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		43A99BC31EF36C85006E477C /* Lines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A99BC61EF36C85006E477C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9027E1C165DD4986AC988746 /* Pods_Lines.framework in Frameworks */,
+				435A87BF1F25293C0048BAE9 /* Pastel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +84,7 @@
 		43A99BBA1EF36C85006E477C = {
 			isa = PBXGroup;
 			children = (
+				435A87BE1F25293C0048BAE9 /* Pastel.framework */,
 				43A99BC51EF36C85006E477C /* Lines */,
 				43A99BC41EF36C85006E477C /* Products */,
 				AC8C24C0558DB9AF81E76DA9 /* Pods */,
@@ -162,6 +181,7 @@
 				43A99BC11EF36C85006E477C /* Resources */,
 				E150865BF5007D03C37D940B /* [CP] Embed Pods Frameworks */,
 				3BA286A2669DF11E2E84AB33 /* [CP] Copy Pods Resources */,
+				435A87C11F25293C0048BAE9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -408,6 +428,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WQ4X98Q4GE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Lines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.frasertheking.Lines;
@@ -422,6 +446,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WQ4X98Q4GE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Lines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.frasertheking.Lines;

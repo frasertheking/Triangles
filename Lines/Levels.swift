@@ -11,13 +11,13 @@ import UIKit
 class Levels: NSObject {
 
     static let a0 = Level(levelId: 0, numberOfLinesProvided: 1, numberOfTrianglesRequired: 1, lines:
-        [Line(id: -1, start: CGPoint(x: 185, y: 150), end: CGPoint(x: 65, y: 500)),
-         Line(id: -1, start: CGPoint(x: 164, y: 150), end: CGPoint(x: 288, y: 500))])
+        [Line(id: -1, start: CGPoint(x: 200, y: 150), end: CGPoint(x: 80, y: 500)),
+         Line(id: -1, start: CGPoint(x: 175, y: 150), end: CGPoint(x: 300, y: 500))])
     
     static let a1 = Level(levelId: 1, numberOfLinesProvided: 1, numberOfTrianglesRequired: 2, lines:
-        [Line(id: -1, start: CGPoint(x: 185, y: 150), end: CGPoint(x: 65, y: 500)),
-         Line(id: -1, start: CGPoint(x: 164, y: 150), end: CGPoint(x: 288, y: 500)),
-         Line(id: -1, start: CGPoint(x: 60, y: 485), end: CGPoint(x: 300, y: 486))])
+        [Line(id: -1, start: CGPoint(x: 200, y: 150), end: CGPoint(x: 80, y: 500)),
+         Line(id: -1, start: CGPoint(x: 175, y: 150), end: CGPoint(x: 300, y: 500)),
+         Line(id: -1, start: CGPoint(x: 60, y: 485), end: CGPoint(x: 310, y: 486))])
     
     static let a2 = Level(levelId: 2, numberOfLinesProvided: 2, numberOfTrianglesRequired: 2, lines:
         [Line(id: -1, start: CGPoint(x: 70.5, y: 201.0), end: CGPoint(x: 315.5, y: 201.5)),

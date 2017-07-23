@@ -27,36 +27,44 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y92-Wx-gie">
-                                <rect key="frame" x="32" y="64" width="57" height="30"/>
-                                <state key="normal" title="Clear All"/>
+                                <rect key="frame" x="32" y="64" width="57" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="clearPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q5h-ow-7u2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoY-dg-or9">
-                                <rect key="frame" x="305" y="64" width="38" height="30"/>
-                                <state key="normal" title="Undo"/>
+                                <rect key="frame" x="284" y="64" width="59" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Undo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="undoPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OYh-Op-Kjg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb5-UM-of3">
-                                <rect key="frame" x="172.5" y="45" width="31" height="60"/>
+                                <rect key="frame" x="172.5" y="55" width="31" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSX-IZ-ZNd">
-                                <rect key="frame" x="162" y="606" width="50" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Next"/>
+                                <rect key="frame" x="158" y="601" width="58" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="nextPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gXk-c7-jPd"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7t-ca-1fq">
-                                <rect key="frame" x="166" y="575" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="163" y="567" width="49" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -68,7 +76,7 @@
                             <constraint firstItem="u7t-ca-1fq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OWF-dX-daK"/>
                             <constraint firstAttribute="trailing" secondItem="Xry-KG-5jD" secondAttribute="trailing" id="TVV-FU-eXs"/>
                             <constraint firstItem="QSX-IZ-ZNd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xtl-JS-n9l"/>
-                            <constraint firstItem="Bb5-UM-of3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="f6y-zS-vQj"/>
+                            <constraint firstItem="Bb5-UM-of3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="f6y-zS-vQj"/>
                             <constraint firstItem="Xry-KG-5jD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gOi-pw-AZs"/>
                             <constraint firstItem="Bb5-UM-of3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gQa-Vj-9iN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NoY-dg-or9" secondAttribute="trailing" constant="16" id="jLk-dF-j5h"/>
