@@ -17,7 +17,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var triangleCountLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var triangleLabel: UILabel!
+    @IBOutlet weak var lineLabel: UILabel!
     
     var levelNumber = 0
     var level: Level = Levels.levels[0]
@@ -37,12 +38,13 @@ class GameViewController: UIViewController {
         
         // Custom Color
         pastelView.setColors([UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
-                              UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
-                              UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
+                              UIColor(red: 252/255, green: 227/255, blue: 138/255, alpha: 1.0),
+                              UIColor(red: 243/255, green: 129/255, blue: 129/255, alpha: 1.0),
                               UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
                               UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
                               UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
-                              UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)])
+                              UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0),
+                              UIColor(red: 245/255, green: 78/255, blue: 162/255, alpha: 1.0)])
         
         pastelView.startAnimation()
         view.insertSubview(pastelView, at: 0)
@@ -50,7 +52,8 @@ class GameViewController: UIViewController {
         self.nextButton.isHidden = true
         sketchView.delegate = self
         sketchView.setupLevel(level: level)
-        descriptionLabel.text = "Make \(level.numberOfTrianglesRequired!) triangles with \(level.numberOfLinesProvided!) line(s)"
+        triangleLabel.text = "\(level.numberOfTrianglesRequired!)"
+        lineLabel.text = "\(level.numberOfLinesProvided!)"
     }
     
     func updateTriangleCount(newCount: Int) {
@@ -83,7 +86,8 @@ class GameViewController: UIViewController {
         levelNumber += 1
         level = Levels.levels[levelNumber]
         sketchView.setupLevel(level: level)
-        descriptionLabel.text = "Make \(level.numberOfTrianglesRequired!) triangles with \(level.numberOfLinesProvided!) line(s)"
+        triangleLabel.text = "\(level.numberOfTrianglesRequired!)"
+        lineLabel.text = "\(level.numberOfLinesProvided!)"
     }
     
     @IBAction func activateSketchMode(sender: UIButton) {
