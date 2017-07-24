@@ -81,11 +81,10 @@ class GameViewController: UIViewController {
     
     @IBAction func nextPressed(sender: UIButton) {
         self.triangleCountLabel.text = "0"
-        sketchView.resetStage()
-        self.nextButton.isHidden = true
         levelNumber += 1
         level = Levels.levels[levelNumber]
-        sketchView.setupLevel(level: level)
+        sketchView.resetStageForLevel(level: level)
+        self.nextButton.isHidden = true
         triangleLabel.text = "\(level.numberOfTrianglesRequired!)"
         lineLabel.text = "\(level.numberOfLinesProvided!)"
     }

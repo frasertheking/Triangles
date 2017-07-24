@@ -102,9 +102,21 @@ class SketchView: UIView {
     // Level setup 
     func setupLevel(level: Level) {
         self.level = level
-        if !devModeEnabled {
-            generateLevel()
+        if !self.devModeEnabled {
+            self.generateLevel()
         }
+        
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveLinear, animations: {
+            self.lineView.alpha = 1
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.5, delay: 0.75, options: .curveLinear, animations: {
+            self.triangleView.alpha = 1
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.5, delay: 1, options: .curveLinear, animations: {
+            self.vertexView.alpha = 1
+        }, completion: nil)
     }
     
     func generateLevel() {
@@ -132,15 +144,28 @@ class SketchView: UIView {
     }
     
     // Action Event Handlers
-    func resetStage() {
-        self.vertexView.layer.sublayers = nil
-        self.lineView.layer.sublayers = nil
-        self.triangleView.layer.sublayers = nil
-        lineArr.removeAll()
-        intersectionArray.removeAll()
-        triangleArray.removeAll()
-        lineCount = 0
-        startingLineCount = 0
+    func resetStageForLevel(level: Level) {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: { 
+            self.vertexView.alpha = 0
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveLinear, animations: {
+            self.triangleView.alpha = 0
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveLinear, animations: {
+            self.lineView.alpha = 0
+        }) { (finished) in
+            self.vertexView.layer.sublayers = nil
+            self.lineView.layer.sublayers = nil
+            self.triangleView.layer.sublayers = nil
+            self.lineArr.removeAll()
+            self.intersectionArray.removeAll()
+            self.triangleArray.removeAll()
+            self.lineCount = 0
+            self.startingLineCount = 0
+            self.setupLevel(level: level)
+        }
     }
     
     func clearAll() {
