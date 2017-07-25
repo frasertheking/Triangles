@@ -22,7 +22,6 @@ class SketchView: UIView {
     var devModeEnabled = false
     
     // Constants
-    fileprivate let kLineMax: Int = 99
     fileprivate let kVertexRadius: CGFloat = 9.0
     fileprivate let kMinimumTriangleSize: CGFloat = 100.0
     fileprivate let kAnimationDuration: TimeInterval = 0.2
@@ -37,7 +36,6 @@ class SketchView: UIView {
     fileprivate var lineArr: [Line] = [Line]()
     fileprivate var triangleArray: [Triangle] = [Triangle]()
     fileprivate var intersectionArray: [CGPoint] = [CGPoint]()
-    fileprivate var colorArray: [UIColor] = [UIColor]()
     fileprivate var lineCount: Int = 0
     fileprivate var lineStart: CGPoint?
     fileprivate var undoFrameRefresh: Bool = false
@@ -127,11 +125,6 @@ class SketchView: UIView {
         
         guard let lines = level.lines else {
             return
-        }
-        
-        // Seed colors
-        for _ in 0 ... kLineMax {
-            colorArray.append(randomColor(hue: .random, luminosity: .bright))
         }
         
         startingLineCount = 0
@@ -324,9 +317,13 @@ class SketchView: UIView {
                     let shape = CAShapeLayer()
                     shape.frame = self.triangleView.bounds
                     shape.path = path
-                    shape.fillColor = colorArray[minCount].cgColor
                     shape.strokeColor = UIColor.black.cgColor
                     shape.lineWidth = kTriangleStrokeBufferWidth
+                    shape.fillColor = UIColor.red.cgColor
+                    
+                    if let color = triangle.color {
+                        shape.fillColor = color.cgColor
+                    }
                     
                     self.triangleView.layer.insertSublayer(shape, at: 0)
                 }

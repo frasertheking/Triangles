@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RandomColorSwift
+
+var colors: [UIColor] = [UIColor]()
 
 class Triangle {
     var id: Int?
@@ -20,6 +23,7 @@ class Triangle {
     var line2: Line?
     var line3: Line?
     var isMinimal = true
+    var color: UIColor?
     var semiPerimeter: CGFloat {
         get {
             
@@ -63,7 +67,7 @@ class Triangle {
         }
     }
     
-    init(vertex1: CGPoint, vertex2: CGPoint, vertex3: CGPoint, line1: Line, line2: Line, line3: Line, int1: CGPoint, int2: CGPoint, int3: CGPoint) {
+    init(vertex1: CGPoint, vertex2: CGPoint, vertex3: CGPoint, line1: Line, line2: Line, line3: Line, int1: CGPoint, int2: CGPoint, int3: CGPoint, color: UIColor) {
         self.vertex1 = vertex1
         self.vertex2 = vertex2
         self.vertex3 = vertex3
@@ -73,6 +77,7 @@ class Triangle {
         self.intersection1 = int1
         self.intersection2 = int2
         self.intersection3 = int3
+        self.color = color
     }
     
     func hasLine(line: Line) -> Bool {
@@ -114,6 +119,13 @@ class Triangle {
     
     // Class functions    
     class func getTriangleFromLines(lines: [Line], currentLine: Line, intersectionArray: [CGPoint], currentTriangles: [Triangle]) -> [Triangle]? {
+        if colors.count == 0 {
+            // Seed colors
+            for _ in 0 ... 999 {
+                colors.append(randomColor(hue: .random, luminosity: .bright))
+            }
+        }
+        
         var triangleArr: [Triangle] = [Triangle]()
         for i in 0 ..< lines.count {
             for j in i+1 ..< lines.count {
@@ -149,7 +161,8 @@ class Triangle {
                                                     line3: lines[j],
                                                     int1: intersection1,
                                                     int2: intersection2,
-                                                    int3: intersection3))
+                                                    int3: intersection3,
+                                                    color: colors[currentLine.id! + lines[i].id! + lines[j].id!]))
                     }
                 }
             }

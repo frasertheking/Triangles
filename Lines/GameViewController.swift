@@ -65,8 +65,12 @@ class GameViewController: UIViewController {
         
         if newCount == numberOfTrianglesRequired && levelNumber < Levels.levels.count-1 {
             self.nextButton.isHidden = false
+            self.undoButton.isHidden = true
+            self.clearButton.isHidden = true
         } else {
             self.nextButton.isHidden = true
+            self.undoButton.isHidden = false
+            self.clearButton.isHidden = false
         }
     }
     
@@ -85,6 +89,8 @@ class GameViewController: UIViewController {
         level = Levels.levels[levelNumber]
         sketchView.resetStageForLevel(level: level)
         self.nextButton.isHidden = true
+        self.undoButton.isHidden = false
+        self.clearButton.isHidden = false
         triangleLabel.text = "\(level.numberOfTrianglesRequired!)"
         lineLabel.text = "\(level.numberOfLinesProvided!)"
     }
