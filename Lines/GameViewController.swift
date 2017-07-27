@@ -13,12 +13,16 @@ class GameViewController: UIViewController {
     
     // Interface outlets
     @IBOutlet weak var sketchView: SketchView!
-    @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var triangleCountLabel: UILabel!
     @IBOutlet weak var triangleLabel: UILabel!
     @IBOutlet weak var lineLabel: UILabel!
+    @IBOutlet weak var nextButtonBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var triangleContainerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var vertexContainerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var lineContainerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var vertexCountContainer: UIView!
     
     var levelNumber = 0
     var level: Level = Levels.levels[0]
@@ -49,7 +53,7 @@ class GameViewController: UIViewController {
         pastelView.startAnimation()
         view.insertSubview(pastelView, at: 0)
 
-        self.nextButton.isHidden = true
+        vertexCountContainer.isHidden = true
         sketchView.delegate = self
         sketchView.setupLevel(level: level)
         triangleLabel.text = "\(level.numberOfTrianglesRequired!)"
@@ -64,39 +68,67 @@ class GameViewController: UIViewController {
         }
         
         if newCount == numberOfTrianglesRequired && levelNumber < Levels.levels.count-1 {
-            self.nextButton.isHidden = false
-            self.undoButton.isHidden = true
-            self.clearButton.isHidden = true
+            bounceSketchView()
+            self.undoButton.isEnabled = false
         } else {
-            self.nextButton.isHidden = true
-            self.undoButton.isHidden = false
-            self.clearButton.isHidden = false
+            self.undoButton.isEnabled = true
         }
     }
     
-    // Action Event Handlers
-    @IBAction func clearPressed(sender: UIButton) {
-        sketchView.clearAll()
+    func bounceSketchView() {
+        UIView.animate(withDuration: 0.25, animations: { self.sketchView.transform = CGAffineTransform(scaleX: 1.075, y: 1.075) }, completion: { (finish: Bool) in UIView.animate(withDuration: 0.25, animations: {
+            self.sketchView.transform = CGAffineTransform.identity
+        }, completion: { (finished) in
+            self.animateNextButtonIn()
+            })
+        })
     }
     
+    func animateNextButtonIn() {
+        nextButtonBottomConstraint.constant = 20
+        triangleContainerBottomConstraint.constant = 100
+        vertexContainerBottomConstraint.constant = 100
+        lineContainerBottomConstraint.constant = 100
+        
+        UIView.animate(withDuration: 0.3, delay: 0.25, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    func animateNextButtonOut() {
+        nextButtonBottomConstraint.constant = -80
+        triangleContainerBottomConstraint.constant = 20
+        vertexContainerBottomConstraint.constant = 20
+        lineContainerBottomConstraint.constant = 20
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    // Action Event Handlers
+    
     @IBAction func undoPressed(sender: UIButton) {
+        let fullRotation = CABasicAnimation(keyPath: "transform.rotation")
+        fullRotation.fromValue = NSNumber(floatLiteral: 0)
+        fullRotation.toValue = NSNumber(floatLiteral: -Double(CGFloat.pi * 2))
+        fullRotation.duration = 0.5
+        fullRotation.repeatCount = 1
+        undoButton.layer.add(fullRotation, forKey: "360")
+        
         sketchView.undo()
     }
     
     @IBAction func nextPressed(sender: UIButton) {
-        self.triangleCountLabel.text = "0"
         levelNumber += 1
         level = Levels.levels[levelNumber]
         sketchView.resetStageForLevel(level: level)
-        self.nextButton.isHidden = true
-        self.undoButton.isHidden = false
-        self.clearButton.isHidden = false
+        animateNextButtonOut()
         triangleLabel.text = "\(level.numberOfTrianglesRequired!)"
         lineLabel.text = "\(level.numberOfLinesProvided!)"
     }
     
     @IBAction func activateSketchMode(sender: UIButton) {
         sketchView.level = nil
-        sketchView.clearAll()
     }
 }

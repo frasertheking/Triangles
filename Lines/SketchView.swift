@@ -28,7 +28,7 @@ class SketchView: UIView {
     fileprivate let kSwollenVertexScaleFactor: CGFloat = 1.25
     fileprivate let kLineWidth: CGFloat = 4.0
     fileprivate let kTriangleStrokeBufferWidth: CGFloat = 4.0
-    fileprivate let kLineColor: UIColor = UIColor.black
+    var kLineColor: UIColor = UIColor.black
     
     // Global vars
     fileprivate var firstPoint: CGPoint?

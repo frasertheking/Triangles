@@ -121,7 +121,7 @@ class Triangle {
     class func getTriangleFromLines(lines: [Line], currentLine: Line, intersectionArray: [CGPoint], currentTriangles: [Triangle]) -> [Triangle]? {
         if colors.count == 0 {
             // Seed colors
-            for _ in 0 ... 999 {
+            for _ in 0 ... 99 {
                 colors.append(randomColor(hue: .random, luminosity: .bright))
             }
         }
@@ -153,6 +153,8 @@ class Triangle {
                             vertex3 = vertex3InCircle
                         }
                         
+                        let colorInt = Int((vertex1.x + vertex2.x + vertex3.x + vertex1.y + vertex2.y + vertex3.y).truncatingRemainder(dividingBy: 99.0))
+                        
                         triangleArr.append(Triangle(vertex1: vertex1,
                                                     vertex2: vertex2,
                                                     vertex3: vertex3,
@@ -162,7 +164,7 @@ class Triangle {
                                                     int1: intersection1,
                                                     int2: intersection2,
                                                     int3: intersection3,
-                                                    color: colors[currentLine.id! + lines[i].id! + lines[j].id!]))
+                                                    color: colors[colorInt]))
                     }
                 }
             }
