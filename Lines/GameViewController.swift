@@ -8,6 +8,7 @@
 
 import UIKit
 import Pastel
+import FaveButton
 
 class GameViewController: UIViewController {
     
@@ -23,13 +24,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var vertexContainerBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var lineContainerBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var vertexCountContainer: UIView!
+    @IBOutlet weak var checkmarkButton: FaveButton!
     
     var levelNumber = 0
     var level: Level = Levels.levels[0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let pastelView = PastelView(frame: view.bounds)
         
@@ -67,15 +68,21 @@ class GameViewController: UIViewController {
             return
         }
         
-        if newCount == numberOfTrianglesRequired && levelNumber < Levels.levels.count-1 {
+        if newCount == numberOfTrianglesRequired && sketchView.levelLoaded && levelNumber < Levels.levels.count-1 {
             bounceSketchView()
             self.undoButton.isEnabled = false
+        } else if sketchView.canPerformUndo() {
+            undoButton.isEnabled = true
         } else {
-            self.undoButton.isEnabled = true
+            undoButton.isEnabled = false
         }
     }
     
     func bounceSketchView() {
+        checkmarkButton.isHidden = false
+        triangleCountLabel.isHidden = true
+        checkmarkButton.sendActions(for: .touchUpInside)
+
         UIView.animate(withDuration: 0.25, animations: { self.sketchView.transform = CGAffineTransform(scaleX: 1.075, y: 1.075) }, completion: { (finish: Bool) in UIView.animate(withDuration: 0.25, animations: {
             self.sketchView.transform = CGAffineTransform.identity
         }, completion: { (finished) in
@@ -120,12 +127,16 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func nextPressed(sender: UIButton) {
+        self.triangleCountLabel.text = "0"
         levelNumber += 1
         level = Levels.levels[levelNumber]
         sketchView.resetStageForLevel(level: level)
         animateNextButtonOut()
         triangleLabel.text = "\(level.numberOfTrianglesRequired!)"
         lineLabel.text = "\(level.numberOfLinesProvided!)"
+        checkmarkButton.isHidden = true
+        triangleCountLabel.isHidden = false
+        checkmarkButton.sendActions(for: .touchUpInside)
     }
     
     @IBAction func activateSketchMode(sender: UIButton) {

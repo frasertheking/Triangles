@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FaveButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Lines.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>9FD54B5467F0B5DF561EECA79F137805</key>
+		<key>39D1AFE2A07BE52F7035305C6B593CE9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D67F03CB006D2913E782049E4E9CBF83</key>
+		<key>7C08227B6E14D87F0F5B0FD6DFFA1A3E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9B0052D85D09803A1E2C2D49A7C5EC8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

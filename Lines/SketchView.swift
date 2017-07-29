@@ -51,7 +51,8 @@ class SketchView: UIView {
         }
     }
     var level: Level?
-    var dontDrawTriangles = false
+    var dontDrawTriangles: Bool = false
+    var levelLoaded: Bool = false
 
     // Max generation vars
     var maxTriangles = 0
@@ -85,6 +86,11 @@ class SketchView: UIView {
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleGesture(gesture:)))
         gestureRecognizer.minimumPressDuration = 0.0
         view.addGestureRecognizer(gestureRecognizer)
+        
+        // Add parallax features to views
+        self.addParallaxToView(vw: triangleView)
+        self.addParallaxToView(vw: lineView)
+        self.addParallaxToView(vw: vertexView)
     }
     
     // Loads a XIB file into a view and returns this view.
@@ -102,6 +108,7 @@ class SketchView: UIView {
         self.level = level
         if !self.devModeEnabled {
             self.generateLevel()
+            levelLoaded = true
         }
         
         UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveLinear, animations: {
@@ -127,6 +134,7 @@ class SketchView: UIView {
             return
         }
         
+        levelLoaded = false
         startingLineCount = 0
         lineCount = startingLineCount
         for line in lines {
@@ -174,7 +182,7 @@ class SketchView: UIView {
     }
     
     func undo() {
-        if (lineCount > startingLineCount) {
+        if canPerformUndo() {
              lineCount -= 1
              
              removeLayerFromView(by: lineCount, view: lineView)
@@ -184,6 +192,10 @@ class SketchView: UIView {
              undoFrameRefresh = true
              findIntersections()
         }
+    }
+    
+    func canPerformUndo() -> Bool {
+        return lineCount > startingLineCount
     }
     
     func handleGesture(gesture: UILongPressGestureRecognizer) {
@@ -406,6 +418,22 @@ class SketchView: UIView {
         for line in self.maxLines {
             self.drawLine(fromPoint: line.start!, toPoint: line.end!, doneDrawingLine: true)
         }
+    }
+    
+    func addParallaxToView(vw: UIView) {
+        let amount = 10
+        
+        let horizontal = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+        horizontal.minimumRelativeValue = -amount
+        horizontal.maximumRelativeValue = amount
+        
+        let vertical = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+        vertical.minimumRelativeValue = -amount
+        vertical.maximumRelativeValue = amount
+        
+        let group = UIMotionEffectGroup()
+        group.motionEffects = [horizontal, vertical]
+        vw.addMotionEffect(group)
     }
     
 }

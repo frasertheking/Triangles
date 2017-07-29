@@ -7,82 +7,127 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07B6DF2A7FE67FAB3C6E96DDB1413EF6 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B157B1EA3EBAE1F3B0B4817C912AAF8 /* Hue.swift */; };
-		224F4FCE8996CE52490623AF8E23DA46 /* RandomColorSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0158030CC89E3DFDBA906DF490D2E420 /* RandomColorSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5358418E48E18A6BC6C06911D2DE22D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		6FD648BC31723B8468B368537ECCACCF /* ColorDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B8EED062721CE4EF71FDE057512ED /* ColorDefinition.swift */; };
-		8951D9487B15479640DE958227CC0897 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94343978D8754AFCC0C894BAD0959310 /* RandomColor.swift */; };
-		A55AFCD727430D83FA3559B14D29D0E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A6CEE160055E2969EB2F8FE48B2DA451 /* Pods-Lines-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F22641BE7018391786DC0396FB36153 /* Pods-Lines-dummy.m */; };
-		C60FC1AC881F38DFA3F912EC0BFEEDF8 /* Pods-Lines-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EF0407A017EF6CAAB64F098D56C42AD /* Pods-Lines-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DD5505A764ECE7A0E0292088983681E6 /* Luminosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C83CD1E2A0D5F3B0049368D74053A /* Luminosity.swift */; };
-		E91E4DB36795A6DF5F7C4BB75ECEC666 /* RandomColorSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AA8574ABA12CE8AC28F0BE68E52E54 /* RandomColorSwift-dummy.m */; };
+		0ACE0C92E49C9B7F84B93FF608C9C182 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		0D93BF5ACE5420C2790F1AA8CA481892 /* RandomColorSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F213D99361579E3D4565FB2A1FBD8235 /* RandomColorSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11231EDF58D9715E48688041F5775F35 /* Constraints+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710EB8A962883385156237F16289A577 /* Constraints+.swift */; };
+		14C96683865769F6CA419276A30B1AEB /* FaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77BD2A41F5A7B15BFF4C54DCFCB4616 /* FaveButton.swift */; };
+		1E057E3AFBF9BDDB803ABD080244E14F /* Pods-Lines-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EF0407A017EF6CAAB64F098D56C42AD /* Pods-Lines-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB70CB9F38313F0CA9E8D0CAE765AF8 /* FaveButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09F4243945D87BDE18E8FBB0142B5504 /* FaveButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		227E1B2894510D9058D10C8AA840DAAC /* Luminosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1283FC7A15F34AB7AAF5824E62966F /* Luminosity.swift */; };
+		36665F9CC301DA708DE1222320BD1E4A /* FaveButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 866301FD7A2E0C254C310119372D2B40 /* FaveButton-dummy.m */; };
+		531408BF6C209461B4C07FFE7312E0F3 /* FaveIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F5FF216D520C4C835D3146C361B547 /* FaveIcon.swift */; };
+		5EF4F8BE943AC89E53090B7F0E03EED6 /* Spark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DDD6EBE2DF17657AE6258507539CD2 /* Spark.swift */; };
+		63B097C8B076D6DE70EE36C61D6D4888 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5231AB81CF59AE288F204FAAD255FDCB /* Hue.swift */; };
+		69912C9DF647C88E62A46296C067EC65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		92675AEFA93BB273A495AF5B24A06CC5 /* RandomColorSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7194EC1F3D0D331B05253FAD2FB6810 /* RandomColorSwift-dummy.m */; };
+		95709685565BF19C920BFC5F03658A4F /* Pods-Lines-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F22641BE7018391786DC0396FB36153 /* Pods-Lines-dummy.m */; };
+		A2EDFAA77CF1F51F9EF7C716A11AE118 /* ColorDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E701300F177CE13C79A8E6B3A9D59272 /* ColorDefinition.swift */; };
+		C57371AD4BBBE9FA5CBC57C151D9D0BE /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28FAC7BC55723E273C199C739EEDF2A /* Easing.swift */; };
+		CD17F739B45D4CF59EC659DF78F6BDB9 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A726DDA49C154F0B82CF0C2000BA3 /* Ring.swift */; };
+		CDB1BAFEAB814C169438ED5DDFEEAB76 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E59DFC02BDD415146934C8CCF215FD0 /* Geometry.swift */; };
+		D77080CDDCBD8B2DD280FB60BFEF9466 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		E7429B642F62D3F2F63A90887DEBDC12 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2181688FD0FC4CE16F53B2CADB66453 /* Init.swift */; };
+		EEE1F0EB74745FF2A6E81AB9F5F24493 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF18E9E75830DEBEEF11B2DD7F3599 /* RandomColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		883DBD19F5B99A8E615A55FFB9C6F59F /* PBXContainerItemProxy */ = {
+		88BFF3535F7491AE31D5EF99C71A79E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D67F03CB006D2913E782049E4E9CBF83;
+			remoteGlobalIDString = 7C08227B6E14D87F0F5B0FD6DFFA1A3E;
+			remoteInfo = FaveButton;
+		};
+		D577CD7A2544F245BA85528BEBA0FC30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B0052D85D09803A1E2C2D49A7C5EC8F;
 			remoteInfo = RandomColorSwift;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0158030CC89E3DFDBA906DF490D2E420 /* RandomColorSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-umbrella.h"; sourceTree = "<group>"; };
-		0B157B1EA3EBAE1F3B0B4817C912AAF8 /* Hue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = RandomColor/Hue.swift; sourceTree = "<group>"; };
+		09F4243945D87BDE18E8FBB0142B5504 /* FaveButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FaveButton-umbrella.h"; sourceTree = "<group>"; };
 		0F22641BE7018391786DC0396FB36153 /* Pods-Lines-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Lines-dummy.m"; sourceTree = "<group>"; };
 		12F5C5BBB421CD59F1D582257439AB29 /* Pods-Lines-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Lines-acknowledgements.markdown"; sourceTree = "<group>"; };
+		15DDD6EBE2DF17657AE6258507539CD2 /* Spark.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Spark.swift; path = Source/Spark.swift; sourceTree = "<group>"; };
+		1694D8CD9A97561BD10D07C064D480FA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22E33914D45CC2FE54A8109582662465 /* FaveButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FaveButton.modulemap; sourceTree = "<group>"; };
 		26DED1DC989698CA2C7FF69F07B80D3E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36604D4DE6AC1376A0BE6DA55F4911C5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6015DDE60FBE0C887DCBFA53B0595B06 /* RandomColorSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RandomColorSwift.modulemap; sourceTree = "<group>"; };
+		27CBC055BA1EEA1F9A17548EC6D9ECD4 /* FaveButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FaveButton.xcconfig; sourceTree = "<group>"; };
+		2F2E1C77D42A0D953976A1D9BF06495A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30DE6AF4E5CDDC9FF1DF09A65F6A47A0 /* Pods_Lines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lines.framework; path = "Pods-Lines.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5231AB81CF59AE288F204FAAD255FDCB /* Hue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = RandomColor/Hue.swift; sourceTree = "<group>"; };
+		5E59DFC02BDD415146934C8CCF215FD0 /* Geometry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Geometry.swift; path = Source/Helpers/Geometry.swift; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6EF0407A017EF6CAAB64F098D56C42AD /* Pods-Lines-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Lines-umbrella.h"; sourceTree = "<group>"; };
+		710EB8A962883385156237F16289A577 /* Constraints+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Constraints+.swift"; path = "Source/Helpers/Constraints+.swift"; sourceTree = "<group>"; };
 		72D5A1C050111D4ECB67F713B3ECA257 /* Pods-Lines.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Lines.modulemap"; sourceTree = "<group>"; };
 		7EDEDE4B0F3FD4B9F617F24262588F9B /* Pods-Lines-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lines-frameworks.sh"; sourceTree = "<group>"; };
-		8D6B8EED062721CE4EF71FDE057512ED /* ColorDefinition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorDefinition.swift; path = RandomColor/ColorDefinition.swift; sourceTree = "<group>"; };
+		829E97C15C02B262C4548C9043795EEE /* RandomColorSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RandomColorSwift.framework; path = RandomColorSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84CF18E9E75830DEBEEF11B2DD7F3599 /* RandomColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomColor.swift; path = RandomColor/RandomColor.swift; sourceTree = "<group>"; };
+		866301FD7A2E0C254C310119372D2B40 /* FaveButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FaveButton-dummy.m"; sourceTree = "<group>"; };
+		89F5FF216D520C4C835D3146C361B547 /* FaveIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FaveIcon.swift; path = Source/FaveIcon.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94343978D8754AFCC0C894BAD0959310 /* RandomColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomColor.swift; path = RandomColor/RandomColor.swift; sourceTree = "<group>"; };
-		A0BC80F25E557024CCA1EAA55BC2D96E /* RandomColorSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RandomColorSwift.xcconfig; sourceTree = "<group>"; };
-		A5AA8574ABA12CE8AC28F0BE68E52E54 /* RandomColorSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RandomColorSwift-dummy.m"; sourceTree = "<group>"; };
+		93ECF1A08D326877F0C3D64B077F804E /* RandomColorSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RandomColorSwift.xcconfig; sourceTree = "<group>"; };
+		A458BD6D8143822A53F71D64F0C24880 /* FaveButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FaveButton.framework; path = FaveButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF24998F2CC1CFAD74EB8479573BB5F /* Pods-Lines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lines.release.xcconfig"; sourceTree = "<group>"; };
-		BA5EBBA244CD1BD2348C6F92B95F040B /* RandomColorSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-prefix.pch"; sourceTree = "<group>"; };
-		C42D10C69D11C7CB72B00D8DB92AB80B /* Pods_Lines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lines.framework; path = "Pods-Lines.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB1283FC7A15F34AB7AAF5824E62966F /* Luminosity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Luminosity.swift; path = RandomColor/Luminosity.swift; sourceTree = "<group>"; };
+		AF9A726DDA49C154F0B82CF0C2000BA3 /* Ring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Ring.swift; path = Source/Ring.swift; sourceTree = "<group>"; };
+		B2524436B7C6DB5EE957E787A0BE80CB /* FaveButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FaveButton-prefix.pch"; sourceTree = "<group>"; };
+		C4701FB409B45A3CF5472F5B592F2E80 /* RandomColorSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RandomColorSwift.modulemap; sourceTree = "<group>"; };
 		C7FFB1F6486F5AFE5816832CFBF47F1B /* Pods-Lines-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lines-resources.sh"; sourceTree = "<group>"; };
 		CC8C423E3114E0959A8C28A1BCD177F7 /* Pods-Lines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lines.debug.xcconfig"; sourceTree = "<group>"; };
-		D07C83CD1E2A0D5F3B0049368D74053A /* Luminosity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Luminosity.swift; path = RandomColor/Luminosity.swift; sourceTree = "<group>"; };
+		D28FAC7BC55723E273C199C739EEDF2A /* Easing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Easing.swift; path = Source/Helpers/Easing.swift; sourceTree = "<group>"; };
+		DD1337733A649710224628FC04CA5832 /* RandomColorSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-prefix.pch"; sourceTree = "<group>"; };
+		E701300F177CE13C79A8E6B3A9D59272 /* ColorDefinition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorDefinition.swift; path = RandomColor/ColorDefinition.swift; sourceTree = "<group>"; };
+		E77BD2A41F5A7B15BFF4C54DCFCB4616 /* FaveButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FaveButton.swift; path = Source/FaveButton.swift; sourceTree = "<group>"; };
+		F213D99361579E3D4565FB2A1FBD8235 /* RandomColorSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-umbrella.h"; sourceTree = "<group>"; };
+		F2181688FD0FC4CE16F53B2CADB66453 /* Init.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Init.swift; path = Source/Helpers/Init.swift; sourceTree = "<group>"; };
 		F280CF9071B04748C06FFB6D47BBC0DD /* Pods-Lines-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Lines-acknowledgements.plist"; sourceTree = "<group>"; };
-		F82025A0B3723836A8A53C07AC544060 /* RandomColorSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RandomColorSwift.framework; path = RandomColorSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7194EC1F3D0D331B05253FAD2FB6810 /* RandomColorSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RandomColorSwift-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		32BD49B00B3EB4865E5630663E2CD26E /* Frameworks */ = {
+		8EE54EDA0FC88D601DEC0EF1147DAC22 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5358418E48E18A6BC6C06911D2DE22D4 /* Foundation.framework in Frameworks */,
+				0ACE0C92E49C9B7F84B93FF608C9C182 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF7FF9E7A288008FFDC7DD2E2173C372 /* Frameworks */ = {
+		9D39A0090C3530A441C70E4EF5BE8889 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A55AFCD727430D83FA3559B14D29D0E6 /* Foundation.framework in Frameworks */,
+				69912C9DF647C88E62A46296C067EC65 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4AABADD637DCFF7421E1675ED73A6BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D77080CDDCBD8B2DD280FB60BFEF9466 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A69497D84C5513A95B2ADCD82327992 /* Products */ = {
+		1522A8F1BA787C97D7096EF762AFFE6E /* RandomColorSwift */ = {
 			isa = PBXGroup;
 			children = (
-				C42D10C69D11C7CB72B00D8DB92AB80B /* Pods_Lines.framework */,
-				F82025A0B3723836A8A53C07AC544060 /* RandomColorSwift.framework */,
+				E701300F177CE13C79A8E6B3A9D59272 /* ColorDefinition.swift */,
+				5231AB81CF59AE288F204FAAD255FDCB /* Hue.swift */,
+				AB1283FC7A15F34AB7AAF5824E62966F /* Luminosity.swift */,
+				84CF18E9E75830DEBEEF11B2DD7F3599 /* RandomColor.swift */,
+				F6D8C637001CB3F0314A03387A2C203A /* Support Files */,
 			);
-			name = Products;
+			name = RandomColorSwift;
+			path = RandomColorSwift;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -90,32 +135,10 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				8719A227D0757E8FCDFA0FF6DFA30512 /* Pods */,
-				4A69497D84C5513A95B2ADCD82327992 /* Products */,
+				BE712D7CE18901890320D955473ED4DA /* Pods */,
+				A5A5D6C32015614322ADB2995CFCDF07 /* Products */,
 				998704B23EFEF1CEB57804C2CDDBF33B /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		8719A227D0757E8FCDFA0FF6DFA30512 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E5D7941A3B1778CF3137117BF45E290D /* RandomColorSwift */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		94B0BF7094120FBF3629C8BC8EF32B0E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				36604D4DE6AC1376A0BE6DA55F4911C5 /* Info.plist */,
-				6015DDE60FBE0C887DCBFA53B0595B06 /* RandomColorSwift.modulemap */,
-				A0BC80F25E557024CCA1EAA55BC2D96E /* RandomColorSwift.xcconfig */,
-				A5AA8574ABA12CE8AC28F0BE68E52E54 /* RandomColorSwift-dummy.m */,
-				BA5EBBA244CD1BD2348C6F92B95F040B /* RandomColorSwift-prefix.pch */,
-				0158030CC89E3DFDBA906DF490D2E420 /* RandomColorSwift-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/RandomColorSwift";
 			sourceTree = "<group>";
 		};
 		998704B23EFEF1CEB57804C2CDDBF33B /* Targets Support Files */ = {
@@ -126,12 +149,45 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		A5A5D6C32015614322ADB2995CFCDF07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A458BD6D8143822A53F71D64F0C24880 /* FaveButton.framework */,
+				30DE6AF4E5CDDC9FF1DF09A65F6A47A0 /* Pods_Lines.framework */,
+				829E97C15C02B262C4548C9043795EEE /* RandomColorSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE712D7CE18901890320D955473ED4DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7E82CAD754222E1A5757872A14820C1 /* FaveButton */,
+				1522A8F1BA787C97D7096EF762AFFE6E /* RandomColorSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C55A3D1CF3F6074BA6BCAAF152716B21 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				22E33914D45CC2FE54A8109582662465 /* FaveButton.modulemap */,
+				27CBC055BA1EEA1F9A17548EC6D9ECD4 /* FaveButton.xcconfig */,
+				866301FD7A2E0C254C310119372D2B40 /* FaveButton-dummy.m */,
+				B2524436B7C6DB5EE957E787A0BE80CB /* FaveButton-prefix.pch */,
+				09F4243945D87BDE18E8FBB0142B5504 /* FaveButton-umbrella.h */,
+				2F2E1C77D42A0D953976A1D9BF06495A /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FaveButton";
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -142,17 +198,21 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		E5D7941A3B1778CF3137117BF45E290D /* RandomColorSwift */ = {
+		E7E82CAD754222E1A5757872A14820C1 /* FaveButton */ = {
 			isa = PBXGroup;
 			children = (
-				8D6B8EED062721CE4EF71FDE057512ED /* ColorDefinition.swift */,
-				0B157B1EA3EBAE1F3B0B4817C912AAF8 /* Hue.swift */,
-				D07C83CD1E2A0D5F3B0049368D74053A /* Luminosity.swift */,
-				94343978D8754AFCC0C894BAD0959310 /* RandomColor.swift */,
-				94B0BF7094120FBF3629C8BC8EF32B0E /* Support Files */,
+				710EB8A962883385156237F16289A577 /* Constraints+.swift */,
+				D28FAC7BC55723E273C199C739EEDF2A /* Easing.swift */,
+				E77BD2A41F5A7B15BFF4C54DCFCB4616 /* FaveButton.swift */,
+				89F5FF216D520C4C835D3146C361B547 /* FaveIcon.swift */,
+				5E59DFC02BDD415146934C8CCF215FD0 /* Geometry.swift */,
+				F2181688FD0FC4CE16F53B2CADB66453 /* Init.swift */,
+				AF9A726DDA49C154F0B82CF0C2000BA3 /* Ring.swift */,
+				15DDD6EBE2DF17657AE6258507539CD2 /* Spark.swift */,
+				C55A3D1CF3F6074BA6BCAAF152716B21 /* Support Files */,
 			);
-			name = RandomColorSwift;
-			path = RandomColorSwift;
+			name = FaveButton;
+			path = FaveButton;
 			sourceTree = "<group>";
 		};
 		F628A05F54FA7E5AE36F56E1F4445C61 /* Pods-Lines */ = {
@@ -173,53 +233,93 @@
 			path = "Target Support Files/Pods-Lines";
 			sourceTree = "<group>";
 		};
+		F6D8C637001CB3F0314A03387A2C203A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1694D8CD9A97561BD10D07C064D480FA /* Info.plist */,
+				C4701FB409B45A3CF5472F5B592F2E80 /* RandomColorSwift.modulemap */,
+				93ECF1A08D326877F0C3D64B077F804E /* RandomColorSwift.xcconfig */,
+				F7194EC1F3D0D331B05253FAD2FB6810 /* RandomColorSwift-dummy.m */,
+				DD1337733A649710224628FC04CA5832 /* RandomColorSwift-prefix.pch */,
+				F213D99361579E3D4565FB2A1FBD8235 /* RandomColorSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RandomColorSwift";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		19F396885E142E0A28E9F21E982FB962 /* Headers */ = {
+		8F58D35B3C672AE71871DF8381F2B177 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				224F4FCE8996CE52490623AF8E23DA46 /* RandomColorSwift-umbrella.h in Headers */,
+				1FB70CB9F38313F0CA9E8D0CAE765AF8 /* FaveButton-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D188E55FC590DF3F3A24968C4C9AEBA /* Headers */ = {
+		C4B8DBAA8CC431767B5273828242D6C3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C60FC1AC881F38DFA3F912EC0BFEEDF8 /* Pods-Lines-umbrella.h in Headers */,
+				1E057E3AFBF9BDDB803ABD080244E14F /* Pods-Lines-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9EB11F4952CDD5400F5C7EC79291FED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D93BF5ACE5420C2790F1AA8CA481892 /* RandomColorSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9FD54B5467F0B5DF561EECA79F137805 /* Pods-Lines */ = {
+		39D1AFE2A07BE52F7035305C6B593CE9 /* Pods-Lines */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46C5363000F9CD3239D807C31B74ADD0 /* Build configuration list for PBXNativeTarget "Pods-Lines" */;
+			buildConfigurationList = A48407914AF2247C734F220DEFCE8C1E /* Build configuration list for PBXNativeTarget "Pods-Lines" */;
 			buildPhases = (
-				EE93EB3A0C0700ACB857AEA196231791 /* Sources */,
-				32BD49B00B3EB4865E5630663E2CD26E /* Frameworks */,
-				2D188E55FC590DF3F3A24968C4C9AEBA /* Headers */,
+				406DC6154D416174716EEC51C6631E7B /* Sources */,
+				9D39A0090C3530A441C70E4EF5BE8889 /* Frameworks */,
+				C4B8DBAA8CC431767B5273828242D6C3 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				26172D918F9D7C7FA0B75A8AF8B9D7FB /* PBXTargetDependency */,
+				7B79F3B292B3782FA2A52E3A61AF5061 /* PBXTargetDependency */,
+				6686CDF28B7D7855B3B31160FD344448 /* PBXTargetDependency */,
 			);
 			name = "Pods-Lines";
 			productName = "Pods-Lines";
-			productReference = C42D10C69D11C7CB72B00D8DB92AB80B /* Pods_Lines.framework */;
+			productReference = 30DE6AF4E5CDDC9FF1DF09A65F6A47A0 /* Pods_Lines.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D67F03CB006D2913E782049E4E9CBF83 /* RandomColorSwift */ = {
+		7C08227B6E14D87F0F5B0FD6DFFA1A3E /* FaveButton */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6DDE4C5BE1568B700FD32C6A2BCE6EDE /* Build configuration list for PBXNativeTarget "RandomColorSwift" */;
+			buildConfigurationList = D715AEC5C8ED2BE2A239EC682DB79AAC /* Build configuration list for PBXNativeTarget "FaveButton" */;
 			buildPhases = (
-				BBCCD67B851679301EF37555247E7453 /* Sources */,
-				CF7FF9E7A288008FFDC7DD2E2173C372 /* Frameworks */,
-				19F396885E142E0A28E9F21E982FB962 /* Headers */,
+				491D24F8C192F27B69E7EDF6C2DB5101 /* Sources */,
+				A4AABADD637DCFF7421E1675ED73A6BB /* Frameworks */,
+				8F58D35B3C672AE71871DF8381F2B177 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FaveButton;
+			productName = FaveButton;
+			productReference = A458BD6D8143822A53F71D64F0C24880 /* FaveButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9B0052D85D09803A1E2C2D49A7C5EC8F /* RandomColorSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED41CFB7562B2D2DAB2368FD85DA0605 /* Build configuration list for PBXNativeTarget "RandomColorSwift" */;
+			buildPhases = (
+				60B75DEE7A5984638100D47EE6EF6D44 /* Sources */,
+				8EE54EDA0FC88D601DEC0EF1147DAC22 /* Frameworks */,
+				C9EB11F4952CDD5400F5C7EC79291FED /* Headers */,
 			);
 			buildRules = (
 			);
@@ -227,7 +327,7 @@
 			);
 			name = RandomColorSwift;
 			productName = RandomColorSwift;
-			productReference = F82025A0B3723836A8A53C07AC544060 /* RandomColorSwift.framework */;
+			productReference = 829E97C15C02B262C4548C9043795EEE /* RandomColorSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -247,45 +347,68 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 4A69497D84C5513A95B2ADCD82327992 /* Products */;
+			productRefGroup = A5A5D6C32015614322ADB2995CFCDF07 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9FD54B5467F0B5DF561EECA79F137805 /* Pods-Lines */,
-				D67F03CB006D2913E782049E4E9CBF83 /* RandomColorSwift */,
+				7C08227B6E14D87F0F5B0FD6DFFA1A3E /* FaveButton */,
+				39D1AFE2A07BE52F7035305C6B593CE9 /* Pods-Lines */,
+				9B0052D85D09803A1E2C2D49A7C5EC8F /* RandomColorSwift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BBCCD67B851679301EF37555247E7453 /* Sources */ = {
+		406DC6154D416174716EEC51C6631E7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FD648BC31723B8468B368537ECCACCF /* ColorDefinition.swift in Sources */,
-				07B6DF2A7FE67FAB3C6E96DDB1413EF6 /* Hue.swift in Sources */,
-				DD5505A764ECE7A0E0292088983681E6 /* Luminosity.swift in Sources */,
-				8951D9487B15479640DE958227CC0897 /* RandomColor.swift in Sources */,
-				E91E4DB36795A6DF5F7C4BB75ECEC666 /* RandomColorSwift-dummy.m in Sources */,
+				95709685565BF19C920BFC5F03658A4F /* Pods-Lines-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EE93EB3A0C0700ACB857AEA196231791 /* Sources */ = {
+		491D24F8C192F27B69E7EDF6C2DB5101 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6CEE160055E2969EB2F8FE48B2DA451 /* Pods-Lines-dummy.m in Sources */,
+				11231EDF58D9715E48688041F5775F35 /* Constraints+.swift in Sources */,
+				C57371AD4BBBE9FA5CBC57C151D9D0BE /* Easing.swift in Sources */,
+				36665F9CC301DA708DE1222320BD1E4A /* FaveButton-dummy.m in Sources */,
+				14C96683865769F6CA419276A30B1AEB /* FaveButton.swift in Sources */,
+				531408BF6C209461B4C07FFE7312E0F3 /* FaveIcon.swift in Sources */,
+				CDB1BAFEAB814C169438ED5DDFEEAB76 /* Geometry.swift in Sources */,
+				E7429B642F62D3F2F63A90887DEBDC12 /* Init.swift in Sources */,
+				CD17F739B45D4CF59EC659DF78F6BDB9 /* Ring.swift in Sources */,
+				5EF4F8BE943AC89E53090B7F0E03EED6 /* Spark.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60B75DEE7A5984638100D47EE6EF6D44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2EDFAA77CF1F51F9EF7C716A11AE118 /* ColorDefinition.swift in Sources */,
+				63B097C8B076D6DE70EE36C61D6D4888 /* Hue.swift in Sources */,
+				227E1B2894510D9058D10C8AA840DAAC /* Luminosity.swift in Sources */,
+				EEE1F0EB74745FF2A6E81AB9F5F24493 /* RandomColor.swift in Sources */,
+				92675AEFA93BB273A495AF5B24A06CC5 /* RandomColorSwift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		26172D918F9D7C7FA0B75A8AF8B9D7FB /* PBXTargetDependency */ = {
+		6686CDF28B7D7855B3B31160FD344448 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RandomColorSwift;
-			target = D67F03CB006D2913E782049E4E9CBF83 /* RandomColorSwift */;
-			targetProxy = 883DBD19F5B99A8E615A55FFB9C6F59F /* PBXContainerItemProxy */;
+			target = 9B0052D85D09803A1E2C2D49A7C5EC8F /* RandomColorSwift */;
+			targetProxy = D577CD7A2544F245BA85528BEBA0FC30 /* PBXContainerItemProxy */;
+		};
+		7B79F3B292B3782FA2A52E3A61AF5061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FaveButton;
+			target = 7C08227B6E14D87F0F5B0FD6DFFA1A3E /* FaveButton */;
+			targetProxy = 88BFF3535F7491AE31D5EF99C71A79E3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -338,9 +461,9 @@
 			};
 			name = Debug;
 		};
-		365F498F319E73E81F385801B9773E2F /* Release */ = {
+		3879F28DACA18D4275FA750441BA882F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0BC80F25E557024CCA1EAA55BC2D96E /* RandomColorSwift.xcconfig */;
+			baseConfigurationReference = 27CBC055BA1EEA1F9A17548EC6D9ECD4 /* FaveButton.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -354,14 +477,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RandomColorSwift/RandomColorSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RandomColorSwift/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FaveButton/FaveButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FaveButton/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RandomColorSwift/RandomColorSwift.modulemap";
+				MODULEMAP_FILE = "Target Support Files/FaveButton/FaveButton.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = RandomColorSwift;
+				PRODUCT_NAME = FaveButton;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -371,6 +494,41 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		6BF07204B2C5DEB1CF26270F10FA24F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27CBC055BA1EEA1F9A17548EC6D9ECD4 /* FaveButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FaveButton/FaveButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FaveButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FaveButton/FaveButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FaveButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		707B86CFB21B645E37109F39754D4051 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -416,7 +574,80 @@
 			};
 			name = Release;
 		};
-		DA5F41E3790F09C70B152B153CD44221 /* Debug */ = {
+		7C82AA8E6F76ED914C1A484D6BBE77D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAF24998F2CC1CFAD74EB8479573BB5F /* Pods-Lines.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Lines/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Lines/Pods-Lines.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Lines;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7ECC6ABC428475126C3E36895303A5EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93ECF1A08D326877F0C3D64B077F804E /* RandomColorSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RandomColorSwift/RandomColorSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RandomColorSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RandomColorSwift/RandomColorSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = RandomColorSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7F37A08FEAEF3AD3D3ECB66EADB9259C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CC8C423E3114E0959A8C28A1BCD177F7 /* Pods-Lines.debug.xcconfig */;
 			buildSettings = {
@@ -455,44 +686,9 @@
 			};
 			name = Debug;
 		};
-		DAD9879F8B0AA8E6CB6C6524FCD3F029 /* Debug */ = {
+		E93E0FB6481243D5B474226DBDA1A2DC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0BC80F25E557024CCA1EAA55BC2D96E /* RandomColorSwift.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RandomColorSwift/RandomColorSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RandomColorSwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RandomColorSwift/RandomColorSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = RandomColorSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		EFADAAD83BEF220FC0C2415B3B728223 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AAF24998F2CC1CFAD74EB8479573BB5F /* Pods-Lines.release.xcconfig */;
+			baseConfigurationReference = 93ECF1A08D326877F0C3D64B077F804E /* RandomColorSwift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -506,18 +702,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Lines/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/RandomColorSwift/RandomColorSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RandomColorSwift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Lines/Pods-Lines.modulemap";
+				MODULEMAP_FILE = "Target Support Files/RandomColorSwift/RandomColorSwift.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Lines;
+				PRODUCT_NAME = RandomColorSwift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -540,20 +732,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46C5363000F9CD3239D807C31B74ADD0 /* Build configuration list for PBXNativeTarget "Pods-Lines" */ = {
+		A48407914AF2247C734F220DEFCE8C1E /* Build configuration list for PBXNativeTarget "Pods-Lines" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DA5F41E3790F09C70B152B153CD44221 /* Debug */,
-				EFADAAD83BEF220FC0C2415B3B728223 /* Release */,
+				7F37A08FEAEF3AD3D3ECB66EADB9259C /* Debug */,
+				7C82AA8E6F76ED914C1A484D6BBE77D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6DDE4C5BE1568B700FD32C6A2BCE6EDE /* Build configuration list for PBXNativeTarget "RandomColorSwift" */ = {
+		D715AEC5C8ED2BE2A239EC682DB79AAC /* Build configuration list for PBXNativeTarget "FaveButton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DAD9879F8B0AA8E6CB6C6524FCD3F029 /* Debug */,
-				365F498F319E73E81F385801B9773E2F /* Release */,
+				6BF07204B2C5DEB1CF26270F10FA24F3 /* Debug */,
+				3879F28DACA18D4275FA750441BA882F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED41CFB7562B2D2DAB2368FD85DA0605 /* Build configuration list for PBXNativeTarget "RandomColorSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ECC6ABC428475126C3E36895303A5EA /* Debug */,
+				E93E0FB6481243D5B474226DBDA1A2DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

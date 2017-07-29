@@ -1,12 +1,15 @@
 PODS:
+  - FaveButton (2.0.3)
   - RandomColorSwift (1.0.0)
 
 DEPENDENCIES:
+  - FaveButton (~> 2.0.3)
   - RandomColorSwift
 
 SPEC CHECKSUMS:
+  FaveButton: cfcbc5e73da159c4f916613da5687357b5bb4783
   RandomColorSwift: 9f85058b721665d52d239ca166a913e083506444
 
-PODFILE CHECKSUM: 1b0381a5692edaa9cc8e06a436afdbbe8303b954
+PODFILE CHECKSUM: 7d3535db5d387f40c8312bcc1a38e8e47ad9544c
 
 COCOAPODS: 1.2.1
