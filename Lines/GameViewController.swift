@@ -37,15 +37,15 @@ class GameViewController: UIViewController {
         self.toggleVertexCounter()
         sketchView.delegate = self
         sketchView.setupLevel(level: level)
-        triangleLabel.text = "\(level.numberOfTrianglesRequired!)"
-        lineLabel.text = "\(level.numberOfLinesProvided!)"
-        vertexLabel.text = "\(level.numberOfVerticesRequired!)"
+        triangleLabel.text = "0/\(level.numberOfTrianglesRequired!)"
+        lineLabel.text = "0/\(level.numberOfLinesProvided!)"
+        vertexLabel.text = "0/\(level.numberOfVerticesRequired!)"
     }
     
-    func updateTriangleCount(newCount: Int) {
-        self.triangleCountLabel.text = "\(newCount)"
+    func updateTriangles(triangles: Int) {
+        triangleLabel.text = "\(triangles)/\(level.numberOfTrianglesRequired!)"
         
-        if sketchView.isLevelComplete(levelNumber: levelNumber, triangleCount: newCount) {
+        if sketchView.isLevelComplete(levelNumber: levelNumber, triangleCount: triangles) {
             bounceSketchView()
             self.undoButton.isEnabled = false
         } else if sketchView.canPerformUndo() {
@@ -53,6 +53,14 @@ class GameViewController: UIViewController {
         } else {
             undoButton.isEnabled = false
         }
+    }
+    
+    func updateLines(lines: Int) {
+        lineLabel.text = "\(lines)/\(level.numberOfLinesProvided!)"
+    }
+    
+    func updateVertices(vertices: Int) {
+        vertexLabel.text = "\(vertices)/\(level.numberOfVerticesRequired!)"
     }
     
     // Animation functions
@@ -108,14 +116,14 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func nextPressed(sender: UIButton) {
-        self.triangleCountLabel.text = "0"
         levelNumber += 1
+        self.triangleCountLabel.text = "\(levelNumber)"
         level = Levels.levels[levelNumber]
         sketchView.resetStageForLevel(level: level)
         animateNextButtonOut()
-        triangleLabel.text = "\(level.numberOfTrianglesRequired!)"
-        lineLabel.text = "\(level.numberOfLinesProvided!)"
-        vertexLabel.text = "\(level.numberOfVerticesRequired!)"
+        triangleLabel.text = "0/\(level.numberOfTrianglesRequired!)"
+        lineLabel.text = "0/\(level.numberOfLinesProvided!)"
+        vertexLabel.text = "0/\(level.numberOfVerticesRequired!)"
         checkmarkButton.isHidden = true
         triangleCountLabel.isHidden = false
         checkmarkButton.sendActions(for: .touchUpInside)

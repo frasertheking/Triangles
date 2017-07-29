@@ -55,6 +55,13 @@ class Levels: NSObject {
          Line(id: -1, start: CGPoint(x: 357.0, y: 262.0), end: CGPoint(x: 91.0, y: 479.5)),
          Line(id: -1, start: CGPoint(x: 113.5, y: 494.5), end: CGPoint(x: 207.0, y: 120.0))])
     
+    static let a12 = Level(levelId: 14, numberOfLinesProvided: 1, numberOfTrianglesRequired: 7, numberOfVerticesRequired: 12, lines:
+        [Line(id: -1, start: CGPoint(x: 30.5, y: 292.5), end: CGPoint(x: 341.0, y: 294.0)),
+         Line(id: -1, start: CGPoint(x: 183.0, y: 120.0), end: CGPoint(x: 289.5, y: 486.5)),
+         Line(id: -1, start: CGPoint(x: 315.5, y: 466.0), end: CGPoint(x: 35.5, y: 271.5)),
+         Line(id: -1, start: CGPoint(x: 357.0, y: 262.0), end: CGPoint(x: 91.0, y: 479.5)),
+         Line(id: -1, start: CGPoint(x: 113.5, y: 494.5), end: CGPoint(x: 207.0, y: 120.0))])
+    
     static let b1 = Level(levelId: 5, numberOfLinesProvided: 2, numberOfTrianglesRequired: 4, numberOfVerticesRequired: -1, lines:
         [Line(id: -1, start: CGPoint(x: 62.5, y: 331.0), end: CGPoint(x: 327.5, y: 170.0)),
          Line(id: -1, start: CGPoint(x: 103.5, y: 273.5), end: CGPoint(x: 282.5, y: 534.0)),
@@ -86,7 +93,19 @@ class Levels: NSObject {
         [Line(id: -1, start: CGPoint(x: 76.5, y: 236.0), end: CGPoint(x: 202.0, y: 508.5)),
          Line(id: -1, start: CGPoint(x: 160.0, y: 512.0), end: CGPoint(x: 291.0, y: 289.0)),
          Line(id: -1, start: CGPoint(x: 60.5, y: 254.0), end: CGPoint(x: 320.0, y: 340.5))])
+    
+    static let v1 = Level(levelId: 12, numberOfLinesProvided: 1, numberOfTrianglesRequired: 4, numberOfVerticesRequired: 6, lines:
+        [Line(id: -1, start: CGPoint(x: 109.5, y: 263.5), end: CGPoint(x: 112.5, y: 430.5)),
+        Line(id: -1, start: CGPoint(x: 93.0, y: 417.0), end: CGPoint(x: 274.0, y: 416.5)),
+        Line(id: -1, start: CGPoint(x: 267.5, y: 429.5), end: CGPoint(x: 263.5, y: 260.0)),
+        Line(id: -1, start: CGPoint(x: 98.5, y: 275.0), end: CGPoint(x: 278.0, y: 273.5)),
+        Line(id: -1, start: CGPoint(x: 96.5, y: 262.5), end: CGPoint(x: 281.5, y: 431.0)),
+        Line(id: -1, start: CGPoint(x: 273.5, y: 263.5), end: CGPoint(x: 102.0, y: 426.5))])
+    
+    static let v2 = Level(levelId: 13, numberOfLinesProvided: 4, numberOfTrianglesRequired: 4, numberOfVerticesRequired: 12, lines:
+        [Line(id: -1, start: CGPoint(x: 185.0, y: 165.5), end: CGPoint(x: 185.0, y: 519.5)),
+         Line(id: -1, start: CGPoint(x: 54.5, y: 341.0), end: CGPoint(x: 324.0, y: 341.0))])
 
     
-    static let levels: [Level] = [v0, a0, a1, a2, a10, a3, b0, b1, a4, a5, a6, a7, a8, a9]
+    static let levels: [Level] = [a0, a1, a2, a10, a3, b0, b1, a5, v0, v1, v2, a4, a12, a7, a6, a8, a9]
 }

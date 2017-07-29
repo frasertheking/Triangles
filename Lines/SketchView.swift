@@ -47,7 +47,23 @@ class SketchView: UIView {
             return self.numberOfTriangles
         }
         set {
-            self.delegate?.updateTriangleCount(newCount: newValue)
+            self.delegate?.updateTriangles(triangles: newValue)
+        }
+    }
+    var numberOfLines: Int {
+        get {
+            return self.numberOfLines
+        }
+        set {
+            self.delegate?.updateLines(lines: newValue)
+        }
+    }
+    var numberOfVertices: Int {
+        get {
+            return self.numberOfVertices
+        }
+        set {
+            self.delegate?.updateVertices(vertices: newValue)
         }
     }
     var level: Level?
@@ -207,14 +223,15 @@ class SketchView: UIView {
     
     func undo() {
         if canPerformUndo() {
-             lineCount -= 1
-             
-             removeLayerFromView(by: lineCount, view: lineView)
-             lineArr.removeLast()
-             intersectionArray.removeAll()
-             self.vertexView.layer.sublayers = nil
-             undoFrameRefresh = true
-             findIntersections()
+            lineCount -= 1
+            numberOfLines = lineCount - startingLineCount
+            
+            removeLayerFromView(by: lineCount, view: lineView)
+            lineArr.removeLast()
+            intersectionArray.removeAll()
+            self.vertexView.layer.sublayers = nil
+            undoFrameRefresh = true
+            findIntersections()
         }
     }
     
@@ -286,6 +303,7 @@ class SketchView: UIView {
                         
                         if intersectionArray.index(of: intersectionPoint) == nil && drawVertex {
                             intersectionArray.append(intersectionPoint)
+                            numberOfVertices = intersectionArray.count
                             drawVertices(x: intersectionPoint.x - kVertexRadius, y: intersectionPoint.y - kVertexRadius)
                         }
                     }
@@ -326,6 +344,7 @@ class SketchView: UIView {
         if doneDrawingLine {
             lineArr.append(Line(id: lineCount, start: roundedStart, end: roundedEnd))
             lineCount += 1
+            numberOfLines = lineCount - startingLineCount
             undoFrameRefresh = false
             findIntersections()
         }
