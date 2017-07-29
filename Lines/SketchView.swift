@@ -144,6 +144,30 @@ class SketchView: UIView {
         lineCount = startingLineCount
     }
     
+    func isLevelComplete(levelNumber: Int, triangleCount: Int) -> Bool {
+        
+        guard let numberOfTrianglesRequired = level?.numberOfTrianglesRequired else {
+            return false
+        }
+        
+        guard let numberOfVerticesRequired = level?.numberOfVerticesRequired else {
+            return false
+        }
+        
+        if numberOfVerticesRequired != -1 && intersectionArray.count != numberOfVerticesRequired {
+            return false
+        }
+        
+        if triangleCount == numberOfTrianglesRequired &&
+            levelLoaded &&
+            levelNumber < Levels.levels.count-1 {
+            
+            return true
+        }
+        
+        return false
+    }
+    
     // Action Event Handlers
     func resetStageForLevel(level: Level) {
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: { 

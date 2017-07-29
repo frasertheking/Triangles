@@ -82,11 +82,11 @@ class Levels: NSObject {
          Line(id: -1, start: CGPoint(x: 342.5, y: 169.0), end: CGPoint(x: 155.0, y: 452.5)),
          Line(id: -1, start: CGPoint(x: 86.5, y: 181.0), end: CGPoint(x: 171.5, y: 511.0))])
     
-    static let v0 = Level(levelId: 9, numberOfLinesProvided: 2, numberOfTrianglesRequired: 3, numberOfVerticesRequired: -1, lines:
-        [Line(id: -1, start: CGPoint(x: 88.0, y: 204.0), end: CGPoint(x: 323.0, y: 207.0)),
-         Line(id: -1, start: CGPoint(x: 342.5, y: 169.0), end: CGPoint(x: 155.0, y: 452.5)),
-         Line(id: -1, start: CGPoint(x: 86.5, y: 181.0), end: CGPoint(x: 171.5, y: 511.0))])
+    static let v0 = Level(levelId: 10, numberOfLinesProvided: 3, numberOfTrianglesRequired: 2, numberOfVerticesRequired: 6, lines:
+        [Line(id: -1, start: CGPoint(x: 76.5, y: 236.0), end: CGPoint(x: 202.0, y: 508.5)),
+         Line(id: -1, start: CGPoint(x: 160.0, y: 512.0), end: CGPoint(x: 291.0, y: 289.0)),
+         Line(id: -1, start: CGPoint(x: 60.5, y: 254.0), end: CGPoint(x: 320.0, y: 340.5))])
 
     
-    static let levels: [Level] = [a0, a1, a2, a10, a3, b0, b1, a4, a5, a6, a7, a8, a9]
+    static let levels: [Level] = [v0, a0, a1, a2, a10, a3, b0, b1, a4, a5, a6, a7, a8, a9]
 }

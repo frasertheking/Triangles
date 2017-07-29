@@ -19,6 +19,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var triangleCountLabel: UILabel!
     @IBOutlet weak var triangleLabel: UILabel!
     @IBOutlet weak var lineLabel: UILabel!
+    @IBOutlet weak var vertexLabel: UILabel!
     @IBOutlet weak var nextButtonBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var triangleContainerBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var vertexContainerBottomConstraint: NSLayoutConstraint!
@@ -32,43 +33,19 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pastelView = PastelView(frame: view.bounds)
-        
-        // Custom Direction
-        pastelView.startPastelPoint = .bottomLeft
-        pastelView.endPastelPoint = .topRight
-        
-        // Custom Duration
-        pastelView.animationDuration = 10.0
-        
-        // Custom Color
-        pastelView.setColors([UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
-                              UIColor(red: 252/255, green: 227/255, blue: 138/255, alpha: 1.0),
-                              UIColor(red: 243/255, green: 129/255, blue: 129/255, alpha: 1.0),
-                              UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
-                              UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
-                              UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
-                              UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0),
-                              UIColor(red: 245/255, green: 78/255, blue: 162/255, alpha: 1.0)])
-        
-        pastelView.startAnimation()
-        view.insertSubview(pastelView, at: 0)
-
-        vertexCountContainer.isHidden = true
+        self.setupBackgroundGradient()
+        self.toggleVertexCounter()
         sketchView.delegate = self
         sketchView.setupLevel(level: level)
         triangleLabel.text = "\(level.numberOfTrianglesRequired!)"
         lineLabel.text = "\(level.numberOfLinesProvided!)"
+        vertexLabel.text = "\(level.numberOfVerticesRequired!)"
     }
     
     func updateTriangleCount(newCount: Int) {
         self.triangleCountLabel.text = "\(newCount)"
         
-        guard let numberOfTrianglesRequired = level.numberOfTrianglesRequired else {
-            return
-        }
-        
-        if newCount == numberOfTrianglesRequired && sketchView.levelLoaded && levelNumber < Levels.levels.count-1 {
+        if sketchView.isLevelComplete(levelNumber: levelNumber, triangleCount: newCount) {
             bounceSketchView()
             self.undoButton.isEnabled = false
         } else if sketchView.canPerformUndo() {
@@ -78,6 +55,7 @@ class GameViewController: UIViewController {
         }
     }
     
+    // Animation functions
     func bounceSketchView() {
         checkmarkButton.isHidden = false
         triangleCountLabel.isHidden = true
@@ -113,8 +91,11 @@ class GameViewController: UIViewController {
         }, completion: nil)
     }
     
-    // Action Event Handlers
+    func toggleVertexCounter() {
+        vertexCountContainer.isHidden = level.numberOfVerticesRequired != -1 ? false : true
+    }
     
+    // Action Event Handlers
     @IBAction func undoPressed(sender: UIButton) {
         let fullRotation = CABasicAnimation(keyPath: "transform.rotation")
         fullRotation.fromValue = NSNumber(floatLiteral: 0)
@@ -134,12 +115,10 @@ class GameViewController: UIViewController {
         animateNextButtonOut()
         triangleLabel.text = "\(level.numberOfTrianglesRequired!)"
         lineLabel.text = "\(level.numberOfLinesProvided!)"
+        vertexLabel.text = "\(level.numberOfVerticesRequired!)"
         checkmarkButton.isHidden = true
         triangleCountLabel.isHidden = false
         checkmarkButton.sendActions(for: .touchUpInside)
-    }
-    
-    @IBAction func activateSketchMode(sender: UIButton) {
-        sketchView.level = nil
+        toggleVertexCounter()
     }
 }

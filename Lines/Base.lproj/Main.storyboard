@@ -27,7 +27,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoY-dg-or9">
-                                <rect key="frame" x="305" y="41.5" width="50" height="50"/>
+                                <rect key="frame" x="305" y="51.5" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="3cS-dJ-SY0"/>
                                     <constraint firstAttribute="height" constant="50" id="nlx-yS-spQ"/>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DS-Px-O0F">
-                                <rect key="frame" x="20" y="44" width="44" height="44"/>
+                                <rect key="frame" x="20" y="54" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="dXy-Rf-Tv9"/>
                                     <constraint firstAttribute="height" constant="44" id="iT6-5g-dbF"/>
@@ -48,7 +48,7 @@
                                 <state key="normal" image="back"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb5-UM-of3">
-                                <rect key="frame" x="138" y="30" width="100" height="72"/>
+                                <rect key="frame" x="138" y="40" width="100" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="YHc-ow-drn"/>
                                 </constraints>
@@ -153,7 +153,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEL-5E-KxP" customClass="FaveButton" customModule="FaveButton">
-                                <rect key="frame" x="147" y="26" width="80" height="80"/>
+                                <rect key="frame" x="147" y="36" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="OUE-DM-7e6"/>
                                     <constraint firstAttribute="height" constant="80" id="Qjs-0q-ttD"/>
@@ -225,7 +225,7 @@
                             <constraint firstItem="Bb5-UM-of3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uOL-ql-uym"/>
                             <constraint firstItem="Xry-KG-5jD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uoq-5n-m78"/>
                             <constraint firstAttribute="bottom" secondItem="Xry-KG-5jD" secondAttribute="bottom" id="w9H-zW-9jT"/>
-                            <constraint firstItem="Bb5-UM-of3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="30" id="wbL-Ee-hs8"/>
+                            <constraint firstItem="Bb5-UM-of3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="40" id="wbL-Ee-hs8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -241,6 +241,7 @@
                         <outlet property="undoButton" destination="NoY-dg-or9" id="rSe-AT-RHl"/>
                         <outlet property="vertexContainerBottomConstraint" destination="YFq-Jf-V7e" id="DEo-q7-tHb"/>
                         <outlet property="vertexCountContainer" destination="yNJ-y4-uU6" id="uGa-YV-6t5"/>
+                        <outlet property="vertexLabel" destination="jbb-RG-85R" id="FUT-af-yR0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
