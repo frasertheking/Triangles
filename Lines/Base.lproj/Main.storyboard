@@ -47,7 +47,7 @@
                                 </constraints>
                                 <state key="normal" image="back"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb5-UM-of3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb5-UM-of3">
                                 <rect key="frame" x="138" y="40" width="100" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="YHc-ow-drn"/>
@@ -233,13 +233,13 @@
                     </view>
                     <connections>
                         <outlet property="checkmarkButton" destination="sEL-5E-KxP" id="Mdf-KV-XFS"/>
+                        <outlet property="levelLabel" destination="Bb5-UM-of3" id="Qp0-y6-yba"/>
                         <outlet property="lineContainerBottomConstraint" destination="XBN-W7-zuf" id="6qU-pI-86D"/>
                         <outlet property="lineLabel" destination="cI9-DL-Ghb" id="gKf-6O-XWN"/>
                         <outlet property="nextButton" destination="QSX-IZ-ZNd" id="o6l-Rg-2U8"/>
                         <outlet property="nextButtonBottomConstraint" destination="1Mn-gZ-wKq" id="oTs-fp-RBC"/>
                         <outlet property="sketchView" destination="Xry-KG-5jD" id="OXe-gc-2Ks"/>
                         <outlet property="triangleContainerBottomConstraint" destination="80Y-ew-QEL" id="YNV-cJ-4nQ"/>
-                        <outlet property="triangleCountLabel" destination="Bb5-UM-of3" id="WUj-8w-VHA"/>
                         <outlet property="triangleLabel" destination="u7t-ca-1fq" id="EbH-pW-XFO"/>
                         <outlet property="undoButton" destination="NoY-dg-or9" id="rSe-AT-RHl"/>
                         <outlet property="vertexContainerBottomConstraint" destination="YFq-Jf-V7e" id="DEo-q7-tHb"/>

@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var sketchView: SketchView!
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var triangleCountLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var triangleLabel: UILabel!
     @IBOutlet weak var lineLabel: UILabel!
     @IBOutlet weak var vertexLabel: UILabel!
@@ -66,7 +66,7 @@ class GameViewController: UIViewController {
     // Animation functions
     func bounceSketchView() {
         checkmarkButton.isHidden = false
-        triangleCountLabel.isHidden = true
+        levelLabel.isHidden = true
         checkmarkButton.sendActions(for: .touchUpInside)
 
         UIView.animate(withDuration: 0.25, animations: { self.sketchView.transform = CGAffineTransform(scaleX: 1.075, y: 1.075) }, completion: { (finish: Bool) in UIView.animate(withDuration: 0.25, animations: {
@@ -117,7 +117,7 @@ class GameViewController: UIViewController {
     
     @IBAction func nextPressed(sender: UIButton) {
         levelNumber += 1
-        self.triangleCountLabel.text = "\(levelNumber)"
+        levelLabel.text = "\(levelNumber+1)"
         level = Levels.levels[levelNumber]
         sketchView.resetStageForLevel(level: level)
         animateNextButtonOut()
@@ -125,7 +125,7 @@ class GameViewController: UIViewController {
         lineLabel.text = "0/\(level.numberOfLinesProvided!)"
         vertexLabel.text = "0/\(level.numberOfVerticesRequired!)"
         checkmarkButton.isHidden = true
-        triangleCountLabel.isHidden = false
+        levelLabel.isHidden = false
         checkmarkButton.sendActions(for: .touchUpInside)
         toggleVertexCounter()
     }
