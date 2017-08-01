@@ -66,7 +66,7 @@ class GameViewController: UIViewController {
     // Animation functions
     func bounceSketchView() {
         checkmarkButton.isHidden = false
-        levelLabel.isHidden = true
+        //levelLabel.isHidden = true
         checkmarkButton.sendActions(for: .touchUpInside)
 
         UIView.animate(withDuration: 0.25, animations: { self.sketchView.transform = CGAffineTransform(scaleX: 1.075, y: 1.075) }, completion: { (finish: Bool) in UIView.animate(withDuration: 0.25, animations: {
@@ -125,7 +125,7 @@ class GameViewController: UIViewController {
         lineLabel.text = "0/\(level.numberOfLinesProvided!)"
         vertexLabel.text = "0/\(level.numberOfVerticesRequired!)"
         checkmarkButton.isHidden = true
-        levelLabel.isHidden = false
+        //levelLabel.isHidden = false
         checkmarkButton.sendActions(for: .touchUpInside)
         toggleVertexCounter()
     }

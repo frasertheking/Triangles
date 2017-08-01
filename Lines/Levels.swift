@@ -107,5 +107,5 @@ class Levels: NSObject {
          Line(id: -1, start: CGPoint(x: 54.5, y: 341.0), end: CGPoint(x: 324.0, y: 341.0))])
 
     
-    static let levels: [Level] = [a0, a1, a2, a10, a3, b0, b1, a5, v0, v1, v2, a4, a12, a7, a6, a8, a9]
+    static let levels: [Level] = [a0, a1, a2, a10, a3, b0, a5, v0, v1, v2, a4, a12, a7, a6, a8, a9]
 }
