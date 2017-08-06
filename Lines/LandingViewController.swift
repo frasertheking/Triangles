@@ -26,7 +26,7 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupBackgroundGradient()
+        setupBackgroundGradient(landing: true)
         /*sketchView.devModeEnabled = false
         sketchView.kLineWidth = 2
         sketchView.kTriangleStrokeBufferWidth = 2
@@ -59,7 +59,7 @@ class LandingViewController: UIViewController {
     }
     
     func animateIn() {
-        animateLogo(view: logoImageView2, alpha: 1.0, duration: 0.25, delay: 5.0, completion: { (finished) in
+        animateLogo(view: logoImageView2, alpha: 1.0, duration: 0.25, delay: 3.0, completion: { (finished) in
             self.animateLogo(view: self.logoImageView3, alpha: 1.0, duration: 0.25, delay: 0.75, completion: { (finished) in
                 self.animateLogo(view: self.logoImageView4, alpha: 1.0, duration: 0.25, delay: 0.75, completion: { (finished) in
                     self.animateLogo(view: self.logoImageView5, alpha: 1.0, duration: 0.25, delay: 0.75, completion: { (finished) in

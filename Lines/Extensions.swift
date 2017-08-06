@@ -26,7 +26,7 @@ extension CGPoint {
 }
 
 extension UIViewController {
-    func setupBackgroundGradient() {
+    func setupBackgroundGradient(landing: Bool) {
         let pastelView = PastelView(frame: view.bounds)
         
         // Custom Direction
@@ -36,41 +36,25 @@ extension UIViewController {
         // Custom Duration
         pastelView.animationDuration = 10.0
         
-        var randomColorArray: [UIColor] = [UIColor]()
-        
-        for _ in 0...20 {
-            randomColorArray.append(randomColor(hue: .random, luminosity: .dark))
+        if landing {
+            pastelView.setColors([
+                UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
+                UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
+                UIColor(red: 243/255, green: 129/255, blue: 129/255, alpha: 1.0),
+                                  UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
+                                  UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0),
+                                  UIColor(red: 245/255, green: 78/255, blue: 162/255, alpha: 1.0)])
+        } else {
+            var randomColorArray: [UIColor] = [UIColor]()
+            
+            for _ in 0...20 {
+                randomColorArray.append(randomColor(hue: .random, luminosity: .dark))
+            }
+            
+            pastelView.setColors(randomColorArray)
         }
-        
-        pastelView.setColors(randomColorArray)
         
         pastelView.startAnimation()
         self.view.insertSubview(pastelView, at: 0)
-    }
-}
-
-extension UIButton {
-    func setupBackgroundGradient() {
-        let pastelView = PastelView(frame: self.bounds)
-        
-        // Custom Direction
-        pastelView.startPastelPoint = .bottomLeft
-        pastelView.endPastelPoint = .topRight
-        
-        // Custom Duration
-        pastelView.animationDuration = 10.0
-        
-        var randomColorArray: [UIColor] = [UIColor]()
-        
-        for _ in 0...20 {
-            randomColorArray.append(randomColor(hue: .random, luminosity: .light))
-        }
-        
-        pastelView.setColors(randomColorArray)
-        pastelView.layer.cornerRadius = 5
-        pastelView.layer.masksToBounds = true
-        
-        pastelView.startAnimation()
-        self.insertSubview(pastelView, at: 0)
     }
 }
