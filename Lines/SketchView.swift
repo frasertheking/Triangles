@@ -22,12 +22,13 @@ class SketchView: UIView {
     var devModeEnabled = false
     
     // Constants
-    fileprivate let kVertexRadius: CGFloat = 10.0
+    var kVertexRadius: CGFloat = 10.0
     fileprivate let kMinimumTriangleSize: CGFloat = 100.0
     fileprivate let kAnimationDuration: TimeInterval = 0.2
     fileprivate let kSwollenVertexScaleFactor: CGFloat = 1.25
-    fileprivate let kLineWidth: CGFloat = 4.0
-    fileprivate let kTriangleStrokeBufferWidth: CGFloat = 4.0
+    
+    var kLineWidth: CGFloat = 4.0
+    var kTriangleStrokeBufferWidth: CGFloat = 4.0
     var kLineColor: UIColor = UIColor.black
     
     // Global vars

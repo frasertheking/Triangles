@@ -15,6 +15,7 @@
 		435A87BF1F25293C0048BAE9 /* Pastel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435A87BE1F25293C0048BAE9 /* Pastel.framework */; };
 		435A87C01F25293C0048BAE9 /* Pastel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 435A87BE1F25293C0048BAE9 /* Pastel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43924C291F1BEE060007B61F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924C281F1BEE060007B61F /* Extensions.swift */; };
+		43A95BD71F369CC5004EBFAA /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A95BD61F369CC5004EBFAA /* LandingViewController.swift */; };
 		43A99BC71EF36C85006E477C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A99BC61EF36C85006E477C /* AppDelegate.swift */; };
 		43A99BC91EF36C85006E477C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A99BC81EF36C85006E477C /* GameViewController.swift */; };
 		43A99BCC1EF36C85006E477C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A99BCA1EF36C85006E477C /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		432171B41F12A0D9001A85F5 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		435A87BE1F25293C0048BAE9 /* Pastel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pastel.framework; path = Carthage/Build/iOS/Pastel.framework; sourceTree = "<group>"; };
 		43924C281F1BEE060007B61F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		43A95BD61F369CC5004EBFAA /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		43A99BC31EF36C85006E477C /* Lines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A99BC61EF36C85006E477C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A99BC81EF36C85006E477C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				43A99BC81EF36C85006E477C /* GameViewController.swift */,
+				43A95BD61F369CC5004EBFAA /* LandingViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				43A99BC91EF36C85006E477C /* GameViewController.swift in Sources */,
 				43A99BC71EF36C85006E477C /* AppDelegate.swift in Sources */,
 				430030431F1D8268004AD769 /* SketchView.swift in Sources */,
+				43A95BD71F369CC5004EBFAA /* LandingViewController.swift in Sources */,
 				432171B51F12A0D9001A85F5 /* Triangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
