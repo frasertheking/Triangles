@@ -7,7 +7,7 @@
 
 import UIKit
 
-fileprivate let vertexRadius: CGFloat = 9.0
+fileprivate let vertexRadius: CGFloat = 10.0
 fileprivate let baseW: CGFloat = 375.0
 fileprivate let baseH: CGFloat = 667.0
 fileprivate let width = UIScreen.main.bounds.size.width

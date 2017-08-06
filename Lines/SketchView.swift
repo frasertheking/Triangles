@@ -22,7 +22,7 @@ class SketchView: UIView {
     var devModeEnabled = false
     
     // Constants
-    fileprivate let kVertexRadius: CGFloat = 9.0
+    fileprivate let kVertexRadius: CGFloat = 10.0
     fileprivate let kMinimumTriangleSize: CGFloat = 100.0
     fileprivate let kAnimationDuration: TimeInterval = 0.2
     fileprivate let kSwollenVertexScaleFactor: CGFloat = 1.25
@@ -170,11 +170,16 @@ class SketchView: UIView {
             return false
         }
         
+        guard let numberOfLinesProvided = level?.numberOfLinesProvided else {
+            return false
+        }
+        
         if numberOfVerticesRequired != -1 && intersectionArray.count != numberOfVerticesRequired {
             return false
         }
         
         if triangleCount == numberOfTrianglesRequired &&
+            (lineCount - startingLineCount) == numberOfLinesProvided &&
             levelLoaded &&
             levelNumber < Levels.levels.count-1 {
             

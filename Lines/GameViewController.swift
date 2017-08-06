@@ -24,7 +24,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var triangleContainerBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var vertexContainerBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var lineContainerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var triangleCountContainer: UIView!
     @IBOutlet weak var vertexCountContainer: UIView!
+    @IBOutlet weak var lineCountContainer: UIView!
     @IBOutlet weak var checkmarkButton: FaveButton!
     
     var levelNumber = 0
@@ -45,6 +47,12 @@ class GameViewController: UIViewController {
     func updateTriangles(triangles: Int) {
         triangleLabel.text = "\(triangles)/\(level.numberOfTrianglesRequired!)"
         
+        if triangles == level.numberOfTrianglesRequired {
+            triangleCountContainer.backgroundColor = UIColor.green.withAlphaComponent(0.35)
+        } else {
+            triangleCountContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
+        }
+        
         if sketchView.isLevelComplete(levelNumber: levelNumber, triangleCount: triangles) {
             bounceSketchView()
             self.undoButton.isEnabled = false
@@ -57,10 +65,22 @@ class GameViewController: UIViewController {
     
     func updateLines(lines: Int) {
         lineLabel.text = "\(lines)/\(level.numberOfLinesProvided!)"
+        
+        if lines == level.numberOfLinesProvided {
+            lineCountContainer.backgroundColor = UIColor.green.withAlphaComponent(0.35)
+        } else {
+            lineCountContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
+        }
     }
     
     func updateVertices(vertices: Int) {
         vertexLabel.text = "\(vertices)/\(level.numberOfVerticesRequired!)"
+        
+        if vertices == level.numberOfVerticesRequired {
+            vertexCountContainer.backgroundColor = UIColor.green.withAlphaComponent(0.35)
+        } else {
+            vertexCountContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
+        }
     }
     
     // Animation functions
