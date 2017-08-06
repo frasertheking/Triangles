@@ -99,10 +99,10 @@ class GameViewController: UIViewController {
     }
     
     func animateNextButtonIn() {
-        nextButtonBottomConstraint.constant = 20
-        triangleContainerBottomConstraint.constant = 100
-        vertexContainerBottomConstraint.constant = 100
-        lineContainerBottomConstraint.constant = 100
+        nextButtonBottomConstraint.constant = 12
+        triangleContainerBottomConstraint.constant = 88
+        vertexContainerBottomConstraint.constant = 88
+        lineContainerBottomConstraint.constant = 88
         
         UIView.animate(withDuration: 0.3, delay: 0.25, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
@@ -111,9 +111,9 @@ class GameViewController: UIViewController {
     
     func animateNextButtonOut() {
         nextButtonBottomConstraint.constant = -80
-        triangleContainerBottomConstraint.constant = 20
-        vertexContainerBottomConstraint.constant = 20
-        lineContainerBottomConstraint.constant = 20
+        triangleContainerBottomConstraint.constant = 12
+        vertexContainerBottomConstraint.constant = 12
+        lineContainerBottomConstraint.constant = 12
         
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
