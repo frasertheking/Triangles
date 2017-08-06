@@ -42,6 +42,7 @@ class GameViewController: UIViewController {
         triangleLabel.text = "0/\(level.numberOfTrianglesRequired!)"
         lineLabel.text = "0/\(level.numberOfLinesProvided!)"
         vertexLabel.text = "0/\(level.numberOfVerticesRequired!)"
+        
     }
     
     func updateTriangles(triangles: Int) {
@@ -148,5 +149,9 @@ class GameViewController: UIViewController {
         //levelLabel.isHidden = false
         checkmarkButton.sendActions(for: .touchUpInside)
         toggleVertexCounter()
+    }
+    
+    @IBAction func popViewController(sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

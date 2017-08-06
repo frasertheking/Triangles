@@ -39,12 +39,38 @@ extension UIViewController {
         var randomColorArray: [UIColor] = [UIColor]()
         
         for _ in 0...20 {
-            randomColorArray.append(randomColor(hue: .random, luminosity: .light))
+            randomColorArray.append(randomColor(hue: .random, luminosity: .dark))
         }
         
         pastelView.setColors(randomColorArray)
         
         pastelView.startAnimation()
         self.view.insertSubview(pastelView, at: 0)
+    }
+}
+
+extension UIButton {
+    func setupBackgroundGradient() {
+        let pastelView = PastelView(frame: self.bounds)
+        
+        // Custom Direction
+        pastelView.startPastelPoint = .bottomLeft
+        pastelView.endPastelPoint = .topRight
+        
+        // Custom Duration
+        pastelView.animationDuration = 10.0
+        
+        var randomColorArray: [UIColor] = [UIColor]()
+        
+        for _ in 0...20 {
+            randomColorArray.append(randomColor(hue: .random, luminosity: .light))
+        }
+        
+        pastelView.setColors(randomColorArray)
+        pastelView.layer.cornerRadius = 5
+        pastelView.layer.masksToBounds = true
+        
+        pastelView.startAnimation()
+        self.insertSubview(pastelView, at: 0)
     }
 }

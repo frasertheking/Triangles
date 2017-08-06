@@ -11,12 +11,17 @@ import Pastel
 
 class LandingViewController: UIViewController {
     
+    @IBOutlet weak var logoContainer: UIView!
     @IBOutlet weak var logoImageView1: UIImageView!
     @IBOutlet weak var logoImageView2: UIImageView!
     @IBOutlet weak var logoImageView3: UIImageView!
     @IBOutlet weak var logoImageView4: UIImageView!
     @IBOutlet weak var logoImageView5: UIImageView!
     @IBOutlet weak var logoImageView6: UIImageView!
+    
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var sandboxButton: UIButton!
+    @IBOutlet weak var instructionsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +41,21 @@ class LandingViewController: UIViewController {
         logoImageView6.alpha = 0
         
         animateIn()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        pulse()
+    }
+    
+    func pulse() {
+        let pulseAnimation:CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
+        pulseAnimation.duration = 0.75
+        pulseAnimation.toValue = NSNumber(value: 1.05)
+        pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        pulseAnimation.autoreverses = true
+        pulseAnimation.repeatCount = Float.greatestFiniteMagnitude
+        logoContainer.layer.add(pulseAnimation, forKey: nil)
     }
     
     func animateIn() {
@@ -72,5 +92,9 @@ class LandingViewController: UIViewController {
         }) { (finished) in
             completion()
         }
+    }
+    
+    @IBAction func playPressed(sender: UIButton) {
+        performSegue(withIdentifier: "playSegue", sender: self)
     }
 }
