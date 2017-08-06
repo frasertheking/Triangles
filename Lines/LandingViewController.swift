@@ -39,11 +39,11 @@ class LandingViewController: UIViewController {
     }
     
     func animateIn() {
-        animateLogo(view: logoImageView2, alpha: 1.0, duration: 0.25, delay: 3.0, completion: { (finished) in
-            self.animateLogo(view: self.logoImageView3, alpha: 1.0, duration: 0.25, delay: 0.5, completion: { (finished) in
-                self.animateLogo(view: self.logoImageView4, alpha: 1.0, duration: 0.25, delay: 0.5, completion: { (finished) in
-                    self.animateLogo(view: self.logoImageView5, alpha: 1.0, duration: 0.25, delay: 0.5, completion: { (finished) in
-                        self.animateLogo(view: self.logoImageView6, alpha: 1.0, duration: 0.25, delay: 0.5, completion: { (finished) in
+        animateLogo(view: logoImageView2, alpha: 1.0, duration: 0.25, delay: 5.0, completion: { (finished) in
+            self.animateLogo(view: self.logoImageView3, alpha: 1.0, duration: 0.25, delay: 0.75, completion: { (finished) in
+                self.animateLogo(view: self.logoImageView4, alpha: 1.0, duration: 0.25, delay: 0.75, completion: { (finished) in
+                    self.animateLogo(view: self.logoImageView5, alpha: 1.0, duration: 0.25, delay: 0.75, completion: { (finished) in
+                        self.animateLogo(view: self.logoImageView6, alpha: 1.0, duration: 0.25, delay: 0.75, completion: { (finished) in
                             self.animateOut()
                         })
                     })
@@ -53,7 +53,7 @@ class LandingViewController: UIViewController {
     }
     
     func animateOut() {
-        animateLogo(view: logoImageView6, alpha: 0.0, duration: 0.1, delay: 3.0, completion: { (finished) in
+        animateLogo(view: logoImageView6, alpha: 0.0, duration: 0.1, delay: 5.0, completion: { (finished) in
             self.animateLogo(view: self.logoImageView5, alpha: 0.0, duration: 0.1, delay: 0.0, completion: { (finished) in
                 self.animateLogo(view: self.logoImageView4, alpha: 0.0, duration: 0.1, delay: 0.0, completion: { (finished) in
                     self.animateLogo(view: self.logoImageView3, alpha: 0.0, duration: 0.1, delay: 0.0, completion: { (finished) in
