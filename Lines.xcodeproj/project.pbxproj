@@ -22,6 +22,8 @@
 		43A99BCE1EF36C85006E477C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A99BCD1EF36C85006E477C /* Assets.xcassets */; };
 		43A99BD11EF36C85006E477C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A99BCF1EF36C85006E477C /* LaunchScreen.storyboard */; };
 		43A99BD91EF36F81006E477C /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A99BD81EF36F81006E477C /* Line.swift */; };
+		43E3D1531F389A1F000765E8 /* LevelsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3D1521F389A1F000765E8 /* LevelsCollectionViewController.swift */; };
+		43E3D1551F38A03A000765E8 /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3D1541F38A03A000765E8 /* LevelCollectionViewCell.swift */; };
 		9027E1C165DD4986AC988746 /* Pods_Lines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71A90601016507D7D0F0C91 /* Pods_Lines.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		43A99BD01EF36C85006E477C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43A99BD21EF36C85006E477C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43A99BD81EF36F81006E477C /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		43E3D1521F389A1F000765E8 /* LevelsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsCollectionViewController.swift; sourceTree = "<group>"; };
+		43E3D1541F38A03A000765E8 /* LevelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelCollectionViewCell.swift; sourceTree = "<group>"; };
 		759D8C1EA20764CAF5E688AD /* Pods-Lines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lines.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lines/Pods-Lines.debug.xcconfig"; sourceTree = "<group>"; };
 		A57F526A361506B6178DCA42 /* Pods-Lines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lines.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lines/Pods-Lines.release.xcconfig"; sourceTree = "<group>"; };
 		C71A90601016507D7D0F0C91 /* Pods_Lines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +83,7 @@
 			children = (
 				430030421F1D8268004AD769 /* SketchView.swift */,
 				430030441F1D8272004AD769 /* SketchView.xib */,
+				43E3D1541F38A03A000765E8 /* LevelCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			children = (
 				43A99BC81EF36C85006E477C /* GameViewController.swift */,
 				43A95BD61F369CC5004EBFAA /* LandingViewController.swift */,
+				43E3D1521F389A1F000765E8 /* LevelsCollectionViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43924C291F1BEE060007B61F /* Extensions.swift in Sources */,
+				43E3D1531F389A1F000765E8 /* LevelsCollectionViewController.swift in Sources */,
 				430030471F1D8FEF004AD769 /* Level.swift in Sources */,
 				430030491F1D90BE004AD769 /* Levels.swift in Sources */,
 				43A99BD91EF36F81006E477C /* Line.swift in Sources */,
@@ -305,6 +312,7 @@
 				43A99BC71EF36C85006E477C /* AppDelegate.swift in Sources */,
 				430030431F1D8268004AD769 /* SketchView.swift in Sources */,
 				43A95BD71F369CC5004EBFAA /* LandingViewController.swift in Sources */,
+				43E3D1551F38A03A000765E8 /* LevelCollectionViewCell.swift in Sources */,
 				432171B51F12A0D9001A85F5 /* Triangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

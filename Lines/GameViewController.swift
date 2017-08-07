@@ -152,6 +152,10 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func popViewController(sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "levels")
+        vc.heroModalAnimationType = .zoomOut
+        hero_replaceViewController(with: vc)
+      //  hero_dismissViewController()
+       // self.dismiss(animated: true, completion: nil)
     }
 }

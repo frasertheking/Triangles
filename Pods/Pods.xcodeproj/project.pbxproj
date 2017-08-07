@@ -7,102 +7,200 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0ACE0C92E49C9B7F84B93FF608C9C182 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		0D93BF5ACE5420C2790F1AA8CA481892 /* RandomColorSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F213D99361579E3D4565FB2A1FBD8235 /* RandomColorSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11231EDF58D9715E48688041F5775F35 /* Constraints+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710EB8A962883385156237F16289A577 /* Constraints+.swift */; };
-		14C96683865769F6CA419276A30B1AEB /* FaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77BD2A41F5A7B15BFF4C54DCFCB4616 /* FaveButton.swift */; };
-		1E057E3AFBF9BDDB803ABD080244E14F /* Pods-Lines-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EF0407A017EF6CAAB64F098D56C42AD /* Pods-Lines-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1FB70CB9F38313F0CA9E8D0CAE765AF8 /* FaveButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09F4243945D87BDE18E8FBB0142B5504 /* FaveButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		227E1B2894510D9058D10C8AA840DAAC /* Luminosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1283FC7A15F34AB7AAF5824E62966F /* Luminosity.swift */; };
-		36665F9CC301DA708DE1222320BD1E4A /* FaveButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 866301FD7A2E0C254C310119372D2B40 /* FaveButton-dummy.m */; };
-		531408BF6C209461B4C07FFE7312E0F3 /* FaveIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F5FF216D520C4C835D3146C361B547 /* FaveIcon.swift */; };
-		5EF4F8BE943AC89E53090B7F0E03EED6 /* Spark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DDD6EBE2DF17657AE6258507539CD2 /* Spark.swift */; };
-		63B097C8B076D6DE70EE36C61D6D4888 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5231AB81CF59AE288F204FAAD255FDCB /* Hue.swift */; };
-		69912C9DF647C88E62A46296C067EC65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		92675AEFA93BB273A495AF5B24A06CC5 /* RandomColorSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7194EC1F3D0D331B05253FAD2FB6810 /* RandomColorSwift-dummy.m */; };
-		95709685565BF19C920BFC5F03658A4F /* Pods-Lines-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F22641BE7018391786DC0396FB36153 /* Pods-Lines-dummy.m */; };
-		A2EDFAA77CF1F51F9EF7C716A11AE118 /* ColorDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E701300F177CE13C79A8E6B3A9D59272 /* ColorDefinition.swift */; };
-		C57371AD4BBBE9FA5CBC57C151D9D0BE /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28FAC7BC55723E273C199C739EEDF2A /* Easing.swift */; };
-		CD17F739B45D4CF59EC659DF78F6BDB9 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A726DDA49C154F0B82CF0C2000BA3 /* Ring.swift */; };
-		CDB1BAFEAB814C169438ED5DDFEEAB76 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E59DFC02BDD415146934C8CCF215FD0 /* Geometry.swift */; };
-		D77080CDDCBD8B2DD280FB60BFEF9466 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		E7429B642F62D3F2F63A90887DEBDC12 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2181688FD0FC4CE16F53B2CADB66453 /* Init.swift */; };
-		EEE1F0EB74745FF2A6E81AB9F5F24493 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF18E9E75830DEBEEF11B2DD7F3599 /* RandomColor.swift */; };
+		0054224BA8A23E8413AE5452B7C7D9C4 /* HeroIndependentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F7E0BFA105845F5C060D33BE5F16F /* HeroIndependentController.swift */; };
+		00CF7D513DF064760BF24C6A88E3E855 /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87890758F4F78035C94BD908C2742EB7 /* Lexer.swift */; };
+		05F0808ED771EDC8628F839F16CB7EC8 /* HeroDefaultAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C0033FCC5B57C3004B3145F04B8A3 /* HeroDefaultAnimator.swift */; };
+		0DA21E732596100C88761DA40C290796 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FA309A1443F740B327422E68521C16 /* Nodes.swift */; };
+		11231EDF58D9715E48688041F5775F35 /* Constraints+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219E7BD80A55CECAC8D7B4F78AD14A5C /* Constraints+.swift */; };
+		14C96683865769F6CA419276A30B1AEB /* FaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BD011ADD7DB32FC0C2E55F4B0C1849 /* FaveButton.swift */; };
+		19E2AE41A69EB655BB68C375B96A3C54 /* Pods-Lines-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F22641BE7018391786DC0396FB36153 /* Pods-Lines-dummy.m */; };
+		1D030FD35221838E1BC264DBD51B3A93 /* HeroStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0622AF474BD1E805DF375FCC58B89FF4 /* HeroStringConvertible.swift */; };
+		1EFCE8E2E39D6FF98A82A412DCDA22F4 /* CAMediaTimingFunction+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DA0F72BB1EC92503CF0D983969F2FD /* CAMediaTimingFunction+Hero.swift */; };
+		1FB70CB9F38313F0CA9E8D0CAE765AF8 /* FaveButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 986A061525AF18FE62C7D378FF80BB7F /* FaveButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2808DEA4E83D337D6A0F0D3EE9AFC8CB /* UIView+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E59CBD8115121C49E21ACF11290BDF /* UIView+Hero.swift */; };
+		280ABF18D6BFEBAADD5322A49E52458F /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D1B878FB0F65F6F28A559A47FAC1B /* Hue.swift */; };
+		29E1C79CB521E7299EFF904E327451A8 /* IgnoreSubviewModifiersPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A190AB569EAE368604D9473BAAD78F7 /* IgnoreSubviewModifiersPreprocessor.swift */; };
+		2A23A90B6AF990C25E0FF61806959121 /* RandomColorSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A015D6FB151C341692E094AAAAFCF71 /* RandomColorSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F44F37D2F6170E3B3186555CF82F575 /* HeroDebugPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BDA28E30B0D5DFDFBD188737AC470A /* HeroDebugPlugin.swift */; };
+		30E0982814D1F0971FA52AAE141325B8 /* HeroBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6FAED8596150EAF799B2C41BA9E7D0 /* HeroBaseController.swift */; };
+		33DA57110821FEF2EDE72DDEA4B26ABD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		355839E3459355665718D6358BA078A6 /* HeroViewPropertyViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380D5EC6E813CAF90768D6C4AFE54798 /* HeroViewPropertyViewContext.swift */; };
+		36665F9CC301DA708DE1222320BD1E4A /* FaveButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7285FD73F877244D541DCCFB5BBF2F20 /* FaveButton-dummy.m */; };
+		398917958AEE73A2ABA9DE141F4468CE /* DefaultAnimationPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0C35C9BEEC6EC21CA7D6E87953249 /* DefaultAnimationPreprocessor.swift */; };
+		3DC727C315B8AF8C5310EE51DC925C6C /* Luminosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1480FA29B509275F56D858A253B07347 /* Luminosity.swift */; };
+		4871AB82D1BA4619362CECE2C157E239 /* Array+HeroModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5918C6518E36493F4760F04797AA35 /* Array+HeroModifier.swift */; };
+		531408BF6C209461B4C07FFE7312E0F3 /* FaveIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5C95EDAEE23DF6FF79B784AFFEC2F /* FaveIcon.swift */; };
+		5EF4F8BE943AC89E53090B7F0E03EED6 /* Spark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E745A36E8452954D2EA2085C343B22E /* Spark.swift */; };
+		6095DBFEB1AF8CE765FA645A05459C2B /* CascadePreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4895F81B9D55362A36261295A3A04 /* CascadePreprocessor.swift */; };
+		64B4D37F446B67C4A0D546ABF01ECDC6 /* DurationPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB84E4D029A5ACAE33B105EAE0A397A6 /* DurationPreprocessor.swift */; };
+		67BCB163E387C2E9288BC15CA3E4ACAF /* UIKit+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C04CF36C361AF7A090A0DBB4FF235B /* UIKit+Hero.swift */; };
+		69C8F9CB4C695672395946F7C8A23E24 /* HeroPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855EEF77779A39859CCFAF605F9E6D28 /* HeroPlugin.swift */; };
+		6B76015FB5A7E8450026BC11402C93E9 /* UIViewController+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD38252AF23F14FAB8D37E41E55077 /* UIViewController+Hero.swift */; };
+		6F977B467C1C4EBDE66733417643F1DD /* Hero-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1A7200763A263F37DE9A18C74F220A7 /* Hero-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		731BDB378A5E0759C89BACA382B6412B /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7F15AA7DA007BFAC65D23366F4CB3 /* Regex.swift */; };
+		7DDE6E306CAB5E388629F6C6A561ECBA /* MatchPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D862B514A7BEA9F904110AD736F103 /* MatchPreprocessor.swift */; };
+		84B25B1A071858745816A95418F9F77A /* HeroAnimatorViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FED8B1BC41EC065E796895096BD0A42 /* HeroAnimatorViewContext.swift */; };
+		8938E292D64C5EF03D3A333E778C5EAD /* ColorDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEDA8A1435158680A0BC59B01EB6245 /* ColorDefinition.swift */; };
+		9628285E68B16F830D393DD9DEA5E6D3 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B7C39D492EB67BF5562CB09FCEF0F /* RandomColor.swift */; };
+		A271792E9BD1BF7C0F7FC526D33C68C3 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C14752D85AB076D7496AB3F0AB645C /* Parser.swift */; };
+		A57C83E4371C1D6439BC82CDBEE32E08 /* DispatchQueue+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725EB3E27F7FA0E43F95EB27BB4FE33 /* DispatchQueue+Hero.swift */; };
+		A72A258B0E285A00B063B0AF42E488A5 /* HeroTargetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66BF81BC7FED1F2A593C9DEC53C02C5 /* HeroTargetState.swift */; };
+		ABE0F6116DF5C33A310E215DE9AEE769 /* HeroContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C101BAC11C4D9C5F97FE282E252FB66F /* HeroContext.swift */; };
+		AC78190959872C81167ACC8F0B02BED9 /* Hero-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A27631284833C466E51700C03B5B4D9E /* Hero-dummy.m */; };
+		AF04AD552E6BE94703E8EC8BEAEEA076 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		B1F26CFBF2CB32056558CC62835888FE /* RandomColorSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 214A720846F9C97E9BE2E4552EF5B410 /* RandomColorSwift-dummy.m */; };
+		B62A16E73ADAFD9229C560E7C46ADB8E /* HeroModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1CF015DC2B3E9B0A6FDF3401ADF31 /* HeroModifier.swift */; };
+		BB7E6CA50EF56EF89CECA4DE5FEF66B9 /* HeroCoreAnimationViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2910E8FA470C73EA657A6A286DB14B7 /* HeroCoreAnimationViewContext.swift */; };
+		BEB47A3CAB4F7D3C8EDA608599417596 /* HeroDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9C0777F3E6F7E49C6B4C6EE6A88BD /* HeroDebugView.swift */; };
+		C1D7C318F2418A5FE5F341B4806DE422 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		C4FBFB159181440A744679E4E5CE960D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		C57371AD4BBBE9FA5CBC57C151D9D0BE /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19498245431919A11454A61A4A86D8D5 /* Easing.swift */; };
+		CCACA9026494E6D39D374A4BD303F69C /* CALayer+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831EC56C3DAC6DD4BBB4BF0CDBCBEF45 /* CALayer+Hero.swift */; };
+		CD17F739B45D4CF59EC659DF78F6BDB9 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B468380CEA107DCE0FCBFB50F2ABAD2 /* Ring.swift */; };
+		CDB1BAFEAB814C169438ED5DDFEEAB76 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4DAB8A6F17A42B9801F2F23A6CC67 /* Geometry.swift */; };
+		CE4501723EC8667ADB9698705CC0AA04 /* HeroTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8613603BE0CFD0692283DE961F501D /* HeroTypes.swift */; };
+		D48039A4AAAD63B84E8041F816AAE5CC /* BasePreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7B10CF6D560A22C85F8C441046DEC /* BasePreprocessor.swift */; };
+		D77080CDDCBD8B2DD280FB60BFEF9466 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		DE4FD12FD11924E71640A08AF3AFA2E4 /* SourcePreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD31EA773AC3495E4E83A65CD110F78C /* SourcePreprocessor.swift */; };
+		DE7E529EF406ECBC3185D907151CDE78 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0171916B140D1B2699400895203174AC /* Hero.swift */; };
+		E229A19C8075E5E536B3639430232796 /* Pods-Lines-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EF0407A017EF6CAAB64F098D56C42AD /* Pods-Lines-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E57BB5C5A234EE3344BB5AAECFC7CC7A /* HeroModifier+HeroStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E32D27199975705F880B23CF2270E5 /* HeroModifier+HeroStringConvertible.swift */; };
+		E7429B642F62D3F2F63A90887DEBDC12 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E5758167C61ECC6A22424EBD7CA78 /* Init.swift */; };
+		E91E80F3AA36C095A59C59A446271BF0 /* CG+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6EA84F84C54B719A373FC1BF04B4C /* CG+Hero.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		88BFF3535F7491AE31D5EF99C71A79E3 /* PBXContainerItemProxy */ = {
+		6E89D1B740B48A615BCF00018D06FAAA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7C08227B6E14D87F0F5B0FD6DFFA1A3E;
 			remoteInfo = FaveButton;
 		};
-		D577CD7A2544F245BA85528BEBA0FC30 /* PBXContainerItemProxy */ = {
+		710EED5BD4A2372789D0904246668F51 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9B0052D85D09803A1E2C2D49A7C5EC8F;
+			remoteGlobalIDString = 4A3E211676B243619B026D147D272253;
+			remoteInfo = Hero;
+		};
+		8F89C2C98A76918406844CC47A085F19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF3CF7268FA66245573760B21B51B595;
 			remoteInfo = RandomColorSwift;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09F4243945D87BDE18E8FBB0142B5504 /* FaveButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FaveButton-umbrella.h"; sourceTree = "<group>"; };
+		0171916B140D1B2699400895203174AC /* Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hero.swift; path = Sources/Hero.swift; sourceTree = "<group>"; };
+		05C04CF36C361AF7A090A0DBB4FF235B /* UIKit+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIKit+Hero.swift"; path = "Sources/Extensions/UIKit+Hero.swift"; sourceTree = "<group>"; };
+		0622AF474BD1E805DF375FCC58B89FF4 /* HeroStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroStringConvertible.swift; path = Sources/HeroStringConvertible.swift; sourceTree = "<group>"; };
+		07E6EA84F84C54B719A373FC1BF04B4C /* CG+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CG+Hero.swift"; path = "Sources/Extensions/CG+Hero.swift"; sourceTree = "<group>"; };
 		0F22641BE7018391786DC0396FB36153 /* Pods-Lines-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Lines-dummy.m"; sourceTree = "<group>"; };
+		0FED8B1BC41EC065E796895096BD0A42 /* HeroAnimatorViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroAnimatorViewContext.swift; path = Sources/Animator/HeroAnimatorViewContext.swift; sourceTree = "<group>"; };
+		100E5758167C61ECC6A22424EBD7CA78 /* Init.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Init.swift; path = Source/Helpers/Init.swift; sourceTree = "<group>"; };
 		12F5C5BBB421CD59F1D582257439AB29 /* Pods-Lines-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Lines-acknowledgements.markdown"; sourceTree = "<group>"; };
-		15DDD6EBE2DF17657AE6258507539CD2 /* Spark.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Spark.swift; path = Source/Spark.swift; sourceTree = "<group>"; };
-		1694D8CD9A97561BD10D07C064D480FA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22E33914D45CC2FE54A8109582662465 /* FaveButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FaveButton.modulemap; sourceTree = "<group>"; };
+		1480FA29B509275F56D858A253B07347 /* Luminosity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Luminosity.swift; path = RandomColor/Luminosity.swift; sourceTree = "<group>"; };
+		19498245431919A11454A61A4A86D8D5 /* Easing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Easing.swift; path = Source/Helpers/Easing.swift; sourceTree = "<group>"; };
+		214A720846F9C97E9BE2E4552EF5B410 /* RandomColorSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RandomColorSwift-dummy.m"; sourceTree = "<group>"; };
+		219E7BD80A55CECAC8D7B4F78AD14A5C /* Constraints+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Constraints+.swift"; path = "Source/Helpers/Constraints+.swift"; sourceTree = "<group>"; };
 		26DED1DC989698CA2C7FF69F07B80D3E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27CBC055BA1EEA1F9A17548EC6D9ECD4 /* FaveButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FaveButton.xcconfig; sourceTree = "<group>"; };
-		2F2E1C77D42A0D953976A1D9BF06495A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		30DE6AF4E5CDDC9FF1DF09A65F6A47A0 /* Pods_Lines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lines.framework; path = "Pods-Lines.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5231AB81CF59AE288F204FAAD255FDCB /* Hue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = RandomColor/Hue.swift; sourceTree = "<group>"; };
-		5E59DFC02BDD415146934C8CCF215FD0 /* Geometry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Geometry.swift; path = Source/Helpers/Geometry.swift; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		2A015D6FB151C341692E094AAAAFCF71 /* RandomColorSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-umbrella.h"; sourceTree = "<group>"; };
+		2AE97E0AD0497E1B2AA3F6F5FF2AADF7 /* RandomColorSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RandomColorSwift.xcconfig; sourceTree = "<group>"; };
+		34BDA28E30B0D5DFDFBD188737AC470A /* HeroDebugPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroDebugPlugin.swift; path = "Sources/Debug Plugin/HeroDebugPlugin.swift"; sourceTree = "<group>"; };
+		380D5EC6E813CAF90768D6C4AFE54798 /* HeroViewPropertyViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroViewPropertyViewContext.swift; path = Sources/Animator/HeroViewPropertyViewContext.swift; sourceTree = "<group>"; };
+		3A0F5B1D9D7EA7F22BA0437AC03E3783 /* FaveButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FaveButton-prefix.pch"; sourceTree = "<group>"; };
+		400F7E0BFA105845F5C060D33BE5F16F /* HeroIndependentController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroIndependentController.swift; path = Sources/HeroIndependentController.swift; sourceTree = "<group>"; };
+		43FD38252AF23F14FAB8D37E41E55077 /* UIViewController+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Hero.swift"; path = "Sources/Extensions/UIViewController+Hero.swift"; sourceTree = "<group>"; };
+		44D862B514A7BEA9F904110AD736F103 /* MatchPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchPreprocessor.swift; path = Sources/Preprocessors/MatchPreprocessor.swift; sourceTree = "<group>"; };
+		4CC1CF015DC2B3E9B0A6FDF3401ADF31 /* HeroModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroModifier.swift; path = Sources/HeroModifier.swift; sourceTree = "<group>"; };
+		4FB7F15AA7DA007BFAC65D23366F4CB3 /* Regex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Regex.swift; path = Sources/Parser/Regex.swift; sourceTree = "<group>"; };
+		61E59CBD8115121C49E21ACF11290BDF /* UIView+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Hero.swift"; path = "Sources/Extensions/UIView+Hero.swift"; sourceTree = "<group>"; };
+		68F7B10CF6D560A22C85F8C441046DEC /* BasePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BasePreprocessor.swift; path = Sources/Preprocessors/BasePreprocessor.swift; sourceTree = "<group>"; };
+		69E0B3AE7F919B9E697F489A0F4BB426 /* FaveButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FaveButton.modulemap; sourceTree = "<group>"; };
+		6A190AB569EAE368604D9473BAAD78F7 /* IgnoreSubviewModifiersPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IgnoreSubviewModifiersPreprocessor.swift; path = Sources/Preprocessors/IgnoreSubviewModifiersPreprocessor.swift; sourceTree = "<group>"; };
+		6BB4DAB8A6F17A42B9801F2F23A6CC67 /* Geometry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Geometry.swift; path = Source/Helpers/Geometry.swift; sourceTree = "<group>"; };
+		6D5918C6518E36493F4760F04797AA35 /* Array+HeroModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+HeroModifier.swift"; path = "Sources/Extensions/Array+HeroModifier.swift"; sourceTree = "<group>"; };
 		6EF0407A017EF6CAAB64F098D56C42AD /* Pods-Lines-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Lines-umbrella.h"; sourceTree = "<group>"; };
-		710EB8A962883385156237F16289A577 /* Constraints+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Constraints+.swift"; path = "Source/Helpers/Constraints+.swift"; sourceTree = "<group>"; };
+		70FA309A1443F740B327422E68521C16 /* Nodes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Nodes.swift; path = Sources/Parser/Nodes.swift; sourceTree = "<group>"; };
+		7285FD73F877244D541DCCFB5BBF2F20 /* FaveButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FaveButton-dummy.m"; sourceTree = "<group>"; };
 		72D5A1C050111D4ECB67F713B3ECA257 /* Pods-Lines.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Lines.modulemap"; sourceTree = "<group>"; };
+		765958986A0D73C5F8A2280ECA6EA879 /* RandomColorSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-prefix.pch"; sourceTree = "<group>"; };
+		76BD011ADD7DB32FC0C2E55F4B0C1849 /* FaveButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FaveButton.swift; path = Source/FaveButton.swift; sourceTree = "<group>"; };
+		76FCAFA02CDEE76D4F6F13616BFC78C8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7713ACAC2C950C19386EC5277D729DF3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7725EB3E27F7FA0E43F95EB27BB4FE33 /* DispatchQueue+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Hero.swift"; path = "Sources/Extensions/DispatchQueue+Hero.swift"; sourceTree = "<group>"; };
+		7B468380CEA107DCE0FCBFB50F2ABAD2 /* Ring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Ring.swift; path = Source/Ring.swift; sourceTree = "<group>"; };
+		7E745A36E8452954D2EA2085C343B22E /* Spark.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Spark.swift; path = Source/Spark.swift; sourceTree = "<group>"; };
 		7EDEDE4B0F3FD4B9F617F24262588F9B /* Pods-Lines-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lines-frameworks.sh"; sourceTree = "<group>"; };
-		829E97C15C02B262C4548C9043795EEE /* RandomColorSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RandomColorSwift.framework; path = RandomColorSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		84CF18E9E75830DEBEEF11B2DD7F3599 /* RandomColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomColor.swift; path = RandomColor/RandomColor.swift; sourceTree = "<group>"; };
-		866301FD7A2E0C254C310119372D2B40 /* FaveButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FaveButton-dummy.m"; sourceTree = "<group>"; };
-		89F5FF216D520C4C835D3146C361B547 /* FaveIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FaveIcon.swift; path = Source/FaveIcon.swift; sourceTree = "<group>"; };
+		831EC56C3DAC6DD4BBB4BF0CDBCBEF45 /* CALayer+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+Hero.swift"; path = "Sources/Extensions/CALayer+Hero.swift"; sourceTree = "<group>"; };
+		855EEF77779A39859CCFAF605F9E6D28 /* HeroPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroPlugin.swift; path = Sources/HeroPlugin.swift; sourceTree = "<group>"; };
+		87890758F4F78035C94BD908C2742EB7 /* Lexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Lexer.swift; path = Sources/Parser/Lexer.swift; sourceTree = "<group>"; };
+		879C58FF2E0226761DF65DDEA9F18344 /* FaveButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FaveButton.framework; path = FaveButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		886B7C39D492EB67BF5562CB09FCEF0F /* RandomColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomColor.swift; path = RandomColor/RandomColor.swift; sourceTree = "<group>"; };
+		8965FF077859944C6092726BCA649D9B /* FaveButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FaveButton.xcconfig; sourceTree = "<group>"; };
+		8B1DB8ABEE0C86B39D80B073B772C7F8 /* Hero.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Hero.modulemap; sourceTree = "<group>"; };
+		8E6FAED8596150EAF799B2C41BA9E7D0 /* HeroBaseController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroBaseController.swift; path = Sources/HeroBaseController.swift; sourceTree = "<group>"; };
+		8EEDA8A1435158680A0BC59B01EB6245 /* ColorDefinition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorDefinition.swift; path = RandomColor/ColorDefinition.swift; sourceTree = "<group>"; };
+		92C4DBA968DB3F8CD1F1934BDE309463 /* Hero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Hero.framework; path = Hero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93ECF1A08D326877F0C3D64B077F804E /* RandomColorSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RandomColorSwift.xcconfig; sourceTree = "<group>"; };
-		A458BD6D8143822A53F71D64F0C24880 /* FaveButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FaveButton.framework; path = FaveButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96ADE9DBB76F15CD4D2EE52184518F5B /* Hero.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Hero.xcconfig; sourceTree = "<group>"; };
+		986A061525AF18FE62C7D378FF80BB7F /* FaveButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FaveButton-umbrella.h"; sourceTree = "<group>"; };
+		99DA0F72BB1EC92503CF0D983969F2FD /* CAMediaTimingFunction+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CAMediaTimingFunction+Hero.swift"; path = "Sources/Extensions/CAMediaTimingFunction+Hero.swift"; sourceTree = "<group>"; };
+		9D6C0033FCC5B57C3004B3145F04B8A3 /* HeroDefaultAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroDefaultAnimator.swift; path = Sources/Animator/HeroDefaultAnimator.swift; sourceTree = "<group>"; };
+		9E54C92BCA4FF8DEE7C555048D44A10E /* Pods_Lines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lines.framework; path = "Pods-Lines.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A27631284833C466E51700C03B5B4D9E /* Hero-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Hero-dummy.m"; sourceTree = "<group>"; };
+		A701644B0282D0FCA889D15D821AA4C2 /* Hero-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hero-prefix.pch"; sourceTree = "<group>"; };
+		A7A4895F81B9D55362A36261295A3A04 /* CascadePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CascadePreprocessor.swift; path = Sources/Preprocessors/CascadePreprocessor.swift; sourceTree = "<group>"; };
 		AAF24998F2CC1CFAD74EB8479573BB5F /* Pods-Lines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lines.release.xcconfig"; sourceTree = "<group>"; };
-		AB1283FC7A15F34AB7AAF5824E62966F /* Luminosity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Luminosity.swift; path = RandomColor/Luminosity.swift; sourceTree = "<group>"; };
-		AF9A726DDA49C154F0B82CF0C2000BA3 /* Ring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Ring.swift; path = Source/Ring.swift; sourceTree = "<group>"; };
-		B2524436B7C6DB5EE957E787A0BE80CB /* FaveButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FaveButton-prefix.pch"; sourceTree = "<group>"; };
-		C4701FB409B45A3CF5472F5B592F2E80 /* RandomColorSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RandomColorSwift.modulemap; sourceTree = "<group>"; };
+		AC730078CE336908A8491FC09AC71BA3 /* RandomColorSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RandomColorSwift.framework; path = RandomColorSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD31EA773AC3495E4E83A65CD110F78C /* SourcePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourcePreprocessor.swift; path = Sources/Preprocessors/SourcePreprocessor.swift; sourceTree = "<group>"; };
+		B251B02DC2814794CF6D2581A4BB1965 /* RandomColorSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RandomColorSwift.modulemap; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C101BAC11C4D9C5F97FE282E252FB66F /* HeroContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroContext.swift; path = Sources/HeroContext.swift; sourceTree = "<group>"; };
+		C1A7200763A263F37DE9A18C74F220A7 /* Hero-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hero-umbrella.h"; sourceTree = "<group>"; };
 		C7FFB1F6486F5AFE5816832CFBF47F1B /* Pods-Lines-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lines-resources.sh"; sourceTree = "<group>"; };
 		CC8C423E3114E0959A8C28A1BCD177F7 /* Pods-Lines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lines.debug.xcconfig"; sourceTree = "<group>"; };
-		D28FAC7BC55723E273C199C739EEDF2A /* Easing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Easing.swift; path = Source/Helpers/Easing.swift; sourceTree = "<group>"; };
-		DD1337733A649710224628FC04CA5832 /* RandomColorSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-prefix.pch"; sourceTree = "<group>"; };
-		E701300F177CE13C79A8E6B3A9D59272 /* ColorDefinition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorDefinition.swift; path = RandomColor/ColorDefinition.swift; sourceTree = "<group>"; };
-		E77BD2A41F5A7B15BFF4C54DCFCB4616 /* FaveButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FaveButton.swift; path = Source/FaveButton.swift; sourceTree = "<group>"; };
-		F213D99361579E3D4565FB2A1FBD8235 /* RandomColorSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-umbrella.h"; sourceTree = "<group>"; };
-		F2181688FD0FC4CE16F53B2CADB66453 /* Init.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Init.swift; path = Source/Helpers/Init.swift; sourceTree = "<group>"; };
+		D06D1B878FB0F65F6F28A559A47FAC1B /* Hue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = RandomColor/Hue.swift; sourceTree = "<group>"; };
+		D66BF81BC7FED1F2A593C9DEC53C02C5 /* HeroTargetState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTargetState.swift; path = Sources/HeroTargetState.swift; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DB84E4D029A5ACAE33B105EAE0A397A6 /* DurationPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DurationPreprocessor.swift; path = Sources/Preprocessors/DurationPreprocessor.swift; sourceTree = "<group>"; };
+		DD8613603BE0CFD0692283DE961F501D /* HeroTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTypes.swift; path = Sources/HeroTypes.swift; sourceTree = "<group>"; };
+		E87B472CA271C602AC704706839EEDBA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDC0C35C9BEEC6EC21CA7D6E87953249 /* DefaultAnimationPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultAnimationPreprocessor.swift; path = Sources/DefaultAnimationPreprocessor.swift; sourceTree = "<group>"; };
+		F1C9C0777F3E6F7E49C6B4C6EE6A88BD /* HeroDebugView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroDebugView.swift; path = "Sources/Debug Plugin/HeroDebugView.swift"; sourceTree = "<group>"; };
 		F280CF9071B04748C06FFB6D47BBC0DD /* Pods-Lines-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Lines-acknowledgements.plist"; sourceTree = "<group>"; };
-		F7194EC1F3D0D331B05253FAD2FB6810 /* RandomColorSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RandomColorSwift-dummy.m"; sourceTree = "<group>"; };
+		F2910E8FA470C73EA657A6A286DB14B7 /* HeroCoreAnimationViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroCoreAnimationViewContext.swift; path = Sources/Animator/HeroCoreAnimationViewContext.swift; sourceTree = "<group>"; };
+		F6E32D27199975705F880B23CF2270E5 /* HeroModifier+HeroStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroModifier+HeroStringConvertible.swift"; path = "Sources/HeroModifier+HeroStringConvertible.swift"; sourceTree = "<group>"; };
+		F9C14752D85AB076D7496AB3F0AB645C /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Sources/Parser/Parser.swift; sourceTree = "<group>"; };
+		F9D5C95EDAEE23DF6FF79B784AFFEC2F /* FaveIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FaveIcon.swift; path = Source/FaveIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8EE54EDA0FC88D601DEC0EF1147DAC22 /* Frameworks */ = {
+		193AE410CA501E4AACBBB88A1A5CA056 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ACE0C92E49C9B7F84B93FF608C9C182 /* Foundation.framework in Frameworks */,
+				C4FBFB159181440A744679E4E5CE960D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D39A0090C3530A441C70E4EF5BE8889 /* Frameworks */ = {
+		21E6C68BEB179EF063E58DBBD27207D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69912C9DF647C88E62A46296C067EC65 /* Foundation.framework in Frameworks */,
+				AF04AD552E6BE94703E8EC8BEAEEA076 /* Foundation.framework in Frameworks */,
+				C1D7C318F2418A5FE5F341B4806DE422 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51C0D239FCCE6210A220B49A0F3773BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33DA57110821FEF2EDE72DDEA4B26ABD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,26 +215,112 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1522A8F1BA787C97D7096EF762AFFE6E /* RandomColorSwift */ = {
+		109B184F3F6BB06F0B20BF99964AB023 /* Hero */ = {
 			isa = PBXGroup;
 			children = (
-				E701300F177CE13C79A8E6B3A9D59272 /* ColorDefinition.swift */,
-				5231AB81CF59AE288F204FAAD255FDCB /* Hue.swift */,
-				AB1283FC7A15F34AB7AAF5824E62966F /* Luminosity.swift */,
-				84CF18E9E75830DEBEEF11B2DD7F3599 /* RandomColor.swift */,
-				F6D8C637001CB3F0314A03387A2C203A /* Support Files */,
+				6D5918C6518E36493F4760F04797AA35 /* Array+HeroModifier.swift */,
+				68F7B10CF6D560A22C85F8C441046DEC /* BasePreprocessor.swift */,
+				831EC56C3DAC6DD4BBB4BF0CDBCBEF45 /* CALayer+Hero.swift */,
+				99DA0F72BB1EC92503CF0D983969F2FD /* CAMediaTimingFunction+Hero.swift */,
+				A7A4895F81B9D55362A36261295A3A04 /* CascadePreprocessor.swift */,
+				07E6EA84F84C54B719A373FC1BF04B4C /* CG+Hero.swift */,
+				EDC0C35C9BEEC6EC21CA7D6E87953249 /* DefaultAnimationPreprocessor.swift */,
+				7725EB3E27F7FA0E43F95EB27BB4FE33 /* DispatchQueue+Hero.swift */,
+				DB84E4D029A5ACAE33B105EAE0A397A6 /* DurationPreprocessor.swift */,
+				0171916B140D1B2699400895203174AC /* Hero.swift */,
+				0FED8B1BC41EC065E796895096BD0A42 /* HeroAnimatorViewContext.swift */,
+				8E6FAED8596150EAF799B2C41BA9E7D0 /* HeroBaseController.swift */,
+				C101BAC11C4D9C5F97FE282E252FB66F /* HeroContext.swift */,
+				F2910E8FA470C73EA657A6A286DB14B7 /* HeroCoreAnimationViewContext.swift */,
+				34BDA28E30B0D5DFDFBD188737AC470A /* HeroDebugPlugin.swift */,
+				F1C9C0777F3E6F7E49C6B4C6EE6A88BD /* HeroDebugView.swift */,
+				9D6C0033FCC5B57C3004B3145F04B8A3 /* HeroDefaultAnimator.swift */,
+				400F7E0BFA105845F5C060D33BE5F16F /* HeroIndependentController.swift */,
+				4CC1CF015DC2B3E9B0A6FDF3401ADF31 /* HeroModifier.swift */,
+				F6E32D27199975705F880B23CF2270E5 /* HeroModifier+HeroStringConvertible.swift */,
+				855EEF77779A39859CCFAF605F9E6D28 /* HeroPlugin.swift */,
+				0622AF474BD1E805DF375FCC58B89FF4 /* HeroStringConvertible.swift */,
+				D66BF81BC7FED1F2A593C9DEC53C02C5 /* HeroTargetState.swift */,
+				DD8613603BE0CFD0692283DE961F501D /* HeroTypes.swift */,
+				380D5EC6E813CAF90768D6C4AFE54798 /* HeroViewPropertyViewContext.swift */,
+				6A190AB569EAE368604D9473BAAD78F7 /* IgnoreSubviewModifiersPreprocessor.swift */,
+				87890758F4F78035C94BD908C2742EB7 /* Lexer.swift */,
+				44D862B514A7BEA9F904110AD736F103 /* MatchPreprocessor.swift */,
+				70FA309A1443F740B327422E68521C16 /* Nodes.swift */,
+				F9C14752D85AB076D7496AB3F0AB645C /* Parser.swift */,
+				4FB7F15AA7DA007BFAC65D23366F4CB3 /* Regex.swift */,
+				AD31EA773AC3495E4E83A65CD110F78C /* SourcePreprocessor.swift */,
+				05C04CF36C361AF7A090A0DBB4FF235B /* UIKit+Hero.swift */,
+				61E59CBD8115121C49E21ACF11290BDF /* UIView+Hero.swift */,
+				43FD38252AF23F14FAB8D37E41E55077 /* UIViewController+Hero.swift */,
+				269E853E2B335FC589EE541020E7838E /* Support Files */,
 			);
-			name = RandomColorSwift;
-			path = RandomColorSwift;
+			name = Hero;
+			path = Hero;
+			sourceTree = "<group>";
+		};
+		269E853E2B335FC589EE541020E7838E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B1DB8ABEE0C86B39D80B073B772C7F8 /* Hero.modulemap */,
+				96ADE9DBB76F15CD4D2EE52184518F5B /* Hero.xcconfig */,
+				A27631284833C466E51700C03B5B4D9E /* Hero-dummy.m */,
+				A701644B0282D0FCA889D15D821AA4C2 /* Hero-prefix.pch */,
+				C1A7200763A263F37DE9A18C74F220A7 /* Hero-umbrella.h */,
+				7713ACAC2C950C19386EC5277D729DF3 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Hero";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5BBBF6098CEFD89D991A8C445157DE25 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				69E0B3AE7F919B9E697F489A0F4BB426 /* FaveButton.modulemap */,
+				8965FF077859944C6092726BCA649D9B /* FaveButton.xcconfig */,
+				7285FD73F877244D541DCCFB5BBF2F20 /* FaveButton-dummy.m */,
+				3A0F5B1D9D7EA7F22BA0437AC03E3783 /* FaveButton-prefix.pch */,
+				986A061525AF18FE62C7D378FF80BB7F /* FaveButton-umbrella.h */,
+				E87B472CA271C602AC704706839EEDBA /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FaveButton";
+			sourceTree = "<group>";
+		};
+		664CE2CFF3F343DEB0A1FF6AD9F14E7D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E28D172E4247D9CDB3C12E9E84D3DE7A /* FaveButton */,
+				109B184F3F6BB06F0B20BF99964AB023 /* Hero */,
+				B9D63ED8CA39BCFB655416034F6F1344 /* RandomColorSwift */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				BE712D7CE18901890320D955473ED4DA /* Pods */,
-				A5A5D6C32015614322ADB2995CFCDF07 /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				664CE2CFF3F343DEB0A1FF6AD9F14E7D /* Pods */,
+				AC5ADF9DCDD92DF88722A73BF108C25C /* Products */,
 				998704B23EFEF1CEB57804C2CDDBF33B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -149,70 +333,59 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		A5A5D6C32015614322ADB2995CFCDF07 /* Products */ = {
+		AC5ADF9DCDD92DF88722A73BF108C25C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A458BD6D8143822A53F71D64F0C24880 /* FaveButton.framework */,
-				30DE6AF4E5CDDC9FF1DF09A65F6A47A0 /* Pods_Lines.framework */,
-				829E97C15C02B262C4548C9043795EEE /* RandomColorSwift.framework */,
+				879C58FF2E0226761DF65DDEA9F18344 /* FaveButton.framework */,
+				92C4DBA968DB3F8CD1F1934BDE309463 /* Hero.framework */,
+				9E54C92BCA4FF8DEE7C555048D44A10E /* Pods_Lines.framework */,
+				AC730078CE336908A8491FC09AC71BA3 /* RandomColorSwift.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		B9D63ED8CA39BCFB655416034F6F1344 /* RandomColorSwift */ = {
 			isa = PBXGroup;
 			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+				8EEDA8A1435158680A0BC59B01EB6245 /* ColorDefinition.swift */,
+				D06D1B878FB0F65F6F28A559A47FAC1B /* Hue.swift */,
+				1480FA29B509275F56D858A253B07347 /* Luminosity.swift */,
+				886B7C39D492EB67BF5562CB09FCEF0F /* RandomColor.swift */,
+				EF956FDDE5DEBCB872988A16A21B2842 /* Support Files */,
 			);
-			name = Frameworks;
+			name = RandomColorSwift;
+			path = RandomColorSwift;
 			sourceTree = "<group>";
 		};
-		BE712D7CE18901890320D955473ED4DA /* Pods */ = {
+		E28D172E4247D9CDB3C12E9E84D3DE7A /* FaveButton */ = {
 			isa = PBXGroup;
 			children = (
-				E7E82CAD754222E1A5757872A14820C1 /* FaveButton */,
-				1522A8F1BA787C97D7096EF762AFFE6E /* RandomColorSwift */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C55A3D1CF3F6074BA6BCAAF152716B21 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				22E33914D45CC2FE54A8109582662465 /* FaveButton.modulemap */,
-				27CBC055BA1EEA1F9A17548EC6D9ECD4 /* FaveButton.xcconfig */,
-				866301FD7A2E0C254C310119372D2B40 /* FaveButton-dummy.m */,
-				B2524436B7C6DB5EE957E787A0BE80CB /* FaveButton-prefix.pch */,
-				09F4243945D87BDE18E8FBB0142B5504 /* FaveButton-umbrella.h */,
-				2F2E1C77D42A0D953976A1D9BF06495A /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FaveButton";
-			sourceTree = "<group>";
-		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		E7E82CAD754222E1A5757872A14820C1 /* FaveButton */ = {
-			isa = PBXGroup;
-			children = (
-				710EB8A962883385156237F16289A577 /* Constraints+.swift */,
-				D28FAC7BC55723E273C199C739EEDF2A /* Easing.swift */,
-				E77BD2A41F5A7B15BFF4C54DCFCB4616 /* FaveButton.swift */,
-				89F5FF216D520C4C835D3146C361B547 /* FaveIcon.swift */,
-				5E59DFC02BDD415146934C8CCF215FD0 /* Geometry.swift */,
-				F2181688FD0FC4CE16F53B2CADB66453 /* Init.swift */,
-				AF9A726DDA49C154F0B82CF0C2000BA3 /* Ring.swift */,
-				15DDD6EBE2DF17657AE6258507539CD2 /* Spark.swift */,
-				C55A3D1CF3F6074BA6BCAAF152716B21 /* Support Files */,
+				219E7BD80A55CECAC8D7B4F78AD14A5C /* Constraints+.swift */,
+				19498245431919A11454A61A4A86D8D5 /* Easing.swift */,
+				76BD011ADD7DB32FC0C2E55F4B0C1849 /* FaveButton.swift */,
+				F9D5C95EDAEE23DF6FF79B784AFFEC2F /* FaveIcon.swift */,
+				6BB4DAB8A6F17A42B9801F2F23A6CC67 /* Geometry.swift */,
+				100E5758167C61ECC6A22424EBD7CA78 /* Init.swift */,
+				7B468380CEA107DCE0FCBFB50F2ABAD2 /* Ring.swift */,
+				7E745A36E8452954D2EA2085C343B22E /* Spark.swift */,
+				5BBBF6098CEFD89D991A8C445157DE25 /* Support Files */,
 			);
 			name = FaveButton;
 			path = FaveButton;
+			sourceTree = "<group>";
+		};
+		EF956FDDE5DEBCB872988A16A21B2842 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				76FCAFA02CDEE76D4F6F13616BFC78C8 /* Info.plist */,
+				B251B02DC2814794CF6D2581A4BB1965 /* RandomColorSwift.modulemap */,
+				2AE97E0AD0497E1B2AA3F6F5FF2AADF7 /* RandomColorSwift.xcconfig */,
+				214A720846F9C97E9BE2E4552EF5B410 /* RandomColorSwift-dummy.m */,
+				765958986A0D73C5F8A2280ECA6EA879 /* RandomColorSwift-prefix.pch */,
+				2A015D6FB151C341692E094AAAAFCF71 /* RandomColorSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RandomColorSwift";
 			sourceTree = "<group>";
 		};
 		F628A05F54FA7E5AE36F56E1F4445C61 /* Pods-Lines */ = {
@@ -233,23 +406,25 @@
 			path = "Target Support Files/Pods-Lines";
 			sourceTree = "<group>";
 		};
-		F6D8C637001CB3F0314A03387A2C203A /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1694D8CD9A97561BD10D07C064D480FA /* Info.plist */,
-				C4701FB409B45A3CF5472F5B592F2E80 /* RandomColorSwift.modulemap */,
-				93ECF1A08D326877F0C3D64B077F804E /* RandomColorSwift.xcconfig */,
-				F7194EC1F3D0D331B05253FAD2FB6810 /* RandomColorSwift-dummy.m */,
-				DD1337733A649710224628FC04CA5832 /* RandomColorSwift-prefix.pch */,
-				F213D99361579E3D4565FB2A1FBD8235 /* RandomColorSwift-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/RandomColorSwift";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		43D2691A8CE80F4ABB858FA969EA4FB7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E229A19C8075E5E536B3639430232796 /* Pods-Lines-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82779E8A95ED2A7409BBDD49426A6DCB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F977B467C1C4EBDE66733417643F1DD /* Hero-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8F58D35B3C672AE71871DF8381F2B177 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,42 +433,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C4B8DBAA8CC431767B5273828242D6C3 /* Headers */ = {
+		C6EE179025E3F0B9FE9741AF45958713 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E057E3AFBF9BDDB803ABD080244E14F /* Pods-Lines-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C9EB11F4952CDD5400F5C7EC79291FED /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0D93BF5ACE5420C2790F1AA8CA481892 /* RandomColorSwift-umbrella.h in Headers */,
+				2A23A90B6AF990C25E0FF61806959121 /* RandomColorSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		39D1AFE2A07BE52F7035305C6B593CE9 /* Pods-Lines */ = {
+		4A3E211676B243619B026D147D272253 /* Hero */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A48407914AF2247C734F220DEFCE8C1E /* Build configuration list for PBXNativeTarget "Pods-Lines" */;
+			buildConfigurationList = D6DED4535F841BD78B49E046B4C3A36B /* Build configuration list for PBXNativeTarget "Hero" */;
 			buildPhases = (
-				406DC6154D416174716EEC51C6631E7B /* Sources */,
-				9D39A0090C3530A441C70E4EF5BE8889 /* Frameworks */,
-				C4B8DBAA8CC431767B5273828242D6C3 /* Headers */,
+				42F5D5F556CC9AB8C1D3798AF8424A5A /* Sources */,
+				21E6C68BEB179EF063E58DBBD27207D8 /* Frameworks */,
+				82779E8A95ED2A7409BBDD49426A6DCB /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7B79F3B292B3782FA2A52E3A61AF5061 /* PBXTargetDependency */,
-				6686CDF28B7D7855B3B31160FD344448 /* PBXTargetDependency */,
 			);
-			name = "Pods-Lines";
-			productName = "Pods-Lines";
-			productReference = 30DE6AF4E5CDDC9FF1DF09A65F6A47A0 /* Pods_Lines.framework */;
+			name = Hero;
+			productName = Hero;
+			productReference = 92C4DBA968DB3F8CD1F1934BDE309463 /* Hero.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7C08227B6E14D87F0F5B0FD6DFFA1A3E /* FaveButton */ = {
@@ -310,16 +475,36 @@
 			);
 			name = FaveButton;
 			productName = FaveButton;
-			productReference = A458BD6D8143822A53F71D64F0C24880 /* FaveButton.framework */;
+			productReference = 879C58FF2E0226761DF65DDEA9F18344 /* FaveButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9B0052D85D09803A1E2C2D49A7C5EC8F /* RandomColorSwift */ = {
+		A806816D30A82BDB1DFE4AAAF35FF5F0 /* Pods-Lines */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ED41CFB7562B2D2DAB2368FD85DA0605 /* Build configuration list for PBXNativeTarget "RandomColorSwift" */;
+			buildConfigurationList = 32C7D974BB05A4AF27077690E998159D /* Build configuration list for PBXNativeTarget "Pods-Lines" */;
 			buildPhases = (
-				60B75DEE7A5984638100D47EE6EF6D44 /* Sources */,
-				8EE54EDA0FC88D601DEC0EF1147DAC22 /* Frameworks */,
-				C9EB11F4952CDD5400F5C7EC79291FED /* Headers */,
+				FEA199A82B8BAE3323E8D583FF3B7F1E /* Sources */,
+				193AE410CA501E4AACBBB88A1A5CA056 /* Frameworks */,
+				43D2691A8CE80F4ABB858FA969EA4FB7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15F82517A1CE82A09E0D3F933CB9316D /* PBXTargetDependency */,
+				CAFA03235A11D46A4C71CFC932918EBB /* PBXTargetDependency */,
+				48E84E2515FF7FEEF6D2A870B438DCC7 /* PBXTargetDependency */,
+			);
+			name = "Pods-Lines";
+			productName = "Pods-Lines";
+			productReference = 9E54C92BCA4FF8DEE7C555048D44A10E /* Pods_Lines.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BF3CF7268FA66245573760B21B51B595 /* RandomColorSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 734D51612CD7DE596DB23D2DC3F75359 /* Build configuration list for PBXNativeTarget "RandomColorSwift" */;
+			buildPhases = (
+				52862F57CBF51B5871143DDF11890370 /* Sources */,
+				51C0D239FCCE6210A220B49A0F3773BB /* Frameworks */,
+				C6EE179025E3F0B9FE9741AF45958713 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -327,7 +512,7 @@
 			);
 			name = RandomColorSwift;
 			productName = RandomColorSwift;
-			productReference = 829E97C15C02B262C4548C9043795EEE /* RandomColorSwift.framework */;
+			productReference = AC730078CE336908A8491FC09AC71BA3 /* RandomColorSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -347,23 +532,59 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = A5A5D6C32015614322ADB2995CFCDF07 /* Products */;
+			productRefGroup = AC5ADF9DCDD92DF88722A73BF108C25C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				7C08227B6E14D87F0F5B0FD6DFFA1A3E /* FaveButton */,
-				39D1AFE2A07BE52F7035305C6B593CE9 /* Pods-Lines */,
-				9B0052D85D09803A1E2C2D49A7C5EC8F /* RandomColorSwift */,
+				4A3E211676B243619B026D147D272253 /* Hero */,
+				A806816D30A82BDB1DFE4AAAF35FF5F0 /* Pods-Lines */,
+				BF3CF7268FA66245573760B21B51B595 /* RandomColorSwift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		406DC6154D416174716EEC51C6631E7B /* Sources */ = {
+		42F5D5F556CC9AB8C1D3798AF8424A5A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95709685565BF19C920BFC5F03658A4F /* Pods-Lines-dummy.m in Sources */,
+				4871AB82D1BA4619362CECE2C157E239 /* Array+HeroModifier.swift in Sources */,
+				D48039A4AAAD63B84E8041F816AAE5CC /* BasePreprocessor.swift in Sources */,
+				CCACA9026494E6D39D374A4BD303F69C /* CALayer+Hero.swift in Sources */,
+				1EFCE8E2E39D6FF98A82A412DCDA22F4 /* CAMediaTimingFunction+Hero.swift in Sources */,
+				6095DBFEB1AF8CE765FA645A05459C2B /* CascadePreprocessor.swift in Sources */,
+				E91E80F3AA36C095A59C59A446271BF0 /* CG+Hero.swift in Sources */,
+				398917958AEE73A2ABA9DE141F4468CE /* DefaultAnimationPreprocessor.swift in Sources */,
+				A57C83E4371C1D6439BC82CDBEE32E08 /* DispatchQueue+Hero.swift in Sources */,
+				64B4D37F446B67C4A0D546ABF01ECDC6 /* DurationPreprocessor.swift in Sources */,
+				AC78190959872C81167ACC8F0B02BED9 /* Hero-dummy.m in Sources */,
+				DE7E529EF406ECBC3185D907151CDE78 /* Hero.swift in Sources */,
+				84B25B1A071858745816A95418F9F77A /* HeroAnimatorViewContext.swift in Sources */,
+				30E0982814D1F0971FA52AAE141325B8 /* HeroBaseController.swift in Sources */,
+				ABE0F6116DF5C33A310E215DE9AEE769 /* HeroContext.swift in Sources */,
+				BB7E6CA50EF56EF89CECA4DE5FEF66B9 /* HeroCoreAnimationViewContext.swift in Sources */,
+				2F44F37D2F6170E3B3186555CF82F575 /* HeroDebugPlugin.swift in Sources */,
+				BEB47A3CAB4F7D3C8EDA608599417596 /* HeroDebugView.swift in Sources */,
+				05F0808ED771EDC8628F839F16CB7EC8 /* HeroDefaultAnimator.swift in Sources */,
+				0054224BA8A23E8413AE5452B7C7D9C4 /* HeroIndependentController.swift in Sources */,
+				E57BB5C5A234EE3344BB5AAECFC7CC7A /* HeroModifier+HeroStringConvertible.swift in Sources */,
+				B62A16E73ADAFD9229C560E7C46ADB8E /* HeroModifier.swift in Sources */,
+				69C8F9CB4C695672395946F7C8A23E24 /* HeroPlugin.swift in Sources */,
+				1D030FD35221838E1BC264DBD51B3A93 /* HeroStringConvertible.swift in Sources */,
+				A72A258B0E285A00B063B0AF42E488A5 /* HeroTargetState.swift in Sources */,
+				CE4501723EC8667ADB9698705CC0AA04 /* HeroTypes.swift in Sources */,
+				355839E3459355665718D6358BA078A6 /* HeroViewPropertyViewContext.swift in Sources */,
+				29E1C79CB521E7299EFF904E327451A8 /* IgnoreSubviewModifiersPreprocessor.swift in Sources */,
+				00CF7D513DF064760BF24C6A88E3E855 /* Lexer.swift in Sources */,
+				7DDE6E306CAB5E388629F6C6A561ECBA /* MatchPreprocessor.swift in Sources */,
+				0DA21E732596100C88761DA40C290796 /* Nodes.swift in Sources */,
+				A271792E9BD1BF7C0F7FC526D33C68C3 /* Parser.swift in Sources */,
+				731BDB378A5E0759C89BACA382B6412B /* Regex.swift in Sources */,
+				DE4FD12FD11924E71640A08AF3AFA2E4 /* SourcePreprocessor.swift in Sources */,
+				67BCB163E387C2E9288BC15CA3E4ACAF /* UIKit+Hero.swift in Sources */,
+				2808DEA4E83D337D6A0F0D3EE9AFC8CB /* UIView+Hero.swift in Sources */,
+				6B76015FB5A7E8450026BC11402C93E9 /* UIViewController+Hero.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,32 +604,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		60B75DEE7A5984638100D47EE6EF6D44 /* Sources */ = {
+		52862F57CBF51B5871143DDF11890370 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2EDFAA77CF1F51F9EF7C716A11AE118 /* ColorDefinition.swift in Sources */,
-				63B097C8B076D6DE70EE36C61D6D4888 /* Hue.swift in Sources */,
-				227E1B2894510D9058D10C8AA840DAAC /* Luminosity.swift in Sources */,
-				EEE1F0EB74745FF2A6E81AB9F5F24493 /* RandomColor.swift in Sources */,
-				92675AEFA93BB273A495AF5B24A06CC5 /* RandomColorSwift-dummy.m in Sources */,
+				8938E292D64C5EF03D3A333E778C5EAD /* ColorDefinition.swift in Sources */,
+				280ABF18D6BFEBAADD5322A49E52458F /* Hue.swift in Sources */,
+				3DC727C315B8AF8C5310EE51DC925C6C /* Luminosity.swift in Sources */,
+				9628285E68B16F830D393DD9DEA5E6D3 /* RandomColor.swift in Sources */,
+				B1F26CFBF2CB32056558CC62835888FE /* RandomColorSwift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEA199A82B8BAE3323E8D583FF3B7F1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19E2AE41A69EB655BB68C375B96A3C54 /* Pods-Lines-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6686CDF28B7D7855B3B31160FD344448 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RandomColorSwift;
-			target = 9B0052D85D09803A1E2C2D49A7C5EC8F /* RandomColorSwift */;
-			targetProxy = D577CD7A2544F245BA85528BEBA0FC30 /* PBXContainerItemProxy */;
-		};
-		7B79F3B292B3782FA2A52E3A61AF5061 /* PBXTargetDependency */ = {
+		15F82517A1CE82A09E0D3F933CB9316D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FaveButton;
 			target = 7C08227B6E14D87F0F5B0FD6DFFA1A3E /* FaveButton */;
-			targetProxy = 88BFF3535F7491AE31D5EF99C71A79E3 /* PBXContainerItemProxy */;
+			targetProxy = 6E89D1B740B48A615BCF00018D06FAAA /* PBXContainerItemProxy */;
+		};
+		48E84E2515FF7FEEF6D2A870B438DCC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RandomColorSwift;
+			target = BF3CF7268FA66245573760B21B51B595 /* RandomColorSwift */;
+			targetProxy = 8F89C2C98A76918406844CC47A085F19 /* PBXContainerItemProxy */;
+		};
+		CAFA03235A11D46A4C71CFC932918EBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Hero;
+			target = 4A3E211676B243619B026D147D272253 /* Hero */;
+			targetProxy = 710EED5BD4A2372789D0904246668F51 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -461,9 +696,79 @@
 			};
 			name = Debug;
 		};
+		1A8E2C890A9F1DF5C35388C7AFE67855 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96ADE9DBB76F15CD4D2EE52184518F5B /* Hero.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Hero/Hero-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Hero/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Hero/Hero.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Hero;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2ABA959C232C28721C2F1A4F9EAA7AAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AE97E0AD0497E1B2AA3F6F5FF2AADF7 /* RandomColorSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RandomColorSwift/RandomColorSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RandomColorSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RandomColorSwift/RandomColorSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = RandomColorSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		3879F28DACA18D4275FA750441BA882F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27CBC055BA1EEA1F9A17548EC6D9ECD4 /* FaveButton.xcconfig */;
+			baseConfigurationReference = 8965FF077859944C6092726BCA649D9B /* FaveButton.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -497,7 +802,7 @@
 		};
 		6BF07204B2C5DEB1CF26270F10FA24F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27CBC055BA1EEA1F9A17548EC6D9ECD4 /* FaveButton.xcconfig */;
+			baseConfigurationReference = 8965FF077859944C6092726BCA649D9B /* FaveButton.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -574,7 +879,7 @@
 			};
 			name = Release;
 		};
-		7C82AA8E6F76ED914C1A484D6BBE77D3 /* Release */ = {
+		77EE8D15425C90A6E350CD2B16520354 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AAF24998F2CC1CFAD74EB8479573BB5F /* Pods-Lines.release.xcconfig */;
 			buildSettings = {
@@ -612,16 +917,16 @@
 			};
 			name = Release;
 		};
-		7ECC6ABC428475126C3E36895303A5EA /* Debug */ = {
+		7B6E305268B18E87159B0BC5E4C59370 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93ECF1A08D326877F0C3D64B077F804E /* RandomColorSwift.xcconfig */;
+			baseConfigurationReference = 2AE97E0AD0497E1B2AA3F6F5FF2AADF7 /* RandomColorSwift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -634,20 +939,53 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/RandomColorSwift/RandomColorSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = RandomColorSwift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		7F37A08FEAEF3AD3D3ECB66EADB9259C /* Debug */ = {
+		D49A5B494CC96A7F9B22105565EFFBD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96ADE9DBB76F15CD4D2EE52184518F5B /* Hero.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Hero/Hero-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Hero/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Hero/Hero.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Hero;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DF0B5FE0EF29B26EFAF3161272B95BFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CC8C423E3114E0959A8C28A1BCD177F7 /* Pods-Lines.debug.xcconfig */;
 			buildSettings = {
@@ -686,40 +1024,6 @@
 			};
 			name = Debug;
 		};
-		E93E0FB6481243D5B474226DBDA1A2DC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93ECF1A08D326877F0C3D64B077F804E /* RandomColorSwift.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RandomColorSwift/RandomColorSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RandomColorSwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RandomColorSwift/RandomColorSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = RandomColorSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -732,11 +1036,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A48407914AF2247C734F220DEFCE8C1E /* Build configuration list for PBXNativeTarget "Pods-Lines" */ = {
+		32C7D974BB05A4AF27077690E998159D /* Build configuration list for PBXNativeTarget "Pods-Lines" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7F37A08FEAEF3AD3D3ECB66EADB9259C /* Debug */,
-				7C82AA8E6F76ED914C1A484D6BBE77D3 /* Release */,
+				DF0B5FE0EF29B26EFAF3161272B95BFF /* Debug */,
+				77EE8D15425C90A6E350CD2B16520354 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		734D51612CD7DE596DB23D2DC3F75359 /* Build configuration list for PBXNativeTarget "RandomColorSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2ABA959C232C28721C2F1A4F9EAA7AAF /* Debug */,
+				7B6E305268B18E87159B0BC5E4C59370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6DED4535F841BD78B49E046B4C3A36B /* Build configuration list for PBXNativeTarget "Hero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A8E2C890A9F1DF5C35388C7AFE67855 /* Debug */,
+				D49A5B494CC96A7F9B22105565EFFBD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -746,15 +1068,6 @@
 			buildConfigurations = (
 				6BF07204B2C5DEB1CF26270F10FA24F3 /* Debug */,
 				3879F28DACA18D4275FA750441BA882F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ED41CFB7562B2D2DAB2368FD85DA0605 /* Build configuration list for PBXNativeTarget "RandomColorSwift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7ECC6ABC428475126C3E36895303A5EA /* Debug */,
-				E93E0FB6481243D5B474226DBDA1A2DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
