@@ -49,9 +49,10 @@ class LandingViewController: UIViewController {
     }
     
     func pulse() {
+        logoContainer.layer.removeAllAnimations()
         let pulseAnimation:CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
         pulseAnimation.duration = 0.75
-        pulseAnimation.toValue = NSNumber(value: 1.05)
+        pulseAnimation.toValue = NSNumber(value: 1.03)
         pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         pulseAnimation.autoreverses = true
         pulseAnimation.repeatCount = Float.greatestFiniteMagnitude
