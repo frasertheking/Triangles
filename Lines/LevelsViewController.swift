@@ -11,10 +11,14 @@ import Hero
 
 private let reuseIdentifier = "Cell"
 
-class LevelsCollectionViewController: UICollectionViewController {
+class LevelsViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupBackgroundGradient(landing: false)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -25,25 +29,19 @@ class LevelsCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
         self.setupBackgroundGradient(landing: false)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    @IBAction func backPressed(sender: UIButton) {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "landing")
+        vc.heroModalAnimationType = .push(direction: HeroDefaultAnimationType.Direction.right)
+        hero_replaceViewController(with: vc)
     }
-    */
+}
+
+extension LevelsViewController: UICollectionViewDataSource {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
@@ -53,19 +51,21 @@ class LevelsCollectionViewController: UICollectionViewController {
     }
 
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return 20
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LevelCollectionViewCell
     
         // Configure the cell
     
         return cell
     }
+}
 
+extension LevelsViewController: UICollectionViewDelegate {
     // MARK: UICollectionViewDelegate
 
     /*
@@ -82,7 +82,7 @@ class LevelsCollectionViewController: UICollectionViewController {
     }
     */
 
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = self.storyboard!.instantiateViewController(withIdentifier: "game")
         vc.heroModalAnimationType = .zoom
         hero_replaceViewController(with: vc)

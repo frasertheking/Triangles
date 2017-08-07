@@ -8,6 +8,7 @@
 
 import UIKit
 import Pastel
+import Hero
 
 class LandingViewController: UIViewController {
     
@@ -96,6 +97,8 @@ class LandingViewController: UIViewController {
     }
     
     @IBAction func playPressed(sender: UIButton) {
-        performSegue(withIdentifier: "playSegue", sender: self)
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "levels")
+        vc.heroModalAnimationType = .pull(direction: HeroDefaultAnimationType.Direction.left)
+        hero_replaceViewController(with: vc)
     }
 }
