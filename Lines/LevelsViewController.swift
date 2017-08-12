@@ -28,7 +28,7 @@ class LevelsViewController: UIViewController {
     }
 }
 
-extension LevelsViewController: UICollectionViewDataSource {
+extension LevelsViewController: UICollectionViewDataSource  {
 
     // MARK: UICollectionViewDataSource
 
@@ -36,22 +36,18 @@ extension LevelsViewController: UICollectionViewDataSource {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 300, height: 394);
-    }
-
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 20
+        return 16
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LevelCollectionViewCell
     
-        // Configure the cell
-    
+        cell.image.image = UIImage(named: "level\(indexPath.row+1)")
+        cell.title1.text = "Level \(indexPath.row+1)"
+        
         return cell
     }
     
@@ -71,7 +67,7 @@ extension LevelsViewController: UICollectionViewDataSource {
     }
 }
 
-extension LevelsViewController: UICollectionViewDelegate {
+extension LevelsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     // MARK: UICollectionViewDelegate
 
     /*
@@ -87,6 +83,12 @@ extension LevelsViewController: UICollectionViewDelegate {
         return true
     }
     */
+    
+    func collectionView(_ collectionView: UICollectionView,
+                                 layout collectionViewLayout: UICollectionViewLayout,
+                                 sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 280, height: 375);
+    }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = self.storyboard!.instantiateViewController(withIdentifier: "game")
