@@ -27,7 +27,7 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupBackgroundGradient(landing: true)
+        setupBackgroundGradient(landing: true, luminosity: .dark)
         /*sketchView.devModeEnabled = false
         sketchView.kLineWidth = 2
         sketchView.kTriangleStrokeBufferWidth = 2
@@ -46,7 +46,7 @@ class LandingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        pulse()
+        //pulse()
     }
     
     func pulse() {

@@ -18,16 +18,7 @@ class LevelsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupBackgroundGradient(landing: false)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-        self.setupBackgroundGradient(landing: false)
+        setupBackgroundGradient(landing: false, luminosity: .light)
     }
     
     @IBAction func backPressed(sender: UIButton) {
@@ -62,6 +53,21 @@ extension LevelsViewController: UICollectionViewDataSource {
         // Configure the cell
     
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+            
+        case UICollectionElementKindSectionHeader:
+            
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
+            
+            headerView.backgroundColor = UIColor.clear
+            return headerView
+            
+        default:
+            assert(false, "Unexpected element kind")
+        }
     }
 }
 

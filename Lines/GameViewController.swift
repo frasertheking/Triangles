@@ -35,7 +35,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupBackgroundGradient(landing: false)
+        self.setupBackgroundGradient(landing: false, luminosity: .light)
         self.toggleVertexCounter()
         sketchView.delegate = self
         sketchView.setupLevel(level: level)

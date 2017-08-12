@@ -26,7 +26,7 @@ extension CGPoint {
 }
 
 extension UIViewController {
-    func setupBackgroundGradient(landing: Bool) {
+    func setupBackgroundGradient(landing: Bool, luminosity: Luminosity) {
         let pastelView = PastelView(frame: view.bounds)
         
         // Custom Direction
@@ -48,7 +48,7 @@ extension UIViewController {
             var randomColorArray: [UIColor] = [UIColor]()
             
             for _ in 0...20 {
-                randomColorArray.append(randomColor(hue: .random, luminosity: .dark))
+                randomColorArray.append(randomColor(hue: .random, luminosity: luminosity))
             }
             
             pastelView.setColors(randomColorArray)
