@@ -59,12 +59,29 @@ extension LevelsViewController: UICollectionViewDataSource  {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LevelCollectionViewCell
     
+        guard let numberOfTriangles = Levels.levels[indexPath.row].numberOfTrianglesRequired else {
+            return cell
+        }
+        
+        guard let numberOfLines = Levels.levels[indexPath.row].numberOfLinesProvided else {
+            return cell
+        }
+        
+        let triangleText: String = numberOfTriangles == 1 ? "triangle" : "triangles"
+        let lineText: String = numberOfLines == 1 ? "line" : "lines"
+        
         if indexPath.row > currentLevel {
             cell.beginImageView.image = UIImage(named: "lock")
             cell.blurOverlay.isHidden = false
+            cell.title2.text = "Unlock to view description"
         } else {
-            cell.beginImageView.image = UIImage(named: "start")
+            if indexPath.row == currentLevel {
+                cell.beginImageView.image = UIImage(named: "start")
+            } else {
+                cell.beginImageView.image = UIImage(named: "checkmark")
+            }
             cell.blurOverlay.isHidden = true
+            cell.title2.text = "Create \(String(describing: Levels.levels[indexPath.row].numberOfTrianglesRequired!)) \(triangleText) from \(String(describing: Levels.levels[indexPath.row].numberOfLinesProvided!)) \(lineText)"
         }
         
         cell.image.image = UIImage(named: "level\(indexPath.row+1)")

@@ -97,8 +97,9 @@ class LandingViewController: UIViewController {
     }
     
     @IBAction func playPressed(sender: UIButton) {
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "levels")
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "levels") as! LevelsViewController
         vc.heroModalAnimationType = .pull(direction: HeroDefaultAnimationType.Direction.left)
+        vc.selectedIndex = UserDefaultsInteractor.getCurrentLevel()
         hero_replaceViewController(with: vc)
     }
 }
