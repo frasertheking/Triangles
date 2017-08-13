@@ -11,8 +11,13 @@ import UIKit
 class LevelCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var blurOverlay: UIVisualEffectView!
     @IBOutlet weak var title1: UILabel!
     @IBOutlet weak var title2: UILabel!
     @IBOutlet weak var beginImageView: UIImageView!
+ 
+    override func awakeFromNib() {
+        // Nothing to do
+    }
     
 }

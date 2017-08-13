@@ -573,6 +573,19 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
+                                                        <visualEffectView opaque="NO" alpha="0.97999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFG-Jf-XQI">
+                                                            <rect key="frame" x="-0.5" y="0.0" width="300" height="300"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XvB-MK-36P">
+                                                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            </view>
+                                                            <blurEffect style="light"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <integer key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </visualEffectView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9Y-v2-Ano">
                                                             <rect key="frame" x="18" y="316" width="81.5" height="31"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
@@ -596,14 +609,18 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="HQE-Ha-ncD" firstAttribute="top" secondItem="NNI-4A-blr" secondAttribute="top" id="CVO-so-WJg"/>
+                                                        <constraint firstItem="HaS-G0-VAs" firstAttribute="top" secondItem="YFG-Jf-XQI" secondAttribute="bottom" constant="-24" id="Ddq-ZD-ij0"/>
                                                         <constraint firstAttribute="trailing" secondItem="HQE-Ha-ncD" secondAttribute="trailing" id="IgP-vF-7Hf"/>
                                                         <constraint firstItem="G9Y-v2-Ano" firstAttribute="leading" secondItem="NNI-4A-blr" secondAttribute="leading" constant="18" id="Knk-xY-GBi"/>
                                                         <constraint firstAttribute="trailing" secondItem="HaS-G0-VAs" secondAttribute="trailing" constant="16" id="Mqm-yY-ikv"/>
                                                         <constraint firstItem="HaS-G0-VAs" firstAttribute="top" secondItem="HQE-Ha-ncD" secondAttribute="bottom" constant="-24" id="O6i-kd-iDd"/>
+                                                        <constraint firstItem="YFG-Jf-XQI" firstAttribute="leading" secondItem="NNI-4A-blr" secondAttribute="leading" id="OKU-tG-HJL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="YFG-Jf-XQI" secondAttribute="trailing" id="cYD-hB-LPE"/>
                                                         <constraint firstItem="FGH-97-R2V" firstAttribute="top" secondItem="G9Y-v2-Ano" secondAttribute="bottom" constant="8" id="d7s-NA-23I"/>
                                                         <constraint firstItem="FGH-97-R2V" firstAttribute="leading" secondItem="NNI-4A-blr" secondAttribute="leading" constant="16" id="eFe-ny-Oto"/>
                                                         <constraint firstItem="G9Y-v2-Ano" firstAttribute="top" secondItem="HQE-Ha-ncD" secondAttribute="bottom" constant="16" id="oHB-JZ-mIg"/>
                                                         <constraint firstItem="HQE-Ha-ncD" firstAttribute="leading" secondItem="NNI-4A-blr" secondAttribute="leading" id="rzm-VO-WYV"/>
+                                                        <constraint firstItem="YFG-Jf-XQI" firstAttribute="top" secondItem="NNI-4A-blr" secondAttribute="top" id="xtu-Wg-k3e"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -634,6 +651,7 @@
                                         <size key="customSize" width="300" height="394"/>
                                         <connections>
                                             <outlet property="beginImageView" destination="HaS-G0-VAs" id="Muv-ac-FbC"/>
+                                            <outlet property="blurOverlay" destination="YFG-Jf-XQI" id="bck-6L-hmw"/>
                                             <outlet property="image" destination="HQE-Ha-ncD" id="V7R-wH-VXr"/>
                                             <outlet property="title1" destination="G9Y-v2-Ano" id="lKv-M4-9te"/>
                                             <outlet property="title2" destination="FGH-97-R2V" id="T2x-Ay-t2Y"/>

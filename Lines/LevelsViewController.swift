@@ -61,8 +61,10 @@ extension LevelsViewController: UICollectionViewDataSource  {
     
         if indexPath.row > currentLevel {
             cell.beginImageView.image = UIImage(named: "lock")
+            cell.blurOverlay.isHidden = false
         } else {
             cell.beginImageView.image = UIImage(named: "start")
+            cell.blurOverlay.isHidden = true
         }
         
         cell.image.image = UIImage(named: "level\(indexPath.row+1)")
