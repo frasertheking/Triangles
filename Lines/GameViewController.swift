@@ -29,12 +29,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var lineCountContainer: UIView!
     @IBOutlet weak var checkmarkButton: FaveButton!
     
-    var levelNumber = 0
+    var levelNumber: Int = 0
     var level: Level = Levels.levels[0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        level = Levels.levels[levelNumber] 
         self.setupBackgroundGradient(landing: false, luminosity: .light)
         self.toggleVertexCounter()
         sketchView.delegate = self
@@ -57,6 +58,10 @@ class GameViewController: UIViewController {
         if sketchView.isLevelComplete(levelNumber: levelNumber, triangleCount: triangles) {
             bounceSketchView()
             self.undoButton.isEnabled = false
+            
+            // Update userdefaults current level
+            UserDefaultsInteractor.updateLevelIfGreaterThanCurrent(level: levelNumber+1)
+            
         } else if sketchView.canPerformUndo() {
             undoButton.isEnabled = true
         } else {
@@ -88,8 +93,8 @@ class GameViewController: UIViewController {
     func bounceSketchView() {
         checkmarkButton.isHidden = false
         //levelLabel.isHidden = true
-        checkmarkButton.sendActions(for: .touchUpInside)
-
+        self.checkmarkButton.sendActions(for: .touchUpInside)
+        
         UIView.animate(withDuration: 0.25, animations: { self.sketchView.transform = CGAffineTransform(scaleX: 1.075, y: 1.075) }, completion: { (finish: Bool) in UIView.animate(withDuration: 0.25, animations: {
             self.sketchView.transform = CGAffineTransform.identity
         }, completion: { (finished) in
@@ -152,10 +157,9 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func popViewController(sender: UIButton) {
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "levels")
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "levels") as! LevelsViewController
+        vc.selectedIndex = levelNumber
         vc.heroModalAnimationType = .zoomOut
         hero_replaceViewController(with: vc)
-      //  hero_dismissViewController()
-       // self.dismiss(animated: true, completion: nil)
     }
 }

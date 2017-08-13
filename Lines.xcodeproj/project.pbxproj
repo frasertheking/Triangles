@@ -24,6 +24,7 @@
 		43A99BD91EF36F81006E477C /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A99BD81EF36F81006E477C /* Line.swift */; };
 		43E3D1531F389A1F000765E8 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3D1521F389A1F000765E8 /* LevelsViewController.swift */; };
 		43E3D1551F38A03A000765E8 /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3D1541F38A03A000765E8 /* LevelCollectionViewCell.swift */; };
+		43E3D1581F3FE591000765E8 /* UserDefaultsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3D1571F3FE591000765E8 /* UserDefaultsInteractor.swift */; };
 		9027E1C165DD4986AC988746 /* Pods_Lines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71A90601016507D7D0F0C91 /* Pods_Lines.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		43A99BD81EF36F81006E477C /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		43E3D1521F389A1F000765E8 /* LevelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
 		43E3D1541F38A03A000765E8 /* LevelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelCollectionViewCell.swift; sourceTree = "<group>"; };
+		43E3D1571F3FE591000765E8 /* UserDefaultsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsInteractor.swift; sourceTree = "<group>"; };
 		759D8C1EA20764CAF5E688AD /* Pods-Lines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lines.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lines/Pods-Lines.debug.xcconfig"; sourceTree = "<group>"; };
 		A57F526A361506B6178DCA42 /* Pods-Lines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lines.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lines/Pods-Lines.release.xcconfig"; sourceTree = "<group>"; };
 		C71A90601016507D7D0F0C91 /* Pods_Lines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 			children = (
 				43ACB48B1F1C32540081CFE9 /* Miscellaneous */,
 				43ACB48A1F1C324B0081CFE9 /* Extensions */,
+				43E3D1561F3FE563000765E8 /* Interactors */,
 				43ACB4891F1C32400081CFE9 /* Models */,
 				430030411F1D824F004AD769 /* Views */,
 				43ACB4881F1C32370081CFE9 /* ViewControllers */,
@@ -158,6 +161,14 @@
 				43A99BD21EF36C85006E477C /* Info.plist */,
 			);
 			name = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		43E3D1561F3FE563000765E8 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				43E3D1571F3FE591000765E8 /* UserDefaultsInteractor.swift */,
+			);
+			name = Interactors;
 			sourceTree = "<group>";
 		};
 		937CA21360A150486E6731F1 /* Frameworks */ = {
@@ -312,6 +323,7 @@
 				43A99BC71EF36C85006E477C /* AppDelegate.swift in Sources */,
 				430030431F1D8268004AD769 /* SketchView.swift in Sources */,
 				43A95BD71F369CC5004EBFAA /* LandingViewController.swift in Sources */,
+				43E3D1581F3FE591000765E8 /* UserDefaultsInteractor.swift in Sources */,
 				43E3D1551F38A03A000765E8 /* LevelCollectionViewCell.swift in Sources */,
 				432171B51F12A0D9001A85F5 /* Triangle.swift in Sources */,
 			);

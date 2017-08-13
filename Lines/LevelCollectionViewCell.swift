@@ -13,6 +13,6 @@ class LevelCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title1: UILabel!
     @IBOutlet weak var title2: UILabel!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var beginImageView: UIImageView!
     
 }

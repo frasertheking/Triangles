@@ -15,10 +15,24 @@ class LevelsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var selectedIndex = 0
+    var currentLevel: Int {
+        get {
+            return UserDefaultsInteractor.getCurrentLevel()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupBackgroundGradient(landing: false, luminosity: .light)
+        collectionView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+ 
+        self.collectionView.scrollToItem(at: IndexPath(row: selectedIndex, section: 0), at: UICollectionViewScrollPosition.centeredVertically, animated: false)
     }
     
     @IBAction func backPressed(sender: UIButton) {
@@ -45,6 +59,12 @@ extension LevelsViewController: UICollectionViewDataSource  {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LevelCollectionViewCell
     
+        if indexPath.row > currentLevel {
+            cell.beginImageView.image = UIImage(named: "lock")
+        } else {
+            cell.beginImageView.image = UIImage(named: "start")
+        }
+        
         cell.image.image = UIImage(named: "level\(indexPath.row+1)")
         cell.title1.text = "Level \(indexPath.row+1)"
         
@@ -77,13 +97,15 @@ extension LevelsViewController: UICollectionViewDelegate, UICollectionViewDelega
     }
     */
 
-    /*
     // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        if indexPath.row > currentLevel {
+            return false
+        }
+        
         return true
     }
-    */
-    
+ 
     func collectionView(_ collectionView: UICollectionView,
                                  layout collectionViewLayout: UICollectionViewLayout,
                                  sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -91,8 +113,10 @@ extension LevelsViewController: UICollectionViewDelegate, UICollectionViewDelega
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "game")
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "game") as! GameViewController
+        vc.levelNumber = indexPath.row
         vc.heroModalAnimationType = .zoom
+        selectedIndex = indexPath.row
         hero_replaceViewController(with: vc)
     }
     

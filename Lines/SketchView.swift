@@ -22,14 +22,9 @@ class SketchView: UIView {
     var devModeEnabled = false
     
     // Constants
-    var kVertexRadius: CGFloat = 10.0
     fileprivate let kMinimumTriangleSize: CGFloat = 100.0
     fileprivate let kAnimationDuration: TimeInterval = 0.2
     fileprivate let kSwollenVertexScaleFactor: CGFloat = 1.25
-    
-    var kLineWidth: CGFloat = 4.0
-    var kTriangleStrokeBufferWidth: CGFloat = 4.0
-    var kLineColor: UIColor = UIColor.black
     
     // Global vars
     fileprivate var firstPoint: CGPoint?
@@ -41,6 +36,7 @@ class SketchView: UIView {
     fileprivate var lineStart: CGPoint?
     fileprivate var undoFrameRefresh: Bool = false
     fileprivate var startingLineCount = 0
+    fileprivate var isInitialLoad = true
     
     // Public vars
     var numberOfTriangles: Int {
@@ -67,6 +63,11 @@ class SketchView: UIView {
             self.delegate?.updateVertices(vertices: newValue)
         }
     }
+    
+    var kVertexRadius: CGFloat = 10.0
+    var kLineWidth: CGFloat = 4.0
+    var kTriangleStrokeBufferWidth: CGFloat = 4.0
+    var kLineColor: UIColor = UIColor.black
     var level: Level?
     var dontDrawTriangles: Bool = false
     var levelLoaded: Bool = false
@@ -158,6 +159,7 @@ class SketchView: UIView {
             startingLineCount += 1
             drawLine(fromPoint: line.start!, toPoint: line.end!, doneDrawingLine: true)
         }
+        isInitialLoad = false
         lineCount = startingLineCount
     }
     
@@ -409,7 +411,7 @@ class SketchView: UIView {
         circleLayer.opacity = 0.5
         self.vertexView.layer.addSublayer(circleLayer)
         
-        if (!undoFrameRefresh) {
+        if (!undoFrameRefresh && !isInitialLoad) {
             CATransaction.begin()
             let scaleAnimation:CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
             scaleAnimation.duration = kAnimationDuration
