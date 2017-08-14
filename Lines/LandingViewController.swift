@@ -28,12 +28,6 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
         
         setupBackgroundGradient(landing: true, luminosity: .dark)
-        /*sketchView.devModeEnabled = false
-        sketchView.kLineWidth = 2
-        sketchView.kTriangleStrokeBufferWidth = 2
-        sketchView.kVertexRadius = 4
-        
-        sketchView.setupLevel(level: Levels.logo)*/
         
         logoImageView2.alpha = 0
         logoImageView3.alpha = 0
@@ -42,22 +36,6 @@ class LandingViewController: UIViewController {
         logoImageView6.alpha = 0
         
         animateIn()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //pulse()
-    }
-    
-    func pulse() {
-        logoContainer.layer.removeAllAnimations()
-        let pulseAnimation:CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
-        pulseAnimation.duration = 0.75
-        pulseAnimation.toValue = NSNumber(value: 1.03)
-        pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        pulseAnimation.autoreverses = true
-        pulseAnimation.repeatCount = Float.greatestFiniteMagnitude
-        logoContainer.layer.add(pulseAnimation, forKey: nil)
     }
     
     func animateIn() {
@@ -100,6 +78,13 @@ class LandingViewController: UIViewController {
         let vc = self.storyboard!.instantiateViewController(withIdentifier: "levels") as! LevelsViewController
         vc.heroModalAnimationType = .pull(direction: HeroDefaultAnimationType.Direction.left)
         vc.selectedIndex = UserDefaultsInteractor.getCurrentLevel()
+        hero_replaceViewController(with: vc)
+    }
+    
+    @IBAction func createPressed(sender: UIButton) {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "game") as! GameViewController
+        vc.heroModalAnimationType = .pull(direction: HeroDefaultAnimationType.Direction.left)
+        vc.isCreateMode = true
         hero_replaceViewController(with: vc)
     }
 }

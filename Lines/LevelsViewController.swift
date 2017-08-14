@@ -40,6 +40,11 @@ class LevelsViewController: UIViewController {
         vc.heroModalAnimationType = .push(direction: HeroDefaultAnimationType.Direction.right)
         hero_replaceViewController(with: vc)
     }
+    
+    @IBAction func sharePressed(sender: UIButton) {
+        UserDefaultsInteractor.setCurrentLevel(level: 0)
+        collectionView.reloadData()
+    }
 }
 
 extension LevelsViewController: UICollectionViewDataSource  {
@@ -53,7 +58,7 @@ extension LevelsViewController: UICollectionViewDataSource  {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 16
+        return Levels.levels.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

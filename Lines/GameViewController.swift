@@ -9,6 +9,7 @@
 import UIKit
 import Pastel
 import FaveButton
+import Hero
 
 class GameViewController: UIViewController {
     
@@ -31,6 +32,7 @@ class GameViewController: UIViewController {
     
     var levelNumber: Int = 0
     var level: Level = Levels.levels[0]
+    var isCreateMode: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,7 @@ class GameViewController: UIViewController {
         self.setupBackgroundGradient(landing: false, luminosity: .light)
         self.toggleVertexCounter()
         sketchView.delegate = self
+        sketchView.createModeEnabled = isCreateMode
         sketchView.setupLevel(level: level)
         triangleLabel.text = "0/\(level.numberOfTrianglesRequired!)"
         lineLabel.text = "0/\(level.numberOfLinesProvided!)"
@@ -93,7 +96,9 @@ class GameViewController: UIViewController {
     func bounceSketchView() {
         checkmarkButton.isHidden = false
         //levelLabel.isHidden = true
-        self.checkmarkButton.sendActions(for: .touchUpInside)
+        DispatchQueue.main.async {
+            self.checkmarkButton.sendActions(for: .touchUpInside)
+        }
         
         UIView.animate(withDuration: 0.25, animations: { self.sketchView.transform = CGAffineTransform(scaleX: 1.075, y: 1.075) }, completion: { (finish: Bool) in UIView.animate(withDuration: 0.25, animations: {
             self.sketchView.transform = CGAffineTransform.identity
@@ -157,9 +162,15 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func popViewController(sender: UIButton) {
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "levels") as! LevelsViewController
-        vc.selectedIndex = levelNumber
-        vc.heroModalAnimationType = .zoomOut
-        hero_replaceViewController(with: vc)
+        if isCreateMode {
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "landing")
+            vc.heroModalAnimationType = .push(direction: .right)
+            hero_replaceViewController(with: vc)
+        } else {
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "levels") as! LevelsViewController
+            vc.selectedIndex = levelNumber
+            vc.heroModalAnimationType = .zoomOut
+            hero_replaceViewController(with: vc)
+        }
     }
 }

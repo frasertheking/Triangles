@@ -131,6 +131,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createPressedWithSender:" destination="a4F-bW-jbm" eventType="touchUpInside" id="qRW-eW-FS3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUR-qY-7SI">
                                 <rect key="frame" x="100" y="470" width="243" height="60"/>
@@ -686,6 +689,9 @@
                                                 <constraint firstAttribute="height" constant="36" id="ruF-pb-VXZ"/>
                                             </constraints>
                                             <state key="normal" image="share"/>
+                                            <connections>
+                                                <action selector="sharePressedWithSender:" destination="sTg-sg-G7x" eventType="touchUpInside" id="Ke1-rF-6OV"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

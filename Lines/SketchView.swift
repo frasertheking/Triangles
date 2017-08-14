@@ -19,7 +19,7 @@ class SketchView: UIView {
     var delegate: GameViewController?
     
     // DEV MODE
-    var devModeEnabled = false
+    var createModeEnabled = false
     
     // Constants
     fileprivate let kMinimumTriangleSize: CGFloat = 100.0
@@ -124,7 +124,7 @@ class SketchView: UIView {
     // Level setup 
     func setupLevel(level: Level) {
         self.level = level
-        if !self.devModeEnabled {
+        if !self.createModeEnabled {
             self.generateLevel()
             levelLoaded = true
         }
@@ -223,7 +223,7 @@ class SketchView: UIView {
 
         lineArr.removeAll()
         intersectionArray.removeAll()
-        if !devModeEnabled {
+        if !createModeEnabled {
             generateLevel()
         }
         findIntersections()
@@ -257,7 +257,7 @@ class SketchView: UIView {
             return
         }
         
-        if (lineCount < startingLineCount + numberOfLinesProvided) || devModeEnabled {
+        if (lineCount < startingLineCount + numberOfLinesProvided) || createModeEnabled {
             if gesture.state == .began {
                 lineStart = gesture.location(in: self)
             }
