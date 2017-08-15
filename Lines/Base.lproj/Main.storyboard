@@ -550,7 +550,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The more triangles the better" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSh-c9-UVP">
-                                <rect key="frame" x="16" y="469" width="343" height="29"/>
+                                <rect key="frame" x="16" y="478.5" width="343" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -573,26 +573,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draw lines by dragging your finger across the screen" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sz-YL-C4Q">
-                                <rect key="frame" x="16" y="122" width="343" height="57.5"/>
+                                <rect key="frame" x="16" y="131.5" width="343" height="57.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create triangles between intersecting lines" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ja-ha-gsS">
-                                <rect key="frame" x="16" y="295.5" width="343" height="57.5"/>
+                                <rect key="frame" x="16" y="305" width="343" height="57.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drag" translatesAutoresizingMaskIntoConstraints="NO" id="JEr-L7-OIR">
-                                <rect key="frame" x="137.5" y="187.5" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="197" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="p8U-33-LJY"/>
                                     <constraint firstAttribute="width" constant="100" id="xp2-nv-wcd"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="example-triangle" translatesAutoresizingMaskIntoConstraints="NO" id="W4s-pA-Qwm">
-                                <rect key="frame" x="137" y="361" width="100" height="100"/>
+                                <rect key="frame" x="137" y="370.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="UcD-QB-SR7"/>
                                     <constraint firstAttribute="height" constant="100" id="tXT-xp-t4G"/>
@@ -606,7 +606,8 @@
                             <constraint firstItem="9zq-xU-iDd" firstAttribute="centerX" secondItem="JKJ-UI-prZ" secondAttribute="centerX" id="JMU-x0-ZG2"/>
                             <constraint firstAttribute="trailing" secondItem="5Ja-ha-gsS" secondAttribute="trailing" constant="16" id="Pd2-uy-AjN"/>
                             <constraint firstAttribute="trailing" secondItem="FSh-c9-UVP" secondAttribute="trailing" constant="16" id="Syt-xL-vL9"/>
-                            <constraint firstItem="8sz-YL-C4Q" firstAttribute="top" secondItem="9zq-xU-iDd" secondAttribute="bottom" constant="30" id="T1Q-Kn-Qkx"/>
+                            <constraint firstItem="5Ja-ha-gsS" firstAttribute="centerX" secondItem="JKJ-UI-prZ" secondAttribute="centerX" id="U3x-U0-dmg"/>
+                            <constraint firstItem="5Ja-ha-gsS" firstAttribute="centerY" secondItem="JKJ-UI-prZ" secondAttribute="centerY" id="U42-bK-17c"/>
                             <constraint firstItem="8sz-YL-C4Q" firstAttribute="leading" secondItem="JKJ-UI-prZ" secondAttribute="leading" constant="16" id="UBF-22-yjv"/>
                             <constraint firstItem="W4s-pA-Qwm" firstAttribute="top" secondItem="5Ja-ha-gsS" secondAttribute="bottom" constant="8" id="VQZ-3J-QB9"/>
                             <constraint firstItem="9zq-xU-iDd" firstAttribute="centerY" secondItem="E8p-BQ-TtM" secondAttribute="centerY" id="cXk-zN-ouD"/>
