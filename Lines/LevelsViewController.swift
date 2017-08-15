@@ -25,7 +25,7 @@ class LevelsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupBackgroundGradient(landing: false, luminosity: .light)
+        setupBackgroundGradient(landing: false, luminosity: .bright)
         collectionView.reloadData()
     }
     

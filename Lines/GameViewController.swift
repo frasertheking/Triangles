@@ -39,7 +39,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         level = Levels.levels[levelNumber] 
-        self.setupBackgroundGradient(landing: false, luminosity: .light)
+        self.setupBackgroundGradient(landing: false, luminosity: .bright)
         self.toggleVertexCounter()
         sketchView.delegate = self
         sketchView.createModeEnabled = isCreateMode

@@ -27,7 +27,7 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupBackgroundGradient(landing: true, luminosity: .dark)
+        setupBackgroundGradient(landing: true, luminosity: .bright)
         
         logoImageView2.alpha = 0
         logoImageView3.alpha = 0
@@ -85,6 +85,12 @@ class LandingViewController: UIViewController {
         let vc = self.storyboard!.instantiateViewController(withIdentifier: "game") as! GameViewController
         vc.heroModalAnimationType = .pull(direction: HeroDefaultAnimationType.Direction.left)
         vc.isCreateMode = true
+        hero_replaceViewController(with: vc)
+    }
+    
+    @IBAction func instructionsPressed(sender: UIButton) {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "instructions") as! InstructionsViewController
+        vc.heroModalAnimationType = .pull(direction: HeroDefaultAnimationType.Direction.left)
         hero_replaceViewController(with: vc)
     }
 }

@@ -25,6 +25,7 @@
 		43E3D1531F389A1F000765E8 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3D1521F389A1F000765E8 /* LevelsViewController.swift */; };
 		43E3D1551F38A03A000765E8 /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3D1541F38A03A000765E8 /* LevelCollectionViewCell.swift */; };
 		43E3D1581F3FE591000765E8 /* UserDefaultsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3D1571F3FE591000765E8 /* UserDefaultsInteractor.swift */; };
+		43F9BFE11F4285C6005F3D53 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9BFE01F4285C6005F3D53 /* InstructionsViewController.swift */; };
 		9027E1C165DD4986AC988746 /* Pods_Lines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71A90601016507D7D0F0C91 /* Pods_Lines.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		43E3D1521F389A1F000765E8 /* LevelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
 		43E3D1541F38A03A000765E8 /* LevelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelCollectionViewCell.swift; sourceTree = "<group>"; };
 		43E3D1571F3FE591000765E8 /* UserDefaultsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsInteractor.swift; sourceTree = "<group>"; };
+		43F9BFE01F4285C6005F3D53 /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		759D8C1EA20764CAF5E688AD /* Pods-Lines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lines.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lines/Pods-Lines.debug.xcconfig"; sourceTree = "<group>"; };
 		A57F526A361506B6178DCA42 /* Pods-Lines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lines.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lines/Pods-Lines.release.xcconfig"; sourceTree = "<group>"; };
 		C71A90601016507D7D0F0C91 /* Pods_Lines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 				43A99BC81EF36C85006E477C /* GameViewController.swift */,
 				43A95BD61F369CC5004EBFAA /* LandingViewController.swift */,
 				43E3D1521F389A1F000765E8 /* LevelsViewController.swift */,
+				43F9BFE01F4285C6005F3D53 /* InstructionsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				43A95BD71F369CC5004EBFAA /* LandingViewController.swift in Sources */,
 				43E3D1581F3FE591000765E8 /* UserDefaultsInteractor.swift in Sources */,
 				43E3D1551F38A03A000765E8 /* LevelCollectionViewCell.swift in Sources */,
+				43F9BFE11F4285C6005F3D53 /* InstructionsViewController.swift in Sources */,
 				432171B51F12A0D9001A85F5 /* Triangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
