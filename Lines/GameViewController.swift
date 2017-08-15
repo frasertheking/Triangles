@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var sketchView: SketchView!
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var triangleLabel: UILabel!
     @IBOutlet weak var lineLabel: UILabel!
@@ -43,22 +44,26 @@ class GameViewController: UIViewController {
         sketchView.delegate = self
         sketchView.createModeEnabled = isCreateMode
         sketchView.setupLevel(level: level)
-        triangleLabel.text = "0/\(level.numberOfTrianglesRequired!)"
-        lineLabel.text = "0/\(level.numberOfLinesProvided!)"
-        vertexLabel.text = "0/\(level.numberOfVerticesRequired!)"
         
+        triangleLabel.text = isCreateMode ? "0" : "0/\(level.numberOfTrianglesRequired!)"
+        lineLabel.text = isCreateMode ? "0" : "0/\(level.numberOfLinesProvided!)"
+        vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
+        
+        if isCreateMode {
+            backButton.setImage(UIImage(named: "back"), for: .normal)
+        }
     }
     
     func updateTriangles(triangles: Int) {
-        triangleLabel.text = "\(triangles)/\(level.numberOfTrianglesRequired!)"
+        triangleLabel.text = isCreateMode ? "\(triangles)" : "\(triangles)/\(level.numberOfTrianglesRequired!)"
         
-        if triangles == level.numberOfTrianglesRequired {
+        if !isCreateMode && triangles == level.numberOfTrianglesRequired {
             triangleCountContainer.backgroundColor = UIColor.green.withAlphaComponent(0.35)
         } else {
             triangleCountContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
         }
         
-        if sketchView.isLevelComplete(levelNumber: levelNumber, triangleCount: triangles) {
+        if !isCreateMode && sketchView.isLevelComplete(levelNumber: levelNumber, triangleCount: triangles) {
             bounceSketchView()
             self.undoButton.isEnabled = false
             
@@ -73,9 +78,9 @@ class GameViewController: UIViewController {
     }
     
     func updateLines(lines: Int) {
-        lineLabel.text = "\(lines)/\(level.numberOfLinesProvided!)"
+        lineLabel.text = isCreateMode ? "\(lines)" : "\(lines)/\(level.numberOfLinesProvided!)"
         
-        if lines == level.numberOfLinesProvided {
+        if !isCreateMode && lines == level.numberOfLinesProvided {
             lineCountContainer.backgroundColor = UIColor.green.withAlphaComponent(0.35)
         } else {
             lineCountContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
@@ -83,9 +88,9 @@ class GameViewController: UIViewController {
     }
     
     func updateVertices(vertices: Int) {
-        vertexLabel.text = "\(vertices)/\(level.numberOfVerticesRequired!)"
+        vertexLabel.text = isCreateMode ? "\(vertices)" : "\(vertices)/\(level.numberOfVerticesRequired!)"
         
-        if vertices == level.numberOfVerticesRequired {
+        if !isCreateMode && vertices == level.numberOfVerticesRequired {
             vertexCountContainer.backgroundColor = UIColor.green.withAlphaComponent(0.35)
         } else {
             vertexCountContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
@@ -95,7 +100,6 @@ class GameViewController: UIViewController {
     // Animation functions
     func bounceSketchView() {
         checkmarkButton.isHidden = false
-        //levelLabel.isHidden = true
         DispatchQueue.main.async {
             self.checkmarkButton.sendActions(for: .touchUpInside)
         }
@@ -148,15 +152,13 @@ class GameViewController: UIViewController {
     
     @IBAction func nextPressed(sender: UIButton) {
         levelNumber += 1
-        levelLabel.text = "\(levelNumber+1)"
         level = Levels.levels[levelNumber]
         sketchView.resetStageForLevel(level: level)
         animateNextButtonOut()
-        triangleLabel.text = "0/\(level.numberOfTrianglesRequired!)"
-        lineLabel.text = "0/\(level.numberOfLinesProvided!)"
-        vertexLabel.text = "0/\(level.numberOfVerticesRequired!)"
+        triangleLabel.text = isCreateMode ? "0" : "0/\(level.numberOfTrianglesRequired!)"
+        lineLabel.text = isCreateMode ? "0" : "0/\(level.numberOfLinesProvided!)"
+        vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
         checkmarkButton.isHidden = true
-        //levelLabel.isHidden = false
         checkmarkButton.sendActions(for: .touchUpInside)
         toggleVertexCounter()
     }

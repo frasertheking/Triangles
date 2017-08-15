@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A291m" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a4F-bW-jbm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A330h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a4F-bW-jbm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -309,7 +309,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DS-Px-O0F">
-                                <rect key="frame" x="12" y="54" width="44" height="44"/>
+                                <rect key="frame" x="20" y="54" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="dXy-Rf-Tv9"/>
                                     <constraint firstAttribute="height" constant="44" id="iT6-5g-dbF"/>
@@ -486,7 +486,7 @@
                             <constraint firstAttribute="trailing" secondItem="NoY-dg-or9" secondAttribute="trailing" constant="20" id="BdE-c7-weC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tPc-uP-mio" secondAttribute="bottom" id="Isl-DO-QZk"/>
                             <constraint firstItem="sEL-5E-KxP" firstAttribute="centerY" secondItem="Bb5-UM-of3" secondAttribute="centerY" id="Jfp-gn-k9c"/>
-                            <constraint firstItem="8DS-Px-O0F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="PPN-2a-Dw9"/>
+                            <constraint firstItem="8DS-Px-O0F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="PPN-2a-Dw9"/>
                             <constraint firstAttribute="trailing" secondItem="Xry-KG-5jD" secondAttribute="trailing" id="TVV-FU-eXs"/>
                             <constraint firstAttribute="bottom" secondItem="Xxg-7K-VpY" secondAttribute="bottom" constant="12" id="TsH-Jt-PLP"/>
                             <constraint firstAttribute="bottom" secondItem="Zle-YN-cCG" secondAttribute="bottom" constant="12" id="VzL-xE-GZD"/>
@@ -508,6 +508,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="8DS-Px-O0F" id="A5l-nl-Cjt"/>
                         <outlet property="checkmarkButton" destination="sEL-5E-KxP" id="Mdf-KV-XFS"/>
                         <outlet property="levelLabel" destination="Bb5-UM-of3" id="Qp0-y6-yba"/>
                         <outlet property="lineContainerBottomConstraint" destination="TsH-Jt-PLP" id="cCV-93-9MC"/>
