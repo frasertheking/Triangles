@@ -19,6 +19,9 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var logoImageView4: UIImageView!
     @IBOutlet weak var logoImageView5: UIImageView!
     @IBOutlet weak var logoImageView6: UIImageView!
+    @IBOutlet weak var playButtonImage: UIView!
+    @IBOutlet weak var createButtonImage: UIView!
+    @IBOutlet weak var helpButtonImage: UIView!
     
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var sandboxButton: UIButton!
@@ -35,6 +38,10 @@ class LandingViewController: UIViewController {
         logoImageView5.alpha = 0
         logoImageView6.alpha = 0
         
+        playButtonImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(playPressed)))
+        createButtonImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(createPressed)))
+        helpButtonImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(instructionsPressed)))
+
         animateIn()
     }
     

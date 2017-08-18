@@ -45,12 +45,12 @@ class GameViewController: UIViewController {
         sketchView.createModeEnabled = isCreateMode
         sketchView.setupLevel(level: level)
         
-        triangleLabel.text = isCreateMode ? "0" : "0/\(level.numberOfTrianglesRequired!)"
-        lineLabel.text = isCreateMode ? "0" : "0/\(level.numberOfLinesProvided!)"
-        vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
-        
         if isCreateMode {
             backButton.setImage(UIImage(named: "back"), for: .normal)
+            undoButton.isEnabled = false
+            triangleLabel.text = isCreateMode ? "0" : "0/\(level.numberOfTrianglesRequired!)"
+            lineLabel.text = isCreateMode ? "0" : "0/\(level.numberOfLinesProvided!)"
+            vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
         }
     }
     
