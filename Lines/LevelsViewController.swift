@@ -133,7 +133,11 @@ extension LevelsViewController: UICollectionViewDelegate, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView,
                                  layout collectionViewLayout: UICollectionViewLayout,
                                  sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 280, height: 375);
+        if isIpad() {
+            return CGSize(width: 415, height: 550)
+        } else {
+            return CGSize(width: 280, height: 375)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
