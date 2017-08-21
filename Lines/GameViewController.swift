@@ -99,9 +99,7 @@ class GameViewController: UIViewController {
     
     // Animation functions
     func bounceSketchView() {
-        DispatchQueue.main.async {
-            self.checkmarkButton.toggleCheckState(true)
-        }
+        self.checkmarkButton.toggleCheckState(true)
         
         UIView.animate(withDuration: 0.25, animations: { self.sketchView.transform = CGAffineTransform(scaleX: 1.075, y: 1.075) }, completion: { (finish: Bool) in UIView.animate(withDuration: 0.25, animations: {
             self.sketchView.transform = CGAffineTransform.identity

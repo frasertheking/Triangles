@@ -17,6 +17,7 @@ class SketchView: UIView {
     @IBOutlet weak var lineView: UIView!
     var tapGestureRecognizer: UITapGestureRecognizer!
     var delegate: GameViewController?
+    var helpDelegate: InstructionsViewController?
     
     // DEV MODE
     var createModeEnabled = false
@@ -45,6 +46,7 @@ class SketchView: UIView {
         }
         set {
             self.delegate?.updateTriangles(triangles: newValue)
+            self.helpDelegate?.updateTriangles(triangles: newValue)
         }
     }
     var numberOfLines: Int {
@@ -53,6 +55,7 @@ class SketchView: UIView {
         }
         set {
             self.delegate?.updateLines(lines: newValue)
+            self.helpDelegate?.updateLines(lines: newValue)
         }
     }
     var numberOfVertices: Int {
@@ -61,6 +64,7 @@ class SketchView: UIView {
         }
         set {
             self.delegate?.updateVertices(vertices: newValue)
+            self.helpDelegate?.updateVertices(vertices: newValue)
         }
     }
     

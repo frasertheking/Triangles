@@ -113,5 +113,9 @@ class Levels: NSObject {
          Line(id: -1, start: CGPoint(x: 204.5, y: 299.5), end: CGPoint(x: 180.0, y: 459.0))])
 
     static let levels: [Level] = [a0, a1, a2, a10, a3, q2, b0, a5, v0, v1, v2, a4, a12, a7, a6, a8, a9]
+    
+    static let tutorialLevel = Level(levelId: 0, numberOfLinesProvided: 2, numberOfTrianglesRequired: 2, numberOfVerticesRequired: -1, lines:
+        [Line(id: -1, start: CGPoint(x: 200, y: 25), end: CGPoint(x: 80, y: 375)),
+         Line(id: -1, start: CGPoint(x: 175, y: 25), end: CGPoint(x: 300, y: 375))])
 
 }
