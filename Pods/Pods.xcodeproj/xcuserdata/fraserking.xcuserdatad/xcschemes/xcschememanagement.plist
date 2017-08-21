@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>FaveButton.xcscheme</key>
+		<key>Hero.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Hero.xcscheme</key>
+		<key>M13Checkbox.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>15BF8F14E24CAD19FA48E2BFE4A30597</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20A9DD9ABBF08BC57372A26C35327BF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>485A3788B9800D2CE8334C269B0BEBC2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4A3E211676B243619B026D147D272253</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7C08227B6E14D87F0F5B0FD6DFFA1A3E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A806816D30A82BDB1DFE4AAAF35FF5F0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BF3CF7268FA66245573760B21B51B595</key>
 		<dict>
 			<key>primary</key>
 			<true/>

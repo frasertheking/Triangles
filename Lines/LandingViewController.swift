@@ -81,23 +81,25 @@ class LandingViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showLevels") {
+            let vc = segue.destination as! LevelsViewController
+            vc.selectedIndex = UserDefaultsInteractor.getCurrentLevel()
+        } else if (segue.identifier == "showCreate") {
+            let vc = segue.destination as! GameViewController
+            vc.isCreateMode = true
+        }
+    }
+    
     @IBAction func playPressed(sender: UIButton) {
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "levels") as! LevelsViewController
-        vc.heroModalAnimationType = .pull(direction: HeroDefaultAnimationType.Direction.left)
-        vc.selectedIndex = UserDefaultsInteractor.getCurrentLevel()
-        hero_replaceViewController(with: vc)
+        self.performSegue(withIdentifier: "showLevels", sender: self)
     }
     
     @IBAction func createPressed(sender: UIButton) {
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "game") as! GameViewController
-        vc.heroModalAnimationType = .pull(direction: HeroDefaultAnimationType.Direction.left)
-        vc.isCreateMode = true
-        hero_replaceViewController(with: vc)
+        self.performSegue(withIdentifier: "showCreate", sender: self)
     }
     
     @IBAction func instructionsPressed(sender: UIButton) {
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "instructions") as! InstructionsViewController
-        vc.heroModalAnimationType = .pull(direction: HeroDefaultAnimationType.Direction.left)
-        hero_replaceViewController(with: vc)
+        self.performSegue(withIdentifier: "showHelp", sender: self)
     }
 }

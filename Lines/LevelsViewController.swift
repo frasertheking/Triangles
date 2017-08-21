@@ -26,24 +26,35 @@ class LevelsViewController: UIViewController {
         super.viewDidLoad()
         
         setupBackgroundGradient(landing: false, luminosity: .bright)
-        collectionView.reloadData()
+        if isIpad() {
+            collectionView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+        } else {
+            collectionView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
  
-        self.collectionView.scrollToItem(at: IndexPath(row: selectedIndex, section: 0), at: UICollectionViewScrollPosition.centeredVertically, animated: false)
+        collectionView.reloadData()
+        collectionView.layoutIfNeeded()
+        collectionView.scrollToItem(at: IndexPath(row: currentLevel, section: 0), at: UICollectionViewScrollPosition.centeredVertically, animated: false)
     }
     
     @IBAction func backPressed(sender: UIButton) {
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "landing")
-        vc.heroModalAnimationType = .push(direction: HeroDefaultAnimationType.Direction.right)
-        hero_replaceViewController(with: vc)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func sharePressed(sender: UIButton) {
         UserDefaultsInteractor.setCurrentLevel(level: 0)
         collectionView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showNewGame") {
+            let vc = segue.destination as! GameViewController
+            vc.levelNumber = selectedIndex
+        }
     }
 }
 
@@ -141,11 +152,8 @@ extension LevelsViewController: UICollectionViewDelegate, UICollectionViewDelega
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "game") as! GameViewController
-        vc.levelNumber = indexPath.row
-        vc.heroModalAnimationType = .zoom
         selectedIndex = indexPath.row
-        hero_replaceViewController(with: vc)
+        performSegue(withIdentifier: "showNewGame", sender: self)
     }
     
     /*

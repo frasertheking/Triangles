@@ -14,12 +14,9 @@ class InstructionsViewController: UIViewController {
         super.viewDidLoad()
 
         setupBackgroundGradient(landing: false, luminosity: .bright)
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func popViewController(sender: UIButton) {
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "landing")
-        vc.heroModalAnimationType = .push(direction: .right)
-        hero_replaceViewController(with: vc)
+        navigationController?.popViewController(animated: true)
     }
 }

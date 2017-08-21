@@ -8,8 +8,8 @@
 
 import UIKit
 import Pastel
-import FaveButton
 import Hero
+import M13Checkbox
 
 class GameViewController: UIViewController {
     
@@ -29,7 +29,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var triangleCountContainer: UIView!
     @IBOutlet weak var vertexCountContainer: UIView!
     @IBOutlet weak var lineCountContainer: UIView!
-    @IBOutlet weak var checkmarkButton: FaveButton!
+    @IBOutlet weak var checkmarkButton: M13Checkbox!
     
     var levelNumber: Int = 0
     var level: Level = Levels.levels[0]
@@ -99,9 +99,8 @@ class GameViewController: UIViewController {
     
     // Animation functions
     func bounceSketchView() {
-        checkmarkButton.isHidden = false
         DispatchQueue.main.async {
-            self.checkmarkButton.sendActions(for: .touchUpInside)
+            self.checkmarkButton.toggleCheckState(true)
         }
         
         UIView.animate(withDuration: 0.25, animations: { self.sketchView.transform = CGAffineTransform(scaleX: 1.075, y: 1.075) }, completion: { (finish: Bool) in UIView.animate(withDuration: 0.25, animations: {
@@ -158,21 +157,11 @@ class GameViewController: UIViewController {
         triangleLabel.text = isCreateMode ? "0" : "0/\(level.numberOfTrianglesRequired!)"
         lineLabel.text = isCreateMode ? "0" : "0/\(level.numberOfLinesProvided!)"
         vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
-        checkmarkButton.isHidden = true
-        checkmarkButton.sendActions(for: .touchUpInside)
+        checkmarkButton.toggleCheckState(true)
         toggleVertexCounter()
     }
     
     @IBAction func popViewController(sender: UIButton) {
-        if isCreateMode {
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: "landing")
-            vc.heroModalAnimationType = .push(direction: .right)
-            hero_replaceViewController(with: vc)
-        } else {
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: "levels") as! LevelsViewController
-            vc.selectedIndex = levelNumber
-            vc.heroModalAnimationType = .zoomOut
-            hero_replaceViewController(with: vc)
-        }
+        navigationController?.popViewController(animated: true)
     }
 }
