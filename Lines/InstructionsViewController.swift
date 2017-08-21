@@ -55,7 +55,6 @@ class InstructionsViewController: UIViewController {
     }
     
     func updateLines(lines: Int) {
-        print(lines)
         if lines > 0 {
             undoButton.isEnabled = true
         } else {

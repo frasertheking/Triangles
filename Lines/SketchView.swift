@@ -274,7 +274,7 @@ class SketchView: UIView {
                 if let lineStart = lineStart {
                     if lineStart.distance(gesture.location(in: self)) > 10 {
                         drawLine(fromPoint: lineStart, toPoint: gesture.location(in: self), doneDrawingLine: true)
-                        print("Line(id: -1, start: CGPoint(x: \(lineStart.x), y: \(lineStart.y)), end: CGPoint(x: \(gesture.location(in: self).x), y: \(gesture.location(in: self).y))),")
+                        //print("Line(id: -1, start: CGPoint(x: \(lineStart.x), y: \(lineStart.y)), end: CGPoint(x: \(gesture.location(in: self).x), y: \(gesture.location(in: self).y))),")
                     }
                 }
             }
