@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double FaveButtonVersionNumber;
-FOUNDATION_EXPORT const unsigned char FaveButtonVersionString[];
+FOUNDATION_EXPORT double M13CheckboxVersionNumber;
+FOUNDATION_EXPORT const unsigned char M13CheckboxVersionString[];
 

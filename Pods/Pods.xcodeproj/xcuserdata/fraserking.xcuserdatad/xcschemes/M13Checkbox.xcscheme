@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7C08227B6E14D87F0F5B0FD6DFFA1A3E'
-               BlueprintName = 'FaveButton'
+               BlueprintIdentifier = '20A9DD9ABBF08BC57372A26C35327BF1'
+               BlueprintName = 'M13Checkbox'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'FaveButton.framework'>
+               BuildableName = 'M13Checkbox.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
