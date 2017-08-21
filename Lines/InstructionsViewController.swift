@@ -47,16 +47,15 @@ class InstructionsViewController: UIViewController {
     func updateTriangles(triangles: Int) {
         if index == 2 && triangles > 0 {
             showNext()
-            checkmarkButton.toggleCheckState(true)
         }
         
         if index == 3 && triangles == 2 {
             showNext()
-            checkmarkButton.toggleCheckState(true)
         }
     }
     
     func updateLines(lines: Int) {
+        print(lines)
         if lines > 0 {
             undoButton.isEnabled = true
         } else {
@@ -65,19 +64,21 @@ class InstructionsViewController: UIViewController {
         
         if index == 0 && lines > 0 {
             showNext()
-            checkmarkButton.toggleCheckState(true)
         }
     }
     
     func updateVertices(vertices: Int) {
         if index == 1 && vertices > 0 {
             showNext()
-            checkmarkButton.toggleCheckState(true)
         }
     }
     
     func showNext() {
         nextButtonBottomConstraint.constant = 16
+        
+        if checkmarkButton.checkState == .unchecked {
+            checkmarkButton.toggleCheckState(true)
+        }
         
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
@@ -139,8 +140,11 @@ class InstructionsViewController: UIViewController {
     @IBAction func nextPressed(sender: UIButton) {
         index = index + 1
         hideNext()
-        checkmarkButton.toggleCheckState(true)
+        if checkmarkButton.checkState == .checked {
+            checkmarkButton.toggleCheckState(true)
+        }
         sketchView.clearAll()
+        undoButton.isEnabled = false
 
         if index == 4 {
             hideAllAndShowComplete()

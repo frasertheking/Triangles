@@ -222,11 +222,15 @@ class SketchView: UIView {
     }
     
     func clearAll() {
-        self.vertexView.layer.sublayers = nil
-        self.lineView.layer.sublayers = nil
+        vertexView.layer.sublayers = nil
+        lineView.layer.sublayers = nil
+        triangleView.layer.sublayers = nil
+        lineCount = 0
+        startingLineCount = 0
 
         lineArr.removeAll()
         intersectionArray.removeAll()
+        triangleArray.removeAll()
         if !createModeEnabled {
             generateLevel()
         }
