@@ -51,8 +51,12 @@ class LevelsViewController: UIViewController {
     }
     
     @IBAction func sharePressed(sender: UIButton) {
-        UserDefaultsInteractor.setCurrentLevel(level: 0)
-        collectionView.reloadData()
+        let text = "I've made it to level \(currentLevel+1) on Kobon. Think you can make more tiangles than me? Get it on the App store today!"
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = sender
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

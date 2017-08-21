@@ -65,8 +65,11 @@ class GameViewController: UIViewController {
         
         if !isCreateMode && sketchView.isLevelComplete(levelNumber: levelNumber, triangleCount: triangles) {
             bounceSketchView()
-            self.undoButton.isEnabled = false
-            
+            self.undoButton.setImage(UIImage(named: "share"), for: .normal)
+            self.undoButton.removeTarget(nil, action: nil, for: .allEvents)
+            self.undoButton.addTarget(self, action: #selector(share(sender:)), for: .touchUpInside)
+            undoButton.isEnabled = true
+
             // Update userdefaults current level
             UserDefaultsInteractor.updateLevelIfGreaterThanCurrent(level: levelNumber+1)
             
@@ -157,6 +160,26 @@ class GameViewController: UIViewController {
         vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
         checkmarkButton.toggleCheckState(true)
         toggleVertexCounter()
+        self.undoButton.setImage(UIImage(named: "undo"), for: .normal)
+        self.undoButton.removeTarget(nil, action: nil, for: .allEvents)
+        self.undoButton.addTarget(self, action: #selector(undoPressed(sender:)), for: .touchUpInside)
+    }
+    
+    func share(sender: UIButton) {
+        let image = captureScreen()
+        let text = "Check out my solution to this puzzle in Kobon. Think you can do a better job? Get it on the App store today!"
+        var activityItems: [Any]
+
+        if let image = image {
+            activityItems = [image, text]
+        } else {
+            activityItems = [text]
+        }
+        
+        let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = sender
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func popViewController(sender: UIButton) {

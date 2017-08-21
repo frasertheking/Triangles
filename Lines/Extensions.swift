@@ -51,4 +51,12 @@ extension UIViewController {
     func isIpad() -> Bool {
         return UIDevice.current.userInterfaceIdiom == .pad
     }
+    
+    func captureScreen() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, UIScreen.main.scale)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
 }
