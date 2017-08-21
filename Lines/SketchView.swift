@@ -113,6 +113,12 @@ class SketchView: UIView {
         self.addParallaxToView(vw: triangleView)
         self.addParallaxToView(vw: lineView)
         self.addParallaxToView(vw: vertexView)
+        
+        let points = drawRandomPolygon(ctrX: UIScreen.main.bounds.size.width / 2, ctrY: UIScreen.main.bounds.size.height / 2, aveRadius: UIScreen.main.bounds.size.width / 3, irreg: 1.0, spike: 1.0, numVerts: 12)
+        for i in 0..<points.count-1 {
+            drawLine(fromPoint: points[i], toPoint: points[i+1], doneDrawingLine: true)
+        }
+        drawLine(fromPoint: points[0], toPoint: points[points.count-1], doneDrawingLine: true)
     }
     
     // Loads a XIB file into a view and returns this view.
@@ -463,12 +469,12 @@ class SketchView: UIView {
         for i in stride(from: 0, to: UIScreen.main.bounds.size.width, by: 30) {
             for j in stride(from: 0, to: UIScreen.main.bounds.size.height / 2, by: 30) {
                 self.drawLine(fromPoint: CGPoint(x: i, y: j), toPoint: CGPoint(x: UIScreen.main.bounds.size.width - i, y: UIScreen.main.bounds.size.height - j), doneDrawingLine: true)
-                /*for k in stride(from: 0, to: UIScreen.main.bounds.size.width, by: 30) {
+                for k in stride(from: 0, to: UIScreen.main.bounds.size.width, by: 30) {
                  for l in stride(from: 0, to: UIScreen.main.bounds.size.height / 2, by: 30) {
-                 sketchView.drawLine(fromPoint: CGPoint(x: k, y: l), toPoint: CGPoint(x: UIScreen.main.bounds.size.width - k, y: UIScreen.main.bounds.size.height - l), doneDrawingLine: true)
-                 sketchView.undo()
-                 }
-                 }*/
+                    drawLine(fromPoint: CGPoint(x: k, y: l), toPoint: CGPoint(x: UIScreen.main.bounds.size.width - k, y: UIScreen.main.bounds.size.height - l), doneDrawingLine: true)
+                    undo()
+                  }
+                }
                 self.clearAll()
             }
         }
@@ -495,4 +501,52 @@ class SketchView: UIView {
         vw.addMotionEffect(group)
     }
     
+    func drawRandomPolygon(ctrX: CGFloat, ctrY: CGFloat, aveRadius: CGFloat, irreg: CGFloat, spike: CGFloat, numVerts: CGFloat) -> [CGPoint] {
+        let irregularity: CGFloat = 15.0//clip( x: irreg, min: 0.0, max: 1.0 ) * 2 * .pi / numVerts
+        let spikeyness: CGFloat = 2.0//clip( x: spike, min: 0.0, max: 1.0 ) * aveRadius
+        
+        var angleSteps = [CGFloat]()
+        let lower = (2 * .pi / numVerts) - irregularity
+        let upper = (2 * .pi / numVerts) + irregularity
+        var sum: CGFloat = 0
+        for _ in 0..<Int(numVerts) {
+            let tmp = randomBetweenNumbers(firstNum: lower, secondNum: upper)
+            angleSteps.append( tmp )
+            sum = sum + tmp
+        }
+        
+        let k = CGFloat(sum) / (2 * .pi)
+        for i in 0..<Int(numVerts) {
+            angleSteps[i] = CGFloat(angleSteps[i]) / k
+        }
+        
+        var points = [CGPoint]()
+        var angle = randomBetweenNumbers(firstNum: 0, secondNum: 2.0 * .pi)
+        for i in 0..<Int(numVerts) {
+            let r_i = clip( x: randomBetweenNumbers(firstNum: spikeyness, secondNum: aveRadius), min: 0, max: 2*aveRadius )
+            let x = ctrX + r_i * cos(angle)
+            let y = ctrY + r_i * sin(angle)
+            points.append( CGPoint(x: x, y: y) )
+            
+            angle = angle + angleSteps[i]
+        }
+        
+        return points
+    }
+    
+    func clip(x: CGFloat, min: CGFloat, max: CGFloat) -> CGFloat {
+        if min > max {
+            return x
+        } else if (x < min) {
+            return min
+        } else if x > max {
+            return max
+        }
+        
+        return x
+    }
+    
+    func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat{
+        return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
+    }
 }
