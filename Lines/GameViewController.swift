@@ -36,12 +36,17 @@ class GameViewController: UIViewController {
     var levelNumber: Int = 0
     var level: Level = Levels.levels[0]
     var isCreateMode: Bool = false
+    var isKobonMode: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        level = Levels.levels[levelNumber] 
-        self.setupBackgroundGradient(landing: false, luminosity: .bright)
+        if isKobonMode {
+            level = Levels.kobonLevels[levelNumber]
+        } else {
+            level = Levels.levels[levelNumber]
+        }
+        self.setupBackgroundGradient(luminosity: .bright)
         self.toggleVertexCounter()
         sketchView.delegate = self
         sketchView.createModeEnabled = isCreateMode
@@ -51,10 +56,12 @@ class GameViewController: UIViewController {
             backButton.setImage(UIImage(named: "back"), for: .normal)
             undoButton.isEnabled = false
             shareButton.isHidden = false
-            triangleLabel.text = isCreateMode ? "0" : "0/\(level.numberOfTrianglesRequired!)"
-            lineLabel.text = isCreateMode ? "0" : "0/\(level.numberOfLinesProvided!)"
-            vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
+        } else if isKobonMode {
+            undoButton.isEnabled = false
         }
+        triangleLabel.text = isCreateMode ? "0" : "0/\(level.numberOfTrianglesRequired!)"
+        lineLabel.text = isCreateMode ? "0" : "0/\(level.numberOfLinesProvided!)"
+        vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
     }
     
     func updateTriangles(triangles: Int) {
@@ -156,7 +163,14 @@ class GameViewController: UIViewController {
     @IBAction func nextPressed(sender: UIButton) {
         levelNumber += 1
         delegate?.selectedIndex = levelNumber
-        level = Levels.levels[levelNumber]
+        if isKobonMode {
+            level = Levels.kobonLevels[levelNumber]
+            triangleCountContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
+            lineCountContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
+            vertexCountContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
+        } else {
+            level = Levels.levels[levelNumber]
+        }
         sketchView.resetStageForLevel(level: level)
         animateNextButtonOut()
         triangleLabel.text = isCreateMode ? "0" : "0/\(level.numberOfTrianglesRequired!)"

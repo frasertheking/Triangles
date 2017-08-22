@@ -26,7 +26,7 @@ extension CGPoint {
 }
 
 extension UIViewController {
-    func setupBackgroundGradient(landing: Bool, luminosity: Luminosity) {
+    func setupBackgroundGradient(luminosity: Luminosity) {
         let pastelView = PastelView(frame: view.bounds)
         
         // Custom Direction

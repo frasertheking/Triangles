@@ -130,9 +130,22 @@ class Levels: NSObject {
         [Line(id: -1, start: CGPoint(x: 200, y: 25), end: CGPoint(x: 80, y: 375)),
          Line(id: -1, start: CGPoint(x: 175, y: 25), end: CGPoint(x: 300, y: 375))])
     
+    // KOBON TRIAL 
     
-    // ipad
-    // height: 1024 
-    // width 768
+    static let kobon1 = Level(levelId: 0, numberOfLinesProvided: 3, numberOfTrianglesRequired: 1, numberOfVerticesRequired: -1, lines: nil)
+    static let kobon2 = Level(levelId: 0, numberOfLinesProvided: 4, numberOfTrianglesRequired: 2, numberOfVerticesRequired: -1, lines: nil)
+    static let kobon3 = Level(levelId: 0, numberOfLinesProvided: 5, numberOfTrianglesRequired: 5, numberOfVerticesRequired: -1, lines: nil)
+    static let kobon4 = Level(levelId: 0, numberOfLinesProvided: 6, numberOfTrianglesRequired: 7, numberOfVerticesRequired: -1, lines: nil)
+    static let kobon5 = Level(levelId: 0, numberOfLinesProvided: 7, numberOfTrianglesRequired: 11, numberOfVerticesRequired: -1, lines: nil)
+    static let kobon6 = Level(levelId: 0, numberOfLinesProvided: 8, numberOfTrianglesRequired: 15, numberOfVerticesRequired: -1, lines: nil)
+    static let kobon7 = Level(levelId: 0, numberOfLinesProvided: 9, numberOfTrianglesRequired: 21, numberOfVerticesRequired: -1, lines: nil)
+    static let kobon8 = Level(levelId: 0, numberOfLinesProvided: 10, numberOfTrianglesRequired: 26, numberOfVerticesRequired: -1, lines: nil)
+    static let kobon9 = Level(levelId: 0, numberOfLinesProvided: 11, numberOfTrianglesRequired: 33, numberOfVerticesRequired: -1, lines: nil)
+    static let kobon10 = Level(levelId: 0, numberOfLinesProvided: 12, numberOfTrianglesRequired: 39, numberOfVerticesRequired: -1, lines: nil)
+    static let kobon11 = Level(levelId: 0, numberOfLinesProvided: 13, numberOfTrianglesRequired: 47, numberOfVerticesRequired: -1, lines: nil)
+    static let kobon12 = Level(levelId: 0, numberOfLinesProvided: 14, numberOfTrianglesRequired: 55, numberOfVerticesRequired: -1, lines: nil)
+    static let kobon13 = Level(levelId: 0, numberOfLinesProvided: 15, numberOfTrianglesRequired: 65, numberOfVerticesRequired: -1, lines: nil)
+    
+    static let kobonLevels: [Level] = [kobon1, kobon2, kobon3, kobon4, kobon5, kobon6, kobon7, kobon8, kobon9, kobon10, kobon11, kobon12, kobon13]
 
 }

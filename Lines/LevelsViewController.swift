@@ -25,7 +25,7 @@ class LevelsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupBackgroundGradient(landing: false, luminosity: .bright)
+        setupBackgroundGradient(luminosity: .bright)
         if isIpad() {
             collectionView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
         } else {

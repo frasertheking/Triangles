@@ -30,7 +30,7 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupBackgroundGradient(landing: true, luminosity: .bright)
+        setupBackgroundGradient(luminosity: .bright)
         
         logoImageView2.alpha = 0
         logoImageView3.alpha = 0
@@ -82,17 +82,14 @@ class LandingViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showLevels") {
-            let vc = segue.destination as! LevelsViewController
-            vc.selectedIndex = UserDefaultsInteractor.getCurrentLevel()
-        } else if (segue.identifier == "showCreate") {
+        if (segue.identifier == "showCreate") {
             let vc = segue.destination as! GameViewController
             vc.isCreateMode = true
         }
     }
     
     @IBAction func playPressed(sender: UIButton) {
-        self.performSegue(withIdentifier: "showLevels", sender: self)
+        self.performSegue(withIdentifier: "showModes", sender: self)
     }
     
     @IBAction func createPressed(sender: UIButton) {

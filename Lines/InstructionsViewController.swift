@@ -31,7 +31,7 @@ class InstructionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupBackgroundGradient(landing: false, luminosity: .bright)
+        setupBackgroundGradient(luminosity: .bright)
 
         sketchView.helpDelegate = self
         sketchView.createModeEnabled = true
