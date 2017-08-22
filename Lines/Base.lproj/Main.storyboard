@@ -678,7 +678,7 @@
                             <imageView userInteractionEnabled="NO" alpha="0.035000000000000003" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kobon-background" translatesAutoresizingMaskIntoConstraints="NO" id="jaO-cB-Vbf">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8p-BQ-TtM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8p-BQ-TtM">
                                 <rect key="frame" x="24" y="44" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="aur-Gi-39X"/>
@@ -747,13 +747,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="769-nS-APg">
-                                <rect key="frame" x="36" y="114" width="342" height="34"/>
+                                <rect key="frame" x="24" y="114" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag your finger below to draw a line across the screen" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umQ-dl-vst">
-                                <rect key="frame" x="36" y="157.66666666666666" width="358" height="21"/>
+                                <rect key="frame" x="24" y="157.66666666666666" width="370" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84661091549295775" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -829,12 +829,12 @@
                             <constraint firstItem="umQ-dl-vst" firstAttribute="leading" secondItem="769-nS-APg" secondAttribute="leading" id="J2r-Wq-TLk"/>
                             <constraint firstAttribute="trailing" secondItem="jaO-cB-Vbf" secondAttribute="trailing" id="JKv-tW-Vv0"/>
                             <constraint firstItem="9zq-xU-iDd" firstAttribute="centerX" secondItem="JKJ-UI-prZ" secondAttribute="centerX" id="JMU-x0-ZG2"/>
-                            <constraint firstItem="769-nS-APg" firstAttribute="leading" secondItem="JKJ-UI-prZ" secondAttribute="leadingMargin" constant="16" id="Kxa-Gr-Rxh"/>
                             <constraint firstAttribute="trailing" secondItem="FCr-Eg-gMH" secondAttribute="trailing" constant="24" id="PAk-Rs-4KJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="769-nS-APg" secondAttribute="trailing" constant="16" id="Qnb-RE-Lpd"/>
                             <constraint firstItem="umQ-dl-vst" firstAttribute="top" secondItem="769-nS-APg" secondAttribute="bottom" constant="10" id="RHn-y5-VuK"/>
                             <constraint firstItem="p61-1E-Cfw" firstAttribute="top" secondItem="D6T-Tb-Lhh" secondAttribute="bottom" constant="-70" id="RyM-qq-7Qr"/>
                             <constraint firstAttribute="trailing" secondItem="cda-8k-g6R" secondAttribute="trailing" id="TBR-MI-Egf"/>
+                            <constraint firstItem="769-nS-APg" firstAttribute="leading" secondItem="E8p-BQ-TtM" secondAttribute="leading" id="Wui-VC-P8b"/>
                             <constraint firstAttribute="trailing" secondItem="D6T-Tb-Lhh" secondAttribute="trailing" constant="16" id="XyO-xW-pRX"/>
                             <constraint firstItem="GjC-6w-m1W" firstAttribute="leading" secondItem="JKJ-UI-prZ" secondAttribute="leading" id="Yk0-XR-WmL"/>
                             <constraint firstItem="769-nS-APg" firstAttribute="top" secondItem="9zq-xU-iDd" secondAttribute="bottom" constant="24" id="aJs-kK-G5d"/>
@@ -949,7 +949,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0X-Dy-Xdj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0X-Dy-Xdj">
                                 <rect key="frame" x="24" y="44" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="bev-qR-n5r"/>
@@ -1222,7 +1222,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA7-ux-Qhz">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA7-ux-Qhz">
                                             <rect key="frame" x="12" y="23" width="44" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="EqH-ra-XuA"/>
