@@ -102,7 +102,7 @@ extension LevelsViewController: UICollectionViewDataSource  {
                 cell.beginImageView.image = UIImage(named: "checkmark")
             }
             cell.blurOverlay.isHidden = true
-            cell.title2.text = "Create \(String(describing: Levels.levels[indexPath.row].numberOfTrianglesRequired!)) \(triangleText) from \(String(describing: Levels.levels[indexPath.row].numberOfLinesProvided!)) \(lineText)"
+            cell.title2.text = "Create \(String(describing: Levels.levels[indexPath.row].numberOfTrianglesRequired!)) \(triangleText) with \(String(describing: Levels.levels[indexPath.row].numberOfLinesProvided!)) \(lineText)"
         }
         
         cell.image.image = UIImage(named: "level\(indexPath.row+1)")
