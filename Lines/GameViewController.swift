@@ -56,12 +56,16 @@ class GameViewController: UIViewController {
             backButton.setImage(UIImage(named: "back"), for: .normal)
             undoButton.isEnabled = false
             shareButton.isHidden = false
+            
+            triangleLabel.text = isCreateMode ? "0" : "0/\(level.numberOfTrianglesRequired!)"
+            lineLabel.text = isCreateMode ? "0" : "0/\(level.numberOfLinesProvided!)"
+            vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
         } else if isKobonMode {
             undoButton.isEnabled = false
+            triangleLabel.text = "0/\(level.numberOfTrianglesRequired!)"
+            lineLabel.text = "0/\(level.numberOfLinesProvided!)"
+            vertexLabel.text = "0/\(level.numberOfVerticesRequired!)"
         }
-        triangleLabel.text = isCreateMode ? "0" : "0/\(level.numberOfTrianglesRequired!)"
-        lineLabel.text = isCreateMode ? "0" : "0/\(level.numberOfLinesProvided!)"
-        vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
     }
     
     func updateTriangles(triangles: Int) {
