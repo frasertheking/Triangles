@@ -171,14 +171,13 @@ class Levels: NSObject {
         Line(id: -1, start: CGPoint(x: 324.5, y: 130.5), end: CGPoint(x: 131.5, y: 571.5)),
         Line(id: -1, start: CGPoint(x: 17.5, y: 121.0), end: CGPoint(x: 348.0, y: 590.0))])
     
-    static let levels: [Level] = [new8, new7, new4, new5, new6, new1, new2, a0, a1, a2, a10, a3, q2, b0, a5, v0, v1, v2, a4, a12, a7, a6, a8, a9, new9]
+    static let levels: [Level] = [a0, a1, a2, a10, a3, q2, b0, a5, v0, v1, v2, a4, a12, a7, a6, a8, a9, new8, new7, new4, new5, new6, new1, new2, new9]
     
     static let tutorialLevel = Level(levelId: 0, numberOfLinesProvided: 2, numberOfTrianglesRequired: 2, numberOfVerticesRequired: -1, lines:
-        [Line(id: -1, start: CGPoint(x: 200, y: 25), end: CGPoint(x: 80, y: 375)),
-         Line(id: -1, start: CGPoint(x: 175, y: 25), end: CGPoint(x: 300, y: 375))])
+        [Line(id: -1, start: CGPoint(x: 200, y: 25), end: CGPoint(x: 80, y: 325)),
+         Line(id: -1, start: CGPoint(x: 175, y: 25), end: CGPoint(x: 300, y: 325))])
     
-    // KOBON TRIAL 
-    
+    // KOBON TRIAL     
     static let kobon1 = Level(levelId: 0, numberOfLinesProvided: 3, numberOfTrianglesRequired: 1, numberOfVerticesRequired: -1, lines: nil)
     static let kobon2 = Level(levelId: 0, numberOfLinesProvided: 4, numberOfTrianglesRequired: 2, numberOfVerticesRequired: -1, lines: nil)
     static let kobon3 = Level(levelId: 0, numberOfLinesProvided: 5, numberOfTrianglesRequired: 5, numberOfVerticesRequired: -1, lines: nil)

@@ -13,9 +13,12 @@ class InstructionsViewController: UIViewController {
 
     @IBOutlet weak var sketchView: SketchView!
     @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var triangleContainerView: UIView!
+    @IBOutlet weak var lineContainerView: UIView!
     @IBOutlet weak var stepLabel: UILabel!
     @IBOutlet weak var stepDescriptionLabel: UILabel!
     @IBOutlet weak var completeLabel: UILabel!
+    @IBOutlet weak var finalNoteLabel: UILabel!
     @IBOutlet weak var completeCheckmark: M13Checkbox!
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -38,6 +41,9 @@ class InstructionsViewController: UIViewController {
         sketchView.setupLevel(level: Levels.levels[0])
         undoButton.isEnabled = false
         completeLabel.alpha = 0
+        finalNoteLabel.alpha = 0
+        triangleContainerView.alpha = 0
+        lineContainerView.alpha = 0
     }
 
     @IBAction func popViewController(sender: UIButton) {
@@ -85,6 +91,10 @@ class InstructionsViewController: UIViewController {
         
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
+            if self.index == 3 {
+                self.triangleContainerView.alpha = 0
+                self.lineContainerView.alpha = 0
+            }
         }, completion: nil)
     }
     
@@ -109,6 +119,8 @@ class InstructionsViewController: UIViewController {
                 if self.index == 3 {
                     self.sketchView.createModeEnabled = false
                     self.sketchView.setupLevel(level: Levels.tutorialLevel)
+                    self.triangleContainerView.alpha = 1
+                    self.lineContainerView.alpha = 1
                 }
             }, completion: nil)
         })
@@ -121,9 +133,12 @@ class InstructionsViewController: UIViewController {
             self.sketchView.alpha = 0
             self.undoButton.alpha = 0
             self.separatorView.alpha = 0
+            self.triangleContainerView.alpha = 0
+            self.lineContainerView.alpha = 0
         }, completion: { (finished) in
             UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
                 self.completeLabel.alpha = 1
+                self.finalNoteLabel.alpha = 1
                 self.completeCheckmark.toggleCheckState(true)
             }, completion: nil)
         })
