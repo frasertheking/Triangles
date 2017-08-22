@@ -111,11 +111,28 @@ class Levels: NSObject {
          Line(id: -1, start: CGPoint(x: 248.5, y: 190.0), end: CGPoint(x: 279.0, y: 366.5)),
          Line(id: -1, start: CGPoint(x: 95.0, y: 314.5), end: CGPoint(x: 296.5, y: 347.0)),
          Line(id: -1, start: CGPoint(x: 204.5, y: 299.5), end: CGPoint(x: 180.0, y: 459.0))])
+    
+    /*static let kobon = Level(levelId: 15, numberOfLinesProvided: 10, numberOfTrianglesRequired: 25, numberOfVerticesRequired: -1, lines:
+        [Line(id: 1, start: CGPoint(x: 298.0, y: 151.0), end: CGPoint(x: 382.0, y: 948.0)),
+        Line(id: 1, start: CGPoint(x: 373.0, y: 955.0), end: CGPoint(x: 468.0, y: 141.0)),
+        Line(id: 1, start: CGPoint(x: 473.0, y: 155.0), end: CGPoint(x: 94.0, y: 827.0)),
+        Line(id: 1, start: CGPoint(x: 90.0, y: 817.0), end: CGPoint(x: 712.0, y: 351.0)),
+        Line(id: 1, start: CGPoint(x: 714.0, y: 357.0), end: CGPoint(x: 22.0, y: 671.0)),
+        Line(id: 1, start: CGPoint(x: 23.0, y: 662.0), end: CGPoint(x: 738.0, y: 666.0)),
+        Line(id: 1, start: CGPoint(x: 735.0, y: 674.0), end: CGPoint(x: 54.0, y: 351.0)),
+        Line(id: 1, start: CGPoint(x: 59.0, y: 347.0), end: CGPoint(x: 675.0, y: 825.0)),
+        Line(id: 1, start: CGPoint(x: 666.0, y: 826.0), end: CGPoint(x: 293.0, y: 152.0)),
+        Line(id: 1, start: CGPoint(x: 244.0, y: 536.0), end: CGPoint(x: 553.0, y: 544.0))])*/
 
     static let levels: [Level] = [a0, a1, a2, a10, a3, q2, b0, a5, v0, v1, v2, a4, a12, a7, a6, a8, a9]
     
     static let tutorialLevel = Level(levelId: 0, numberOfLinesProvided: 2, numberOfTrianglesRequired: 2, numberOfVerticesRequired: -1, lines:
         [Line(id: -1, start: CGPoint(x: 200, y: 25), end: CGPoint(x: 80, y: 375)),
          Line(id: -1, start: CGPoint(x: 175, y: 25), end: CGPoint(x: 300, y: 375))])
+    
+    
+    // ipad
+    // height: 1024 
+    // width 768
 
 }

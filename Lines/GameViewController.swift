@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var triangleLabel: UILabel!
     @IBOutlet weak var lineLabel: UILabel!
@@ -31,6 +32,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var lineCountContainer: UIView!
     @IBOutlet weak var checkmarkButton: M13Checkbox!
     
+    var delegate: LevelsViewController?
     var levelNumber: Int = 0
     var level: Level = Levels.levels[0]
     var isCreateMode: Bool = false
@@ -48,6 +50,7 @@ class GameViewController: UIViewController {
         if isCreateMode {
             backButton.setImage(UIImage(named: "back"), for: .normal)
             undoButton.isEnabled = false
+            shareButton.isHidden = false
             triangleLabel.text = isCreateMode ? "0" : "0/\(level.numberOfTrianglesRequired!)"
             lineLabel.text = isCreateMode ? "0" : "0/\(level.numberOfLinesProvided!)"
             vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
@@ -152,6 +155,7 @@ class GameViewController: UIViewController {
     
     @IBAction func nextPressed(sender: UIButton) {
         levelNumber += 1
+        delegate?.selectedIndex = levelNumber
         level = Levels.levels[levelNumber]
         sketchView.resetStageForLevel(level: level)
         animateNextButtonOut()
@@ -165,9 +169,9 @@ class GameViewController: UIViewController {
         self.undoButton.addTarget(self, action: #selector(undoPressed(sender:)), for: .touchUpInside)
     }
     
-    func share(sender: UIButton) {
+    @IBAction func share(sender: UIButton) {
         let image = captureScreen()
-        let text = "Check out my solution to this puzzle in Kobon. Think you can do a better job? Get it on the App store today!"
+        let text = "Check out this puzzle in Kobon. Think you can solve this? Get it on the App store today!"
         var activityItems: [Any]
 
         if let image = image {

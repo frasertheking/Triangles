@@ -79,6 +79,10 @@ class InstructionsViewController: UIViewController {
             checkmarkButton.toggleCheckState(true)
         }
         
+        if index == 3 {
+            nextButton.setTitle("Finish", for: .normal)
+        }
+        
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)

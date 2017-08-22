@@ -114,11 +114,12 @@ class SketchView: UIView {
         self.addParallaxToView(vw: lineView)
         self.addParallaxToView(vw: vertexView)
         
-        let points = drawRandomPolygon(ctrX: UIScreen.main.bounds.size.width / 2, ctrY: UIScreen.main.bounds.size.height / 2, aveRadius: UIScreen.main.bounds.size.width / 3, irreg: 1.0, spike: 1.0, numVerts: 12)
+        // Random polygon generation code
+        /*let points = drawRandomPolygon(ctrX: UIScreen.main.bounds.size.width / 2, ctrY: UIScreen.main.bounds.size.height / 2, aveRadius: UIScreen.main.bounds.size.width / 2, irreg: 1.0, spike: 1.0, numVerts: 7)
         for i in 0..<points.count-1 {
             drawLine(fromPoint: points[i], toPoint: points[i+1], doneDrawingLine: true)
         }
-        drawLine(fromPoint: points[0], toPoint: points[points.count-1], doneDrawingLine: true)
+        drawLine(fromPoint: points[0], toPoint: points[points.count-1], doneDrawingLine: true)*/
     }
     
     // Loads a XIB file into a view and returns this view.
@@ -280,7 +281,7 @@ class SketchView: UIView {
                 if let lineStart = lineStart {
                     if lineStart.distance(gesture.location(in: self)) > 10 {
                         drawLine(fromPoint: lineStart, toPoint: gesture.location(in: self), doneDrawingLine: true)
-                        //print("Line(id: -1, start: CGPoint(x: \(lineStart.x), y: \(lineStart.y)), end: CGPoint(x: \(gesture.location(in: self).x), y: \(gesture.location(in: self).y))),")
+                        print("Line(id: -1, start: CGPoint(x: \(lineStart.x), y: \(lineStart.y)), end: CGPoint(x: \(gesture.location(in: self).x), y: \(gesture.location(in: self).y))),")
                     }
                 }
             }

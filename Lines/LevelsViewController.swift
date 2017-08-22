@@ -16,7 +16,6 @@ class LevelsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var selectedIndex = 0
-    var previousCurrentLevel = 0
     var currentLevel: Int {
         get {
             return UserDefaultsInteractor.getCurrentLevel()
@@ -39,11 +38,7 @@ class LevelsViewController: UIViewController {
  
         collectionView.reloadData()
         collectionView.layoutIfNeeded()
-        var scrollIndex = currentLevel
-        if previousCurrentLevel == currentLevel {
-            scrollIndex = selectedIndex
-        }
-        collectionView.scrollToItem(at: IndexPath(row: scrollIndex, section: 0), at: UICollectionViewScrollPosition.centeredVertically, animated: false)
+        collectionView.scrollToItem(at: IndexPath(row: selectedIndex, section: 0), at: UICollectionViewScrollPosition.centeredVertically, animated: false)
     }
     
     @IBAction func backPressed(sender: UIButton) {
@@ -63,6 +58,7 @@ class LevelsViewController: UIViewController {
         if (segue.identifier == "showNewGame") {
             let vc = segue.destination as! GameViewController
             vc.levelNumber = selectedIndex
+            vc.delegate = self
         }
     }
 }
@@ -162,7 +158,6 @@ extension LevelsViewController: UICollectionViewDelegate, UICollectionViewDelega
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
-        previousCurrentLevel = currentLevel
         performSegue(withIdentifier: "showNewGame", sender: self)
     }
     

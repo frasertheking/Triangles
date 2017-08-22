@@ -199,12 +199,14 @@
                                 <rect key="frame" x="36" y="311.66666666666669" width="60" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-thick" translatesAutoresizingMaskIntoConstraints="NO" id="VA8-oj-edB">
-                                        <rect key="frame" x="12.666666666666664" y="12" width="35.000000000000007" height="35"/>
+                                        <rect key="frame" x="8.3333333333333357" y="7.6666666666666288" width="43.999999999999993" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="2uP-JK-ifE">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="44"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="50"/>
                                             </constraint>
                                             <constraint firstAttribute="width" constant="35" id="V9b-gf-JQM">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="44"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="50"/>
                                             </constraint>
                                         </constraints>
@@ -569,6 +571,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al1-Rq-CLF">
+                                <rect key="frame" x="182" y="41.666666666666671" width="50" height="50.000000000000014"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ioV-cr-ydu"/>
+                                    <constraint firstAttribute="width" constant="50" id="z79-A2-wYt"/>
+                                </constraints>
+                                <state key="normal" image="share"/>
+                                <connections>
+                                    <action selector="shareWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cco-Rz-Ur9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -599,7 +612,9 @@
                             <constraint firstItem="tPc-uP-mio" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f9Z-El-KJf"/>
                             <constraint firstItem="Xry-KG-5jD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gOi-pw-AZs"/>
                             <constraint firstItem="Bb5-UM-of3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gQa-Vj-9iN"/>
+                            <constraint firstItem="NoY-dg-or9" firstAttribute="centerY" secondItem="al1-Rq-CLF" secondAttribute="centerY" id="hcJ-qF-L7P"/>
                             <constraint firstAttribute="trailing" secondItem="tPc-uP-mio" secondAttribute="trailing" id="kXD-Kw-rF8"/>
+                            <constraint firstItem="al1-Rq-CLF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n3h-OB-dgI"/>
                             <constraint firstAttribute="trailing" secondItem="Xxg-7K-VpY" secondAttribute="trailing" constant="12" id="nhY-pP-GsS"/>
                             <constraint firstItem="yNJ-y4-uU6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pjs-Tn-wNE"/>
                             <constraint firstItem="Bb5-UM-of3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uOL-ql-uym"/>
@@ -633,6 +648,7 @@
                         <outlet property="lineLabel" destination="cI9-DL-Ghb" id="gKf-6O-XWN"/>
                         <outlet property="nextButton" destination="QSX-IZ-ZNd" id="o6l-Rg-2U8"/>
                         <outlet property="nextButtonBottomConstraint" destination="1Mn-gZ-wKq" id="oTs-fp-RBC"/>
+                        <outlet property="shareButton" destination="al1-Rq-CLF" id="xq1-C6-nWn"/>
                         <outlet property="sketchView" destination="Xry-KG-5jD" id="OXe-gc-2Ks"/>
                         <outlet property="triangleContainerBottomConstraint" destination="VzL-xE-GZD" id="hwc-0Q-dKu"/>
                         <outlet property="triangleCountContainer" destination="Zle-YN-cCG" id="X5C-Vi-eSp"/>
@@ -736,7 +752,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag your finger to draw a line across the screen" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umQ-dl-vst">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag your finger below to draw a line across the screen" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umQ-dl-vst">
                                 <rect key="frame" x="36" y="157.66666666666666" width="358" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84661091549295775" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1066,7 +1082,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Levels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLK-zA-Byz">
-                                            <rect key="frame" x="358" y="21" width="118" height="48"/>
+                                            <rect key="frame" x="148" y="21" width="118" height="48"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -1083,10 +1099,10 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzI-PN-lMY">
-                                            <rect key="frame" x="778" y="27" width="36" height="36"/>
+                                            <rect key="frame" x="344" y="20" width="50" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="36" id="UlY-rS-E1J"/>
-                                                <constraint firstAttribute="height" constant="36" id="ruF-pb-VXZ"/>
+                                                <constraint firstAttribute="width" constant="50" id="UlY-rS-E1J"/>
+                                                <constraint firstAttribute="height" constant="50" id="ruF-pb-VXZ"/>
                                             </constraints>
                                             <state key="normal" image="share"/>
                                             <connections>
