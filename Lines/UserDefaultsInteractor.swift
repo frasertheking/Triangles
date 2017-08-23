@@ -19,7 +19,7 @@ struct UserDefaultsInteractor {
     
     static func getCurrentLevel() -> Int {
         if isKeyPresentInUserDefaults(key: currentLevelKey) {
-            return UserDefaults.standard.integer(forKey: currentLevelKey)
+            return 30 //UserDefaults.standard.integer(forKey: currentLevelKey)
         }
         
         // Initialize default value if key is not yet set
