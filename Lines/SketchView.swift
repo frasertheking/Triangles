@@ -194,8 +194,7 @@ class SketchView: UIView {
         
         if triangleCount == numberOfTrianglesRequired &&
             (lineCount - startingLineCount) == numberOfLinesProvided &&
-            levelLoaded &&
-            levelNumber < Levels.levels.count-1 {
+            levelLoaded {
             
             return true
         }

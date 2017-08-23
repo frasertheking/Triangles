@@ -46,7 +46,7 @@ class LevelsViewController: UIViewController {
     }
     
     @IBAction func sharePressed(sender: UIButton) {
-        let text = "I've made it to level \(currentLevel+1) on Kobon. Think you can make more tiangles than me? Get it on the App store today!"
+        let text = "I've made it to level \(currentLevel+1) on Kobon. Think you can make more tiangles than me? Get it on the iOS App store today!"
         let textToShare = [ text ]
         let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = sender

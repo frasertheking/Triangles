@@ -40,7 +40,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if isKobonMode {
             level = Levels.kobonLevels[levelNumber]
         } else {
@@ -77,7 +77,7 @@ class GameViewController: UIViewController {
             triangleCountContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
         }
         
-        if !isCreateMode && sketchView.isLevelComplete(levelNumber: levelNumber, triangleCount: triangles) {
+        if !isCreateMode && (sketchView.isLevelComplete(levelNumber: levelNumber, triangleCount: triangles)) {
             bounceSketchView()
             self.undoButton.setImage(UIImage(named: "share"), for: .normal)
             self.undoButton.removeTarget(nil, action: nil, for: .allEvents)
@@ -165,6 +165,11 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func nextPressed(sender: UIButton) {
+        if (!isKobonMode && levelNumber == Levels.levels.count - 1) || (isKobonMode && levelNumber == Levels.kobonLevels.count - 1) {
+            performSegue(withIdentifier: "showSuccess", sender: self)
+            return
+        }
+        
         levelNumber += 1
         delegate?.selectedIndex = levelNumber
         if isKobonMode {
@@ -189,7 +194,7 @@ class GameViewController: UIViewController {
     
     @IBAction func share(sender: UIButton) {
         let image = captureScreen()
-        let text = "Check out this puzzle in Kobon. Think you can solve this? Get it on the App store today!"
+        let text = "Check out this puzzle in Kobon. Think you can solve this? Get it on the iOS App store today!"
         var activityItems: [Any]
 
         if let image = image {

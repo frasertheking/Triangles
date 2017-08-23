@@ -293,12 +293,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kobon - 0.1.2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UL7-vQ-0iz">
-                                <rect key="frame" x="40" y="713" width="334" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -324,7 +318,6 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="16"/>
                             </constraint>
                             <constraint firstItem="rWp-bI-pZk" firstAttribute="leading" secondItem="uNL-OV-n6Y" secondAttribute="leading" id="ZTr-TF-2s6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UL7-vQ-0iz" secondAttribute="trailing" constant="20" id="b4k-Mp-G8e"/>
                             <constraint firstItem="4am-Vh-eON" firstAttribute="top" secondItem="EhY-VB-IKM" secondAttribute="bottom" constant="40" id="fOc-RM-ICb">
                                 <variation key="heightClass=regular-widthClass=regular" constant="80"/>
                             </constraint>
@@ -347,8 +340,6 @@
                             <constraint firstItem="rWp-bI-pZk" firstAttribute="centerY" secondItem="uNL-OV-n6Y" secondAttribute="centerY" multiplier="0.42" id="pbo-Lb-p8r"/>
                             <constraint firstAttribute="trailing" secondItem="ywR-Lt-ii5" secondAttribute="trailing" id="sfW-Bk-Dcx"/>
                             <constraint firstItem="4am-Vh-eON" firstAttribute="centerY" secondItem="Alm-S9-NEq" secondAttribute="centerY" id="w7e-IV-ilh"/>
-                            <constraint firstItem="FnZ-0w-Vpj" firstAttribute="top" secondItem="UL7-vQ-0iz" secondAttribute="bottom" constant="8" id="xGx-NX-wm0"/>
-                            <constraint firstItem="UL7-vQ-0iz" firstAttribute="leading" secondItem="uNL-OV-n6Y" secondAttribute="leadingMargin" constant="20" id="xmS-jT-EcG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tkw-T1-Pmj"/>
@@ -546,7 +537,7 @@
                                     <action selector="nextPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gXk-c7-jPd"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOe-GJ-KKK" customClass="M13Checkbox" customModule="M13Checkbox">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOe-GJ-KKK" customClass="M13Checkbox" customModule="M13Checkbox">
                                 <rect key="frame" x="167" y="26" width="80" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.30980392159999998" green="0.69803921570000005" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -657,11 +648,124 @@
                         <outlet property="vertexContainerBottomConstraint" destination="ycE-i7-10p" id="x1g-nT-1W9"/>
                         <outlet property="vertexCountContainer" destination="yNJ-y4-uU6" id="uGa-YV-6t5"/>
                         <outlet property="vertexLabel" destination="jbb-RG-85R" id="FUT-af-yR0"/>
+                        <segue destination="e9Q-v6-M74" kind="show" identifier="showSuccess" id="0rn-Wv-J2n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="688" y="89"/>
+        </scene>
+        <!--Success View Controller-->
+        <scene sceneID="rhH-zO-HjR">
+            <objects>
+                <viewController id="e9Q-v6-M74" customClass="SuccessViewController" customModule="Lines" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ATQ-m5-NrG"/>
+                        <viewControllerLayoutGuide type="bottom" id="oEV-OJ-rDL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1QF-XS-n4B">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.035000000149011612" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kobon-background" translatesAutoresizingMaskIntoConstraints="NO" id="agb-8t-dEc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XR3-DW-vLs" customClass="M13Checkbox" customModule="M13Checkbox">
+                                <rect key="frame" x="167" y="328" width="80" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.30980392159999998" green="0.69803921570000005" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="fPS-Jg-AA2"/>
+                                    <constraint firstAttribute="height" constant="80" id="hYn-Dq-366"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_IBMarkType" value="checkmark"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_IBBoxType" value="circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_IBCheckState" value="checked"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryCheckmarkTintColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryTintColor">
+                                        <color key="value" red="0.30980392159999998" green="0.69803921570000005" blue="0.25098039220000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_IBStateChangeAnimation" value="Fill"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideBox" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="checkmarkLineWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtb-Lx-i2V">
+                                <rect key="frame" x="24" y="64" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fwt-qO-SeL"/>
+                                    <constraint firstAttribute="width" constant="44" id="oet-w8-eH0"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="popViewControllerWithSender:" destination="e9Q-v6-M74" eventType="touchUpInside" id="w9J-BM-ULP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPL-5A-8O4">
+                                <rect key="frame" x="128.66666666666669" y="62" width="157.00000000000006" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGb-MB-Tgs">
+                                <rect key="frame" x="69" y="266.33333333333326" width="276.33333333333331" height="45.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have successfully completed this game mode! Check back later for new levels!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOX-w3-d8l">
+                                <rect key="frame" x="16" y="424" width="382" height="71.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DPL-5A-8O4" firstAttribute="centerY" secondItem="xtb-Lx-i2V" secondAttribute="centerY" id="0Ym-e2-YCA"/>
+                            <constraint firstItem="oEV-OJ-rDL" firstAttribute="top" secondItem="agb-8t-dEc" secondAttribute="bottom" id="2dH-zR-IeD"/>
+                            <constraint firstItem="XR3-DW-vLs" firstAttribute="centerX" secondItem="1QF-XS-n4B" secondAttribute="centerX" id="7Bm-i5-QW3"/>
+                            <constraint firstAttribute="trailing" secondItem="KOX-w3-d8l" secondAttribute="trailing" constant="16" id="7J1-Ob-lke">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="xtb-Lx-i2V" firstAttribute="leading" secondItem="1QF-XS-n4B" secondAttribute="leading" constant="24" id="Kau-Q1-Iqm"/>
+                            <constraint firstItem="DPL-5A-8O4" firstAttribute="centerX" secondItem="1QF-XS-n4B" secondAttribute="centerX" id="KvX-td-UTD"/>
+                            <constraint firstItem="agb-8t-dEc" firstAttribute="leading" secondItem="1QF-XS-n4B" secondAttribute="leading" id="POW-7w-8h4"/>
+                            <constraint firstItem="xtb-Lx-i2V" firstAttribute="top" secondItem="ATQ-m5-NrG" secondAttribute="bottom" constant="44" id="RYn-LX-VME"/>
+                            <constraint firstAttribute="trailing" secondItem="agb-8t-dEc" secondAttribute="trailing" id="Xui-vG-jRb"/>
+                            <constraint firstItem="XR3-DW-vLs" firstAttribute="centerY" secondItem="1QF-XS-n4B" secondAttribute="centerY" id="ctx-Fb-Jmu"/>
+                            <constraint firstItem="agb-8t-dEc" firstAttribute="top" secondItem="1QF-XS-n4B" secondAttribute="top" id="dnt-gd-3Zh"/>
+                            <constraint firstItem="TGb-MB-Tgs" firstAttribute="centerX" secondItem="1QF-XS-n4B" secondAttribute="centerX" id="kBk-0g-rtq"/>
+                            <constraint firstItem="KOX-w3-d8l" firstAttribute="leading" secondItem="1QF-XS-n4B" secondAttribute="leading" constant="16" id="mdu-pf-H6H">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="XR3-DW-vLs" firstAttribute="top" secondItem="TGb-MB-Tgs" secondAttribute="bottom" constant="16" id="p28-V9-KNK">
+                                <variation key="heightClass=regular-widthClass=regular" constant="44"/>
+                            </constraint>
+                            <constraint firstItem="KOX-w3-d8l" firstAttribute="top" secondItem="XR3-DW-vLs" secondAttribute="bottom" constant="16" id="pLv-nP-qjc">
+                                <variation key="heightClass=regular-widthClass=regular" constant="44"/>
+                            </constraint>
+                            <constraint firstItem="KOX-w3-d8l" firstAttribute="centerX" secondItem="1QF-XS-n4B" secondAttribute="centerX" id="wdp-IP-VHT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="completeCheckmark" destination="XR3-DW-vLs" id="VgW-MV-vsW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gqb-GO-Gc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1544.9275362318842" y="88.858695652173921"/>
         </scene>
         <!--Instructions View Controller-->
         <scene sceneID="cSe-at-odX">
@@ -696,20 +800,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial Complete!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4k-fb-HYU">
-                                <rect key="frame" x="36" y="271.66666666666674" width="342" height="45.333333333333314"/>
+                                <rect key="frame" x="36" y="271.66666666666669" width="342" height="45.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hG7-Ns-mpp">
-                                <rect key="frame" x="36" y="429.66666666666674" width="342" height="50.333333333333314"/>
-                                <string key="text">Final note: Draw your lines through the other lines/vertices to create intersections. Don't stop early or they will not create intersections.</string>
+                                <rect key="frame" x="36" y="429.33333333333331" width="342" height="50.333333333333371"/>
+                                <string key="text">Note: Draw your lines through the other lines/vertices to create intersections. Don't stop early or they will not create intersections.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                </variation>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dX-jL-Ztc" customClass="M13Checkbox" customModule="M13Checkbox">
-                                <rect key="frame" x="167" y="333.66666666666669" width="80" height="80"/>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dX-jL-Ztc" customClass="M13Checkbox" customModule="M13Checkbox">
+                                <rect key="frame" x="167" y="333.33333333333331" width="80" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.30980392159999998" green="0.69803921570000005" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -838,7 +948,7 @@
                                     <constraint firstAttribute="height" constant="1" id="SRi-Nl-3WW"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBj-FJ-IeC" customClass="M13Checkbox" customModule="M13Checkbox">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBj-FJ-IeC" customClass="M13Checkbox" customModule="M13Checkbox">
                                 <rect key="frame" x="24" y="226.66666666666669" width="50" height="50.000000000000057"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.30980392159999998" green="0.69803921570000005" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -895,7 +1005,9 @@
                             <constraint firstItem="E8p-BQ-TtM" firstAttribute="top" secondItem="JKJ-UI-prZ" secondAttribute="top" constant="50" id="5z3-KU-930"/>
                             <constraint firstItem="jaO-cB-Vbf" firstAttribute="leading" secondItem="JKJ-UI-prZ" secondAttribute="leading" id="6KW-22-Zqz"/>
                             <constraint firstItem="jaO-cB-Vbf" firstAttribute="leading" secondItem="E8p-BQ-TtM" secondAttribute="trailing" id="74N-r3-Pkl"/>
-                            <constraint firstItem="hG7-Ns-mpp" firstAttribute="top" secondItem="2dX-jL-Ztc" secondAttribute="bottom" constant="16" id="88z-pq-JER"/>
+                            <constraint firstItem="hG7-Ns-mpp" firstAttribute="top" secondItem="2dX-jL-Ztc" secondAttribute="bottom" constant="16" id="88z-pq-JER">
+                                <variation key="heightClass=regular-widthClass=regular" constant="44"/>
+                            </constraint>
                             <constraint firstItem="WBj-FJ-IeC" firstAttribute="leading" secondItem="JKJ-UI-prZ" secondAttribute="leading" constant="24" id="B3y-zU-mQP"/>
                             <constraint firstItem="jaO-cB-Vbf" firstAttribute="top" secondItem="JKJ-UI-prZ" secondAttribute="topMargin" constant="-76" id="Cou-Kw-qVl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="umQ-dl-vst" secondAttribute="trailing" id="EIX-fM-M3J"/>
@@ -925,7 +1037,9 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
                             <constraint firstItem="WBj-FJ-IeC" firstAttribute="top" secondItem="GjC-6w-m1W" secondAttribute="bottom" constant="24" id="ePW-RE-c4L"/>
-                            <constraint firstItem="2dX-jL-Ztc" firstAttribute="top" secondItem="h4k-fb-HYU" secondAttribute="bottom" constant="16" id="eXx-vY-I0m"/>
+                            <constraint firstItem="2dX-jL-Ztc" firstAttribute="top" secondItem="h4k-fb-HYU" secondAttribute="bottom" constant="16" id="eXx-vY-I0m">
+                                <variation key="heightClass=regular-widthClass=regular" constant="44"/>
+                            </constraint>
                             <constraint firstItem="E8p-BQ-TtM" firstAttribute="leading" secondItem="JKJ-UI-prZ" secondAttribute="leading" constant="12" id="enU-SS-aoX">
                                 <variation key="heightClass=regular-widthClass=compact" constant="24"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="44"/>
@@ -1434,6 +1548,6 @@
         <image name="vertex" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9VW-J2-mXY"/>
+        <segue reference="ZOM-jQ-nlU"/>
     </inferredMetricsTieBreakers>
 </document>
