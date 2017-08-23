@@ -37,6 +37,7 @@ class GameViewController: UIViewController {
     var level: Level = Levels.levels[0]
     var isCreateMode: Bool = false
     var isKobonMode: Bool = false
+    var verticesLoaded: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +65,8 @@ class GameViewController: UIViewController {
             undoButton.isEnabled = false
             triangleLabel.text = "0/\(level.numberOfTrianglesRequired!)"
             lineLabel.text = "0/\(level.numberOfLinesProvided!)"
+            vertexLabel.text = "0/\(level.numberOfVerticesRequired!)"
+        } else if !verticesLoaded {
             vertexLabel.text = "0/\(level.numberOfVerticesRequired!)"
         }
     }
@@ -106,6 +109,7 @@ class GameViewController: UIViewController {
     
     func updateVertices(vertices: Int) {
         vertexLabel.text = isCreateMode ? "\(vertices)" : "\(vertices)/\(level.numberOfVerticesRequired!)"
+        verticesLoaded = true
         
         if !isCreateMode && vertices == level.numberOfVerticesRequired {
             vertexCountContainer.backgroundColor = UIColor.green.withAlphaComponent(0.35)
@@ -124,6 +128,22 @@ class GameViewController: UIViewController {
             self.animateNextButtonIn()
             })
         })
+    }
+    
+    func refreshCounters() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.triangleCountContainer.alpha = 0
+            self.vertexCountContainer.alpha = 0
+            self.lineCountContainer.alpha = 0
+        }) { (finished) in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.vertexCountContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
+                self.toggleVertexCounter()
+                self.triangleCountContainer.alpha = 1
+                self.vertexCountContainer.alpha = 1
+                self.lineCountContainer.alpha = 1
+            })
+        }
     }
     
     func animateNextButtonIn() {
@@ -160,7 +180,8 @@ class GameViewController: UIViewController {
         fullRotation.duration = 0.5
         fullRotation.repeatCount = 1
         undoButton.layer.add(fullRotation, forKey: "360")
-        
+        vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
+
         sketchView.undo()
     }
     
@@ -180,16 +201,16 @@ class GameViewController: UIViewController {
         } else {
             level = Levels.levels[levelNumber]
         }
-        sketchView.resetStageForLevel(level: level)
         animateNextButtonOut()
         triangleLabel.text = isCreateMode ? "0" : "0/\(level.numberOfTrianglesRequired!)"
         lineLabel.text = isCreateMode ? "0" : "0/\(level.numberOfLinesProvided!)"
         vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
         checkmarkButton.toggleCheckState(true)
-        toggleVertexCounter()
-        self.undoButton.setImage(UIImage(named: "undo"), for: .normal)
-        self.undoButton.removeTarget(nil, action: nil, for: .allEvents)
-        self.undoButton.addTarget(self, action: #selector(undoPressed(sender:)), for: .touchUpInside)
+        refreshCounters()
+        sketchView.resetStageForLevel(level: level)
+        undoButton.setImage(UIImage(named: "undo"), for: .normal)
+        undoButton.removeTarget(nil, action: nil, for: .allEvents)
+        undoButton.addTarget(self, action: #selector(undoPressed(sender:)), for: .touchUpInside)
     }
     
     @IBAction func share(sender: UIButton) {
