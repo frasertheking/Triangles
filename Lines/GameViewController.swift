@@ -139,6 +139,9 @@ class GameViewController: UIViewController {
         }) { (finished) in
             UIView.animate(withDuration: 0.3, animations: {
                 self.vertexCountContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
+                self.triangleLabel.text = self.isCreateMode ? "0" : "0/\(self.level.numberOfTrianglesRequired!)"
+                self.lineLabel.text = self.isCreateMode ? "0" : "0/\(self.level.numberOfLinesProvided!)"
+                self.vertexLabel.text = self.isCreateMode ? "0" : "0/\(self.level.numberOfVerticesRequired!)"
                 self.toggleVertexCounter()
                 self.triangleCountContainer.alpha = 1
                 self.vertexCountContainer.alpha = 1
@@ -190,9 +193,10 @@ class GameViewController: UIViewController {
         if (!isKobonMode && levelNumber == Levels.levels.count - 1) || (isKobonMode && levelNumber == Levels.kobonLevels.count - 1) {
             performSegue(withIdentifier: "showSuccess", sender: self)
             return
+        } else {
+            levelNumber += 1
         }
         
-        levelNumber += 1
         delegate?.selectedIndex = levelNumber
         if isKobonMode {
             level = Levels.kobonLevels[levelNumber]
@@ -203,9 +207,6 @@ class GameViewController: UIViewController {
             level = Levels.levels[levelNumber]
         }
         animateNextButtonOut()
-        triangleLabel.text = isCreateMode ? "0" : "0/\(level.numberOfTrianglesRequired!)"
-        lineLabel.text = isCreateMode ? "0" : "0/\(level.numberOfLinesProvided!)"
-        vertexLabel.text = isCreateMode ? "0" : "0/\(level.numberOfVerticesRequired!)"
         checkmarkButton.toggleCheckState(true)
         refreshCounters()
         sketchView.resetStageForLevel(level: level)

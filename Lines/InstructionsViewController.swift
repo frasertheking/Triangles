@@ -80,6 +80,7 @@ class InstructionsViewController: UIViewController {
     
     func showNext() {
         nextButtonBottomConstraint.constant = 16
+        AudioInteractor.playSuccess()
         
         if checkmarkButton.checkState == .unchecked {
             checkmarkButton.toggleCheckState(true)
