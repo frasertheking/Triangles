@@ -105,7 +105,9 @@ extension LevelsViewController: UICollectionViewDataSource  {
             cell.title2.text = "Create \(String(describing: Levels.levels[indexPath.row].numberOfTrianglesRequired!)) \(triangleText) with \(String(describing: Levels.levels[indexPath.row].numberOfLinesProvided!)) \(lineText)"
         }
         
-        cell.image.image = UIImage(named: "level\(indexPath.row+1)")
+        if let imageName = Levels.levels[indexPath.row].image {
+            cell.image.image = UIImage(named: imageName)
+        }
         cell.title1.text = "Level \(indexPath.row+1)"
         
         return cell
