@@ -82,6 +82,7 @@ class GameViewController: UIViewController {
         
         if !isCreateMode && (sketchView.isLevelComplete(levelNumber: levelNumber, triangleCount: triangles)) {
             bounceSketchView()
+            AudioInteractor.playSuccess()
             self.undoButton.setImage(UIImage(named: "share"), for: .normal)
             self.undoButton.removeTarget(nil, action: nil, for: .allEvents)
             self.undoButton.addTarget(self, action: #selector(share(sender:)), for: .touchUpInside)

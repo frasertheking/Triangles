@@ -1,6 +1,7 @@
 import UIKit
 import Pastel
 import RandomColorSwift
+import AVFoundation
 
 extension CGFloat {
     static func random() -> CGFloat {
@@ -69,3 +70,4 @@ extension UIViewController {
         }
     }
 }
+

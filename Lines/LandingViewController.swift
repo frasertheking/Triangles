@@ -22,7 +22,6 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var playButtonImage: UIView!
     @IBOutlet weak var createButtonImage: UIView!
     @IBOutlet weak var helpButtonImage: UIView!
-    
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var sandboxButton: UIButton!
     @IBOutlet weak var instructionsButton: UIButton!
@@ -43,6 +42,7 @@ class LandingViewController: UIViewController {
         helpButtonImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(instructionsPressed)))
 
         animateIn()
+        AudioInteractor.playBackgroundMusic()
     }
     
     func animateIn() {

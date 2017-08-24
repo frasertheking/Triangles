@@ -16,6 +16,9 @@
 		435A87BF1F25293C0048BAE9 /* Pastel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435A87BE1F25293C0048BAE9 /* Pastel.framework */; };
 		435A87C01F25293C0048BAE9 /* Pastel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 435A87BE1F25293C0048BAE9 /* Pastel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4361B7C41F4BD62C005490DF /* kobon-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4361B7C31F4BD62C005490DF /* kobon-background.png */; };
+		4388806E1F4F268C00D253FA /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4388806D1F4F268C00D253FA /* background.mp3 */; };
+		438880711F4F2A8C00D253FA /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4388806F1F4F2A8C00D253FA /* success.mp3 */; };
+		438880741F4F2CD800D253FA /* AudioInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438880731F4F2CD800D253FA /* AudioInteractor.swift */; };
 		43924C291F1BEE060007B61F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924C281F1BEE060007B61F /* Extensions.swift */; };
 		43A95BD71F369CC5004EBFAA /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A95BD61F369CC5004EBFAA /* LandingViewController.swift */; };
 		43A99BC71EF36C85006E477C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A99BC61EF36C85006E477C /* AppDelegate.swift */; };
@@ -56,6 +59,9 @@
 		432171B41F12A0D9001A85F5 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		435A87BE1F25293C0048BAE9 /* Pastel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pastel.framework; path = Carthage/Build/iOS/Pastel.framework; sourceTree = "<group>"; };
 		4361B7C31F4BD62C005490DF /* kobon-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kobon-background.png"; sourceTree = "<group>"; };
+		4388806D1F4F268C00D253FA /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
+		4388806F1F4F2A8C00D253FA /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
+		438880731F4F2CD800D253FA /* AudioInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioInteractor.swift; sourceTree = "<group>"; };
 		43924C281F1BEE060007B61F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		43A95BD61F369CC5004EBFAA /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		43A99BC31EF36C85006E477C /* Lines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lines.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +177,8 @@
 				43A99BCD1EF36C85006E477C /* Assets.xcassets */,
 				431CD0AE1F49F090008149B8 /* kobon-logo-blank.png */,
 				4361B7C31F4BD62C005490DF /* kobon-background.png */,
+				4388806D1F4F268C00D253FA /* background.mp3 */,
+				4388806F1F4F2A8C00D253FA /* success.mp3 */,
 				43A99BC61EF36C85006E477C /* AppDelegate.swift */,
 				43A99BCF1EF36C85006E477C /* LaunchScreen.storyboard */,
 				43A99BD21EF36C85006E477C /* Info.plist */,
@@ -182,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				43E3D1571F3FE591000765E8 /* UserDefaultsInteractor.swift */,
+				438880731F4F2CD800D253FA /* AudioInteractor.swift */,
 			);
 			name = Interactors;
 			sourceTree = "<group>";
@@ -269,9 +278,11 @@
 			files = (
 				430030451F1D8272004AD769 /* SketchView.xib in Resources */,
 				431CD0AF1F49F090008149B8 /* kobon-logo-blank.png in Resources */,
+				438880711F4F2A8C00D253FA /* success.mp3 in Resources */,
 				43A99BD11EF36C85006E477C /* LaunchScreen.storyboard in Resources */,
 				43A99BCE1EF36C85006E477C /* Assets.xcassets in Resources */,
 				43A99BCC1EF36C85006E477C /* Main.storyboard in Resources */,
+				4388806E1F4F268C00D253FA /* background.mp3 in Resources */,
 				4361B7C41F4BD62C005490DF /* kobon-background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +355,7 @@
 				43E3D1551F38A03A000765E8 /* LevelCollectionViewCell.swift in Sources */,
 				43F9BFE11F4285C6005F3D53 /* InstructionsViewController.swift in Sources */,
 				432171B51F12A0D9001A85F5 /* Triangle.swift in Sources */,
+				438880741F4F2CD800D253FA /* AudioInteractor.swift in Sources */,
 				43B51EC61F4E122200F84C78 /* SuccessViewController.swift in Sources */,
 				43B51EC41F4C764700F84C78 /* GameModeViewController.swift in Sources */,
 			);
