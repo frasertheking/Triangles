@@ -163,6 +163,14 @@ extension LevelsViewController: UICollectionViewDelegate, UICollectionViewDelega
         performSegue(withIdentifier: "showNewGame", sender: self)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if isIpad() {
+            return UIEdgeInsetsMake(50, 150, 50, 150)
+        } else {
+            return UIEdgeInsetsMake(50, 0, 50, 0)
+        }
+    }
+    
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
