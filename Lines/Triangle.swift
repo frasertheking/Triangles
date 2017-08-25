@@ -192,7 +192,7 @@ class Triangle {
         for i in 0 ..< sortedArray.count {
             for j in 0 ..< sortedArray.count {
                 let triangleCenter: CGPoint = sortedArray[i].getCenter()
-                if sortedArray[j].isPointInTriangle(p: triangleCenter) && sortedArray[j].area != sortedArray[i].area && sortedArray[i].isMinimal {
+                if sortedArray[j].isPointInTriangle(p: triangleCenter) && sortedArray[j].area != sortedArray[i].area && sortedArray[i].isMinimal && sortedArray[i].area > 100 {
                     sortedArray[j].isMinimal = false
                 }
             }

@@ -48,6 +48,13 @@ class Levels: NSObject {
          Line(id: -1, start: CGPoint(x: 44.5, y: 304.0), end: CGPoint(x: 311.5, y: 313.5)),
          Line(id: -1, start: CGPoint(x: 37.0, y: 400.0), end: CGPoint(x: 318.0, y: 408.5))])
     
+    static let star3 = Level(levelId: 29, image: "star3", numberOfLinesProvided: 5, numberOfTrianglesRequired: 10, numberOfVerticesRequired: 10, lines:
+        [Line(id: -1, start: CGPoint(x: 30.5, y: 292.5), end: CGPoint(x: 341.0, y: 294.0)),
+         Line(id: -1, start: CGPoint(x: 183.0, y: 120.0), end: CGPoint(x: 289.5, y: 486.5)),
+         Line(id: -1, start: CGPoint(x: 315.5, y: 466.0), end: CGPoint(x: 35.5, y: 271.5)),
+         Line(id: -1, start: CGPoint(x: 357.0, y: 262.0), end: CGPoint(x: 91.0, y: 479.5)),
+         Line(id: -1, start: CGPoint(x: 113.5, y: 494.5), end: CGPoint(x: 207.0, y: 120.0))])
+    
     static let star2 = Level(levelId: 5, image: "star2", numberOfLinesProvided: 2, numberOfTrianglesRequired: 10, numberOfVerticesRequired: -1, lines:
         [Line(id: -1, start: CGPoint(x: 30.5, y: 292.5), end: CGPoint(x: 341.0, y: 294.0)),
          Line(id: -1, start: CGPoint(x: 183.0, y: 120.0), end: CGPoint(x: 289.5, y: 486.5)),
@@ -190,7 +197,12 @@ class Levels: NSObject {
         Line(id: -1, start: CGPoint(x: 306.0, y: 188.0), end: CGPoint(x: 188.0, y: 492.5)),
         Line(id: -1, start: CGPoint(x: 66.5, y: 185.0), end: CGPoint(x: 217.0, y: 499.0))])
     
-    static let levels: [Level] = [simple, triangle, twoLines, house, axis, box, downTri, longTri, box2, splitTri, killEx, noTri, grid, twoTriangles, splitBox, cross, target, slashes, lineBox, innerTri, triForce, slopes, penta, spin, star1, w, star2, hard, realHard, last]
+    static let humbleStar = Level(levelId: 28, image: "humbleStar", numberOfLinesProvided: 2, numberOfTrianglesRequired: 5, numberOfVerticesRequired: -1, lines:
+        [Line(id: -1, start: CGPoint(x: 58.5, y: 234.0), end: CGPoint(x: 317.5, y: 238.0)),
+         Line(id: -1, start: CGPoint(x: 313.0, y: 213.0), end: CGPoint(x: 49.5, y: 465.0)),
+         Line(id: -1, start: CGPoint(x: 60.0, y: 481.0), end: CGPoint(x: 249.0, y: 124.5))])
+    
+    static let levels: [Level] = [simple, triangle, twoLines, house, axis, box, splitTri, longTri, box2, downTri, killEx, noTri, grid, humbleStar, twoTriangles, splitBox, cross, target, slopes, lineBox, innerTri, star1, triForce, slashes, penta, spin, star3, w, star2, hard, realHard, last]
     
     static let tutorialLevel = Level(levelId: 0, image: nil, numberOfLinesProvided: 2, numberOfTrianglesRequired: 2, numberOfVerticesRequired: -1, lines:
         [Line(id: -1, start: CGPoint(x: 200, y: 25), end: CGPoint(x: 80, y: 325)),
